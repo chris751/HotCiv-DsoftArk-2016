@@ -2,6 +2,8 @@ package hotciv.standard;
 
 import hotciv.framework.*;
 
+import static hotciv.framework.Player.*;
+
 /** Skeleton implementation of HotCiv.
  
    This source code is from the book 
@@ -30,16 +32,22 @@ import hotciv.framework.*;
 */
 
 public class GameImpl implements Game {
-  public Tile getTileAt( Position p ) { return null; }
+  Player whosTurn = RED;
+
+
+  public Tile getTileAt( Position p ) {
+
+
+    return null;}
   public Unit getUnitAt( Position p ) { return null; }
   public City getCityAt( Position p ) { return null; }
-  public Player getPlayerInTurn() { return null; }
+  public Player getPlayerInTurn() { return whosTurn; }
   public Player getWinner() { return null; }
   public int getAge() { return 0; }
   public boolean moveUnit( Position from, Position to ) {
     return false;
   }
-  public void endOfTurn() {}
+  public void endOfTurn() {whosTurn = BLUE;}
   public void changeWorkForceFocusInCityAt( Position p, String balance ) {}
   public void changeProductionInCityAt( Position p, String unitType ) {}
   public void performUnitActionAt( Position p ) {}

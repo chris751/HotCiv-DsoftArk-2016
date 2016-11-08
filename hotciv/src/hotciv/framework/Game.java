@@ -59,7 +59,6 @@ public interface Game {
    * @return the player that is in turn
    */
   public Player getPlayerInTurn();
-    
   /** return the player that has won the game. 
    * @return the player that has won. If the game is still
    * not finished then return null.

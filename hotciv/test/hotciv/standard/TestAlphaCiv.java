@@ -46,13 +46,32 @@ public class TestAlphaCiv {
   }
 
   // FRS p. 455 states that 'Red is the first player to take a turn'.
+
   @Test
   public void shouldBeRedAsStartingPlayer() {
     assertThat(game.getPlayerInTurn(), is(Player.RED));
   }
 
+  @Test
+  public void shouldBeBlueSecondTurn() {
+    assertThat(game.getPlayerInTurn(),is(Player.RED));
+    game.endOfTurn();
+    assertThat(game.getPlayerInTurn(),is(Player.BLUE));
+  }
+  //test if ocean is in tile 1,0
+  @Ignore
+  @Test
+  public void shouldBeOceanInTileOnePointZero() {
+    Tile isOcean = game.getTileAt(new Position(1,0));
+
+    assertThat(isOcean.getTypeString(), is(GameConstants.OCEANS));
+  }
+
+
+
   /** REMOVE ME.  Not a test of HotCiv, just an example of what
       matchers the hamcrest library has... */
+  /*
   @Test
   public void shouldDefinetelyBeRemoved() {
     assertThat("This is a dummy test", containsString("dummy"));
@@ -64,5 +83,5 @@ public class TestAlphaCiv {
     l.add("Bimse");
     l.add("Bumse");
     assertThat(l, hasItems(new String[] {"Bimse","Bumse"}));
-  }
+  }*/
 }
