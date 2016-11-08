@@ -2,7 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="84083f01-3edc-481d-9129-36d11e5abd61" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/hotciv/src/hotciv/standard/GameImpl.java" afterPath="$PROJECT_DIR$/hotciv/src/hotciv/standard/GameImpl.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/hotciv/test/hotciv/standard/TestAlphaCiv.java" afterPath="$PROJECT_DIR$/hotciv/test/hotciv/standard/TestAlphaCiv.java" />
     </list>
     <ignored path="HotCiv.iws" />
@@ -50,14 +49,16 @@
       <file leaf-file-name="TestAlphaCiv.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/hotciv/test/hotciv/standard/TestAlphaCiv.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="373">
-              <caret line="92" column="3" selection-start-line="92" selection-start-column="3" selection-end-line="92" selection-end-column="3" />
+            <state relative-caret-position="307">
+              <caret line="97" column="3" selection-start-line="97" selection-start-column="3" selection-end-line="97" selection-end-column="3" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="e#1265#1266#0" expanded="true" />
                 <element signature="e#1296#1297#0" expanded="true" />
                 <element signature="e#1421#1422#0" expanded="true" />
                 <element signature="e#1481#1482#0" expanded="true" />
+                <element signature="e#2885#2886#0" expanded="true" />
+                <element signature="e#2930#2931#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -751,7 +752,7 @@
       <workItem from="1478262571454" duration="307000" />
       <workItem from="1478262899980" duration="1506000" />
       <workItem from="1478599726900" duration="434000" />
-      <workItem from="1478601194060" duration="13283000" />
+      <workItem from="1478601194060" duration="13522000" />
     </task>
     <task id="LOCAL-00001" summary="Jedi message tester niklas">
       <created>1478263152330</created>
@@ -771,9 +772,6 @@
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="TestAlphaCiv - 2016.11.08 at 14h 52m 10s.xml">
-      <configuration name="TestAlphaCiv" configurationId="JUnit" />
-    </history-entry>
     <history-entry file="TestAlphaCiv - 2016.11.08 at 14h 52m 24s.xml">
       <configuration name="TestAlphaCiv" configurationId="JUnit" />
     </history-entry>
@@ -801,13 +799,16 @@
     <history-entry file="TestAlphaCiv - 2016.11.08 at 15h 23m 10s.xml">
       <configuration name="TestAlphaCiv" configurationId="JUnit" />
     </history-entry>
+    <history-entry file="TestAlphaCiv - 2016.11.08 at 15h 26m 50s.xml">
+      <configuration name="TestAlphaCiv" configurationId="JUnit" />
+    </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="15530000" />
+    <option name="totallyTimeSpent" value="15769000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="283" y="106" width="1379" height="877" extended-state="0" />
-    <editor active="false" />
+    <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -930,6 +931,8 @@
             <element signature="e#1296#1297#0" expanded="true" />
             <element signature="e#1421#1422#0" expanded="true" />
             <element signature="e#1481#1482#0" expanded="true" />
+            <element signature="e#2885#2886#0" expanded="true" />
+            <element signature="e#2930#2931#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -1058,14 +1061,16 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/hotciv/test/hotciv/standard/TestAlphaCiv.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="373">
-          <caret line="92" column="3" selection-start-line="92" selection-start-column="3" selection-end-line="92" selection-end-column="3" />
+        <state relative-caret-position="307">
+          <caret line="97" column="3" selection-start-line="97" selection-start-column="3" selection-end-line="97" selection-end-column="3" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="e#1265#1266#0" expanded="true" />
             <element signature="e#1296#1297#0" expanded="true" />
             <element signature="e#1421#1422#0" expanded="true" />
             <element signature="e#1481#1482#0" expanded="true" />
+            <element signature="e#2885#2886#0" expanded="true" />
+            <element signature="e#2930#2931#0" expanded="true" />
           </folding>
         </state>
       </provider>

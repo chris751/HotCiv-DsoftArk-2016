@@ -92,7 +92,10 @@ public class TestAlphaCiv {
     }
   }
 
-
+  @Test
+  public void shouldStartAt4000bc(){
+    assertThat(game.getAge(), is(4000));
+  }
   //test if ocean is in tile 1,0
   @Ignore
   @Test
