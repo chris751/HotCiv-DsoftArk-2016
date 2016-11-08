@@ -34,7 +34,7 @@ import static hotciv.framework.Player.*;
 public class GameImpl implements Game {
   //which player has the turn, RED is set to begin
   Player whosTurn = RED;
-  int age = 0;
+  int age = 4000;
 
   public Tile getTileAt( Position p ) {return null;}
   public Unit getUnitAt( Position p ) { return null; }
@@ -53,7 +53,7 @@ public class GameImpl implements Game {
   public void endOfTurn() {
     if(whosTurn == BLUE){
       whosTurn = RED;
-      age = 100;
+      age += -100;
     }
     else{
       whosTurn = BLUE;

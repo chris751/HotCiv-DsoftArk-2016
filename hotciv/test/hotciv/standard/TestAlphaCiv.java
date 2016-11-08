@@ -69,26 +69,30 @@ public class TestAlphaCiv {
   //test is age is 100 after first round
   @Test
   public void shouldAgeOneHundredYearsAfterFirstRoundEnds(){
-    assertThat(game.getAge(),is(0));
+    assertThat(game.getAge(),is(4000));
     assertThat(game.getPlayerInTurn(),is(Player.RED));
     game.endOfTurn();
     assertThat(game.getPlayerInTurn(),is(Player.BLUE));
     game.endOfTurn();
     assertThat(game.getPlayerInTurn(),is(Player.RED));
-    assertThat(game.getAge(),is(100));
+    assertThat(game.getAge(),is(3900));
   }
 
-  @Ignore
   @Test
   public void shouldAgeOneHundredYearsAfterEachRoundEnds(){
-    assertThat(game.getPlayerInTurn(),is(Player.RED));
-    game.endOfTurn();
-    assertThat(game.getPlayerInTurn(),is(Player.BLUE));
-    game.endOfTurn();
-    assertThat(game.getPlayerInTurn(),is(Player.RED));
-    assertThat(game.getAge(),is(100));
-
+    int roundAge = 4000;
+    for(int i=0; i<10; i++) {
+      assertThat(game.getPlayerInTurn(), is(Player.RED));
+      game.endOfTurn();
+      assertThat(game.getPlayerInTurn(), is(Player.BLUE));
+      game.endOfTurn();
+      assertThat(game.getPlayerInTurn(), is(Player.RED));
+      roundAge += -100;
+      assertThat(game.getAge(), is(roundAge));
+    }
   }
+
+
   //test if ocean is in tile 1,0
   @Ignore
   @Test
