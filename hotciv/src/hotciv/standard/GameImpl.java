@@ -32,23 +32,34 @@ import static hotciv.framework.Player.*;
 */
 
 public class GameImpl implements Game {
+  //which player has the turn, RED is set to begin
   Player whosTurn = RED;
 
-
-  public Tile getTileAt( Position p ) {
-
-
-    return null;}
+  public Tile getTileAt( Position p ) {return null;}
   public Unit getUnitAt( Position p ) { return null; }
   public City getCityAt( Position p ) { return null; }
+
+  //returns the variable whosTurn
   public Player getPlayerInTurn() { return whosTurn; }
+
   public Player getWinner() { return null; }
   public int getAge() { return 0; }
   public boolean moveUnit( Position from, Position to ) {
     return false;
   }
-  public void endOfTurn() {whosTurn = BLUE;}
+
+  //at the end of turn switch turn to the correct player
+  public void endOfTurn() {
+    if(whosTurn == BLUE){
+      whosTurn = RED;
+    }
+    else{
+      whosTurn = BLUE;
+    }
+  }
+
   public void changeWorkForceFocusInCityAt( Position p, String balance ) {}
   public void changeProductionInCityAt( Position p, String unitType ) {}
   public void performUnitActionAt( Position p ) {}
+
 }
