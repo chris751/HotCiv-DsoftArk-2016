@@ -97,11 +97,31 @@ public class TestAlphaCiv {
     assertThat(game.getAge(), is(4000));
   }
   //test if ocean is in tile 1,0
-  @Ignore
+
   @Test
   public void shouldBeOceanInTileOnePointZero() {
     Tile isOcean = game.getTileAt(new Position(1,0));
 
     assertThat(isOcean.getTypeString(), is(GameConstants.OCEANS));
+  }
+
+  @Test
+  public void redAlwaysWinInYear3000BC(){
+    for(int i=0; i<10; i++) {
+      game.endOfTurn();
+      game.endOfTurn();
+    }
+      assertThat(game.getAge(),is(3000));
+      assertThat(game.getWinner(), is(Player.RED));
+  }
+
+  @Test
+  public void redShouldNotWinInYear3500BC(){
+    for(int i=0; i<5; i++) {
+      game.endOfTurn();
+      game.endOfTurn();
+    }
+    assertThat(game.getAge(),is(3500));
+    assertThat(game.getWinner(), is(nullValue()));
   }
 }

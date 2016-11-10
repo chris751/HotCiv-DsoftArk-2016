@@ -43,7 +43,16 @@ public class GameImpl implements Game {
   //returns the variable whosTurn
   public Player getPlayerInTurn() { return whosTurn; }
 
-  public Player getWinner() { return null; }
+  public Player getWinner() {
+    if (getAge()==3000){
+      return RED;
+    }
+    else{
+      return null;
+    }
+
+  }
+
   public int getAge() { return age; }
   public boolean moveUnit( Position from, Position to ) {
     return false;
@@ -63,5 +72,4 @@ public class GameImpl implements Game {
   public void changeWorkForceFocusInCityAt( Position p, String balance ) {}
   public void changeProductionInCityAt( Position p, String unitType ) {}
   public void performUnitActionAt( Position p ) {}
-
 }
