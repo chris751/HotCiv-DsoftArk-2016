@@ -36,7 +36,15 @@ public class GameImpl implements Game {
   Player whosTurn = RED;
   int age = 4000;
 
-  public Tile getTileAt( Position p ) {return null;}
+  public Tile getTileAt( Position p ) {
+
+    //Tile Ocean = new Tile();
+
+    //String s = Ocean.getTypeString();
+    //System.out.print(s);
+
+    return null;
+  }
   public Unit getUnitAt( Position p ) { return null; }
   public City getCityAt( Position p ) { return null; }
 

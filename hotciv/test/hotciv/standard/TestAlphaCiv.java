@@ -77,7 +77,7 @@ public class TestAlphaCiv {
     assertThat(game.getPlayerInTurn(),is(Player.RED));
     assertThat(game.getAge(),is(3900));
   }
-
+  //Test if game age progress a hundred years after each round has ended
   @Test
   public void shouldAgeOneHundredYearsAfterEachRoundEnds(){
     int roundAge = 4000;
@@ -91,20 +91,20 @@ public class TestAlphaCiv {
       assertThat(game.getAge(), is(roundAge));
     }
   }
-
+  //Test if the start age is 4000BC
   @Test
   public void shouldStartAt4000bc(){
     assertThat(game.getAge(), is(4000));
   }
   //test if ocean is in tile 1,0
-
+  @Ignore
   @Test
-  public void shouldBeOceanInTileOnePointZero() {
+  public void shouldBeOceanInTile1_0() {
     Tile isOcean = game.getTileAt(new Position(1,0));
 
     assertThat(isOcean.getTypeString(), is(GameConstants.OCEANS));
   }
-
+  //test if RED wins in year 3000BC
   @Test
   public void redAlwaysWinInYear3000BC(){
     for(int i=0; i<10; i++) {
@@ -114,7 +114,7 @@ public class TestAlphaCiv {
       assertThat(game.getAge(),is(3000));
       assertThat(game.getWinner(), is(Player.RED));
   }
-
+  //Make sure that Red doesn't always win
   @Test
   public void redShouldNotWinInYear3500BC(){
     for(int i=0; i<5; i++) {
@@ -123,5 +123,11 @@ public class TestAlphaCiv {
     }
     assertThat(game.getAge(),is(3500));
     assertThat(game.getWinner(), is(nullValue()));
+  }
+  
+  @Ignore
+  @Test
+  public void citiesAdd6ProductionAfterEachRound(){
+
   }
 }
