@@ -96,6 +96,10 @@ public class TestAlphaCiv {
   public void shouldStartAt4000bc(){
     assertThat(game.getAge(), is(4000));
   }
+
+
+
+
   //test if ocean is in tile 1,0
   @Test
   public void shouldBeOceanInTile1_0() {
@@ -118,6 +122,7 @@ public class TestAlphaCiv {
     assertThat(isHills.getTypeString(),is(GameConstants.HILLS));
   }
 
+
   //Test if plains is in tiles 0,0 and 15,15. To make the assumption that most tiles is plains
   @Test
   public void shouldBePlainsInAllTilesTest0_0And15_15(){
@@ -126,6 +131,10 @@ public class TestAlphaCiv {
     assertThat(isPlains0_0.getTypeString(), is(GameConstants.PLAINS));
     assertThat(isPlains15_15.getTypeString(), is(GameConstants.PLAINS));
   }
+
+
+
+
 
   //test if RED wins in year 3000BC
   @Test
@@ -146,12 +155,5 @@ public class TestAlphaCiv {
     }
     assertThat(game.getAge(),is(3500));
     assertThat(game.getWinner(), is(nullValue()));
-  }
-
-  @Ignore
-  @Test
-  public void citiesAdd6ProductionAfterEachRound(){
-
-
   }
 }
