@@ -9,7 +9,7 @@ public class TileImpl implements Tile{
 
 
 
-
+//Using fake it code to return ocean as terrain
     @Override
     public String getTypeString() {
         return "ocean";

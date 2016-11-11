@@ -34,23 +34,22 @@ import static hotciv.framework.Player.*;
 public class GameImpl implements Game {
   //which player has the turn, RED is set to begin
   Player whosTurn = RED;
+  //Starting year
   int age = 4000;
 
+  //Gets a new tile Ocean, and returns it.
   public Tile getTileAt( Position p ) {
-
     TileImpl Ocean = new TileImpl();
-
-    //String s = Ocean.getTypeString();
-    //System.out.print(s);
-
     return Ocean;
   }
+
   public Unit getUnitAt( Position p ) { return null; }
   public City getCityAt( Position p ) { return null; }
 
   //returns the variable whosTurn
   public Player getPlayerInTurn() { return whosTurn; }
 
+  //returns the winning player, which is RED at year 3000BC
   public Player getWinner() {
     if (getAge()==3000){
       return RED;
@@ -61,7 +60,9 @@ public class GameImpl implements Game {
 
   }
 
+  //returns the current year of the game (age varaible)
   public int getAge() { return age; }
+  
   public boolean moveUnit( Position from, Position to ) {
     return false;
   }
