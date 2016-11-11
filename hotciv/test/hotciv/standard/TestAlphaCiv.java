@@ -100,16 +100,20 @@ public class TestAlphaCiv {
   @Test
   public void shouldBeOceanInTile1_0() {
     Tile isOcean = game.getTileAt(new Position(1,0));
-
     assertThat(isOcean.getTypeString(), is(GameConstants.OCEANS));
   }
 
   @Test
   public void shouldBeMountainInTile2_2(){
     Tile isMountain = game.getTileAt(new Position(2,2));
-
     assertThat(isMountain.getTypeString(),is(GameConstants.MOUNTAINS));
 
+  }
+
+  @Test
+  public void shouldBeHillsInTile0_1(){
+    Tile isHills = game.getTileAt(new Position(0,1));
+    assertThat(isHills.getTypeString(),is(GameConstants.HILLS));
   }
 
   //test if RED wins in year 3000BC

@@ -9,6 +9,7 @@ import hotciv.framework.Tile;
 public class TileImpl implements Tile{
 
     Position oceanP = new Position(1,0);
+    Position mountainP = new Position(2,2);
     Position p = GameImpl.p;
 
     //The tile has to be either ocean or mountain, an if statement is used to differenciete.
@@ -16,8 +17,10 @@ public class TileImpl implements Tile{
     public String getTypeString() {
         if(oceanP.equals(p)) {
             return "ocean";
-        }else{
+        }else if(mountainP.equals(p)){
             return "mountain";
+        }else{
+            return "hills";
         }
     }
 }
