@@ -39,6 +39,7 @@ public class GameImpl implements Game {
   Player whosTurn = RED;
   //Starting year
   int age = 4000;
+
   //Gets a new tile Ocean, and returns it.
   public Tile getTileAt( Position p ) {
     this.p = p;

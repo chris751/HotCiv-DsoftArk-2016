@@ -103,6 +103,7 @@ public class TestAlphaCiv {
     assertThat(isOcean.getTypeString(), is(GameConstants.OCEANS));
   }
 
+  //test if mountain is in tile 2,2
   @Test
   public void shouldBeMountainInTile2_2(){
     Tile isMountain = game.getTileAt(new Position(2,2));
@@ -110,10 +111,20 @@ public class TestAlphaCiv {
 
   }
 
+  //test if hills is in tile 0,1
   @Test
   public void shouldBeHillsInTile0_1(){
     Tile isHills = game.getTileAt(new Position(0,1));
     assertThat(isHills.getTypeString(),is(GameConstants.HILLS));
+  }
+
+  //Test if plains is in tiles 0,0 and 15,15. To make the assumption that most tiles is plains
+  @Test
+  public void shouldBePlainsInAllTilesTest0_0And15_15(){
+    Tile isPlains0_0 = game.getTileAt(new Position(0,0));
+    Tile isPlains15_15 = game.getTileAt(new Position(15,15));
+    assertThat(isPlains0_0.getTypeString(), is(GameConstants.PLAINS));
+    assertThat(isPlains15_15.getTypeString(), is(GameConstants.PLAINS));
   }
 
   //test if RED wins in year 3000BC
