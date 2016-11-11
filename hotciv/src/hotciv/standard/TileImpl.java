@@ -1,5 +1,6 @@
 package hotciv.standard;
 
+import hotciv.framework.Position;
 import hotciv.framework.Tile;
 
 /**
@@ -7,11 +8,16 @@ import hotciv.framework.Tile;
  */
 public class TileImpl implements Tile{
 
+    Position oceanP = new Position(1,0);
+    Position p = GameImpl.p;
 
-
-//Using fake it code to return ocean as terrain
+    //The tile has to be either ocean or mountain, an if statement is used to differenciete.
     @Override
     public String getTypeString() {
-        return "ocean";
+        if(oceanP.equals(p)) {
+            return "ocean";
+        }else{
+            return "mountain";
+        }
     }
 }

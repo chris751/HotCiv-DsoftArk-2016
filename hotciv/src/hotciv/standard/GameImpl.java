@@ -32,15 +32,18 @@ import static hotciv.framework.Player.*;
 */
 
 public class GameImpl implements Game {
+  //@param p to enable access to the positions
+  public static Position p;
+
   //which player has the turn, RED is set to begin
   Player whosTurn = RED;
   //Starting year
   int age = 4000;
-
   //Gets a new tile Ocean, and returns it.
   public Tile getTileAt( Position p ) {
-    TileImpl Ocean = new TileImpl();
-    return Ocean;
+    this.p = p;
+    TileImpl terrainTile = new TileImpl();
+    return terrainTile;
   }
 
   public Unit getUnitAt( Position p ) { return null; }
@@ -62,7 +65,7 @@ public class GameImpl implements Game {
 
   //returns the current year of the game (age varaible)
   public int getAge() { return age; }
-  
+
   public boolean moveUnit( Position from, Position to ) {
     return false;
   }
