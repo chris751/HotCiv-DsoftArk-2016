@@ -38,12 +38,12 @@ public class GameImpl implements Game {
 
   public Tile getTileAt( Position p ) {
 
-    //Tile Ocean = new Tile();
+    TileImpl Ocean = new TileImpl();
 
     //String s = Ocean.getTypeString();
     //System.out.print(s);
 
-    return null;
+    return Ocean;
   }
   public Unit getUnitAt( Position p ) { return null; }
   public City getCityAt( Position p ) { return null; }

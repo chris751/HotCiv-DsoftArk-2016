@@ -97,7 +97,6 @@ public class TestAlphaCiv {
     assertThat(game.getAge(), is(4000));
   }
   //test if ocean is in tile 1,0
-  @Ignore
   @Test
   public void shouldBeOceanInTile1_0() {
     Tile isOcean = game.getTileAt(new Position(1,0));
@@ -124,10 +123,11 @@ public class TestAlphaCiv {
     assertThat(game.getAge(),is(3500));
     assertThat(game.getWinner(), is(nullValue()));
   }
-  
+
   @Ignore
   @Test
   public void citiesAdd6ProductionAfterEachRound(){
+
 
   }
 }
