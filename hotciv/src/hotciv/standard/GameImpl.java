@@ -49,6 +49,7 @@ public class GameImpl implements Game {
 
   public Unit getUnitAt( Position p ) { return null; }
   public City getCityAt( Position p ) {
+    this.p=p;
     CityImpl cityPosition = new CityImpl();
 
     return cityPosition; }

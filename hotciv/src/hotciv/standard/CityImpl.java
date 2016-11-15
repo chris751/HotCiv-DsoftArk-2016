@@ -2,14 +2,22 @@ package hotciv.standard;
 
 import hotciv.framework.City;
 import hotciv.framework.Player;
+import hotciv.framework.Position;
 
 /**
  * Created by Christian on 15/11/2016.
  */
 public class CityImpl implements City{
+    private Position redCity = new Position(1,1);
+
     @Override
     public Player getOwner() {
-        return Player.RED;
+        if(GameImpl.p.equals(redCity)){
+            return Player.RED;
+        }else {
+            return Player.BLUE;
+        }
+
     }
 
     @Override
