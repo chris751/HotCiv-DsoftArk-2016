@@ -48,6 +48,7 @@ public class GameImpl implements Game {
   }
   //Returns a unit at position p
   public Unit getUnitAt( Position p ) {
+    this.p = p;
     UnitImpl unitAtPosition = new UnitImpl();
 
     return unitAtPosition;

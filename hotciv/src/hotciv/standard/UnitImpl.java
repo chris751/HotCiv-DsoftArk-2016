@@ -2,15 +2,24 @@ package hotciv.standard;
 
 import hotciv.framework.GameConstants;
 import hotciv.framework.Player;
+import hotciv.framework.Position;
 import hotciv.framework.Unit;
 
 /**
  * Created by Christian on 15/11/2016.
  */
 public class UnitImpl implements Unit {
+    Position archer = new Position(2,0);
+
+
     @Override
     public String getTypeString() {
-        return GameConstants.ARCHER;
+        if(GameImpl.p.equals(archer)){
+            return GameConstants.ARCHER;
+        }else{
+            return GameConstants.LEGION;
+        }
+
     }
 
     @Override

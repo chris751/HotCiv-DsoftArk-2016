@@ -179,7 +179,8 @@ public class TestAlphaCiv {
     assertThat(cityPosBlue.getSize(),is(1));
 
   }
-  //Make sure that there is a unit at position (2,1)
+  //--------------------------------------------------------Unit Archer Test--------------------------------------------
+  //Make sure that there is a unit at position (2,0)
   @Test
   public void shouldBeUnitAt2_0(){
       assertThat(game.getUnitAt(new Position(2,0)),is(notNullValue()));
@@ -197,4 +198,17 @@ public class TestAlphaCiv {
       assertThat(archerUnit.getTypeString(),is(GameConstants.ARCHER));
       assertThat(archerUnit.getOwner(),is(Player.RED));
   }
+  //--------------------------------------------------------Unit Legion Test -------------------------------------------
+  //Make sure that there is a unit at position (3,2)
+  @Test
+  public void shouldBeUnitAt3_2(){
+      assertThat(game.getUnitAt(new Position(3,2)),is(notNullValue()));
+  }
+
+  //Make sure that there is a legion at position (3,2)
+  @Test
+  public void shouldBeLegionAt3_2(){
+      Unit legionUnit = game.getUnitAt(new Position(3,2));
+      assertThat(legionUnit.getTypeString(),is(GameConstants.LEGION));
+    }
 }
