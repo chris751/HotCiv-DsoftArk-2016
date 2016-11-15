@@ -211,4 +211,12 @@ public class TestAlphaCiv {
       Unit legionUnit = game.getUnitAt(new Position(3,2));
       assertThat(legionUnit.getTypeString(),is(GameConstants.LEGION));
     }
+  //Make sure that ther is a blue legion unit at position (3,2)
+  @Test
+  public void shouldBeBlueLegionAt3_2(){
+      Unit legionUnit = game.getUnitAt(new Position(3,2));
+      assertThat(legionUnit.getTypeString(),is(GameConstants.LEGION));
+      assertThat(legionUnit.getOwner(),is(Player.BLUE));
+  }
+
 }

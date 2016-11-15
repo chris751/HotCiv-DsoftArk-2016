@@ -24,7 +24,12 @@ public class UnitImpl implements Unit {
 
     @Override
     public Player getOwner() {
-        return Player.RED;
+        if(GameImpl.p.equals(archer)){
+            return Player.RED;
+        }else{
+            return Player.BLUE;
+        }
+
     }
 
     @Override
