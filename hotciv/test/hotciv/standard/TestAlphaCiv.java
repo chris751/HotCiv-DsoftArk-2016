@@ -157,4 +157,11 @@ public class TestAlphaCiv {
   public void shouldBeCityAt1_1(){
     assertThat(game.getCityAt(new Position(1,1)),is(notNullValue()));
   }
+  //Make the city is red at position (1,1)
+  @Test
+  public void shouldRedCityAt1_1(){
+    City cityPos = game.getCityAt(new Position(1,1));
+    assertThat(cityPos.getOwner(),is(Player.RED));
+  }
+  
 }
