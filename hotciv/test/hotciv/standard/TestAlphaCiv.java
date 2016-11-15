@@ -251,16 +251,51 @@ public class TestAlphaCiv {
         archerUnit = game.getUnitAt(new Position(2,1));
         assertThat(archerUnit.getTypeString(), is(GameConstants.ARCHER));
     }
+
     @Ignore
     @Test
-    public void shouldMoveLegionFrom3_2To3_3(){
-        Unit legionUnit = game.getUnitAt(new Position(3,2));
+    public void shouldMoveLegionFrom3_2To3_3() {
+        Unit legion = game.getUnitAt((new Position(3, 2)));
+        assertThat(legion.getTypeString(),is(GameConstants.LEGION));
+        game.moveUnit(new Position(3,2),new Position(3,3));
+        assertThat(game.getUnitAt(new Position(3,2)),is(nullValue()));
+        legion = game.getUnitAt(new Position(3,3));
+        assertThat(legion.getTypeString(),is(GameConstants.LEGION));
+    }
 
-        assertThat(legionUnit.getTypeString(),is(GameConstants.LEGION));
-        game.moveUnit(new Position(3,2), new Position(3,3));
-        assertThat(game.getUnitAt(new Position(3,2)), is(nullValue()));
 
-        legionUnit = game.getUnitAt(new Position(3,3));
-        assertThat(legionUnit.getTypeString(), is(GameConstants.LEGION));
+    //Makes sure that the cities are producing stuff
+    @Test
+    public void cityShouldBeProducing(){
+        City city = game.getCityAt(new Position(1,1));
+        assertThat(city.getProduction(), is(notNullValue()));
+    }
+    //Makes sure that the production in city at 1,1 can be set to legion
+    @Test
+    public void shouldSetProductionToLegionAtCity1_1(){
+        City city = game.getCityAt(new Position(1,1));
+        game.changeProductionInCityAt(new Position(1,1),GameConstants.LEGION);
+        assertThat(city.getProduction(),is(GameConstants.LEGION));
+    }
+    //Makes sure that the production in city at 1,1 can be set to archer
+    @Test
+    public void shouldSetProductionToArcherAtCity1_1(){
+        City city = game.getCityAt(new Position(1,1));
+        game.changeProductionInCityAt(new Position(1,1),GameConstants.ARCHER);
+        assertThat(city.getProduction(),is(GameConstants.ARCHER));
+    }
+    //Makes sure that the production in city at 1,1 can be set to archer
+    @Test
+    public void shouldSetProductionToSettlerAtCity1_1(){
+        City city = game.getCityAt(new Position(1,1));
+        game.changeProductionInCityAt(new Position(1,1),GameConstants.SETTLER);
+        assertThat(city.getProduction(),is(GameConstants.SETTLER));
+    }
+    //Makes sure that the production in city at 4,1 can be set to Legion
+    @Test
+    public void shouldSetProductionToLegionAtCity4_1(){
+        City city = game.getCityAt(new Position(4,1));
+        game.changeProductionInCityAt(new Position(4,1),GameConstants.LEGION);
+        assertThat(city.getProduction(),is(GameConstants.LEGION));
     }
 }

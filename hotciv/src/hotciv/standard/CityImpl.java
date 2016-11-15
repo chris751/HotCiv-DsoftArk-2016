@@ -1,6 +1,7 @@
 package hotciv.standard;
 
 import hotciv.framework.City;
+import hotciv.framework.GameConstants;
 import hotciv.framework.Player;
 import hotciv.framework.Position;
 
@@ -8,11 +9,16 @@ import hotciv.framework.Position;
  * Created by Christian on 15/11/2016.
  */
 public class CityImpl implements City{
-    private Position redCity = new Position(1,1);
+    private Position p;
+    private String producing = GameConstants.SETTLER;
+
+    public CityImpl(Position p) {
+        this.p = p;
+    }
 
     @Override
     public Player getOwner() {
-        if(GameImpl.p.equals(redCity)){
+        if(p.equals(new Position(1,1))){
             return Player.RED;
         }else {
             return Player.BLUE;
@@ -27,7 +33,13 @@ public class CityImpl implements City{
 
     @Override
     public String getProduction() {
-        return null;
+
+        return this.producing;
+    }
+
+    @Override
+    public void setProduction(String unitType){
+        this.producing = unitType;
     }
 
     @Override

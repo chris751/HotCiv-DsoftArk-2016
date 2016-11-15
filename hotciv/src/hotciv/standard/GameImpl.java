@@ -58,9 +58,7 @@ public class GameImpl implements Game {
   //Returns cityPosition at Position p
   public City getCityAt( Position p ) {
     this.p=p;
-    CityImpl cityPosition = new CityImpl();
-
-    return cityPosition;
+    return world.getCityAt(p);
   }
 
   //returns the variable whosTurn
@@ -80,8 +78,7 @@ public class GameImpl implements Game {
   //returns the current year of the game (age varaible)
   public int getAge() { return age; }
 
-  public boolean moveUnit( Position from, Position to )
-  {
+  public boolean moveUnit( Position from, Position to ) {
     Unit unit = world.removeUnitAt(from);
     world.setUnitAt(to, unit);
     return false;
@@ -100,6 +97,9 @@ public class GameImpl implements Game {
   }
 
   public void changeWorkForceFocusInCityAt( Position p, String balance ) {}
-  public void changeProductionInCityAt( Position p, String unitType ) {}
+  public void changeProductionInCityAt( Position p, String unitType ) {
+    City city = getCityAt(p);
+    city.setProduction(unitType);
+  }
   public void performUnitActionAt( Position p ) {}
 }

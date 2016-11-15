@@ -1,9 +1,6 @@
 package hotciv.standard;
 
-import hotciv.framework.GameConstants;
-import hotciv.framework.Position;
-import hotciv.framework.Unit;
-import hotciv.framework.World;
+import hotciv.framework.*;
 
 /**
  * Created by Christian on 15/11/2016.
@@ -14,6 +11,9 @@ public class WorldImpl implements World {
     static Position archer = new Position(2,0);
     static Position legion = new Position(3,2);
     static Position settler = new Position(4,3);
+
+    City redCity = new CityImpl(new Position(1,1));
+    City blueCity = new CityImpl(new Position(4,1));
 
     @Override
     public Unit removeUnitAt(Position from) {
@@ -41,5 +41,14 @@ public class WorldImpl implements World {
         } else{
             return null;
         }
+    }
+
+    public City getCityAt(Position p){
+        if(p.equals(new Position(1,1))){
+            return redCity;
+        }else{
+            return blueCity;
+        }
+
     }
 }

@@ -55,4 +55,6 @@ public interface City {
    */
   public String getWorkforceFocus();
 
+
+  public void setProduction(String unitType);
 }

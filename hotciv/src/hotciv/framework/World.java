@@ -9,4 +9,6 @@ public interface World {
     void setUnitAt(Position to, Unit unit);
 
     Unit getUnitAt(Position p);
+
+    City getCityAt(Position p);
 }
