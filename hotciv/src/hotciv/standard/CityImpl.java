@@ -10,6 +10,12 @@ import hotciv.framework.Position;
 public class CityImpl implements City{
     private Position redCity = new Position(1,1);
 
+
+    private static int productionValue = 6;
+
+    public static int getProductionValue(){
+        return  productionValue;
+    }
     @Override
     public Player getOwner() {
         if(GameImpl.p.equals(redCity)){
