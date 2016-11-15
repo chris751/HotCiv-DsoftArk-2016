@@ -15,7 +15,7 @@ public class UnitImpl implements Unit {
 
     @Override
     public Player getOwner() {
-        return null;
+        return Player.RED;
     }
 
     @Override
