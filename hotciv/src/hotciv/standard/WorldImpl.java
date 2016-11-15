@@ -15,30 +15,32 @@ public class WorldImpl implements World {
     City redCity = new CityImpl(new Position(1,1), Player.RED);
     City blueCity = new CityImpl(new Position(4,1), Player.BLUE);
 
+    Unit redArcher = new UnitImpl(new Position(2,0), Player.RED, GameConstants.ARCHER);
+    Unit blueLegion = new UnitImpl(new Position(3,2), Player.BLUE, GameConstants.LEGION);
+    Unit redSettler = new UnitImpl(new Position(4,3), Player.RED, GameConstants.SETTLER);
+
     @Override
     public Unit removeUnitAt(Position from) {
         this.p = from;
-        archer = null;
-        return null;
+        return getUnitAt(from);
     }
 
     @Override
     public void setUnitAt(Position to, Unit u) {
-        archer = to;
+        u.setPosition(to);
 
     }
 
     @Override
     public Unit getUnitAt(Position p) {
         this.p = p;
-        UnitImpl unitAtPosition = new UnitImpl();
-        if(p.equals(archer)){
-            return unitAtPosition;
-        } else if(p.equals(legion)){
-            return unitAtPosition;
-        } else if(p.equals(settler)){
-            return unitAtPosition;
-        } else{
+        if(p.equals(redArcher.getPosition())){
+            return redArcher;
+        }else if(p.equals(blueLegion.getPosition())){
+            return blueLegion;
+        }else if(p.equals(redSettler.getPosition())){
+            return redSettler;
+        }else {
             return null;
         }
     }

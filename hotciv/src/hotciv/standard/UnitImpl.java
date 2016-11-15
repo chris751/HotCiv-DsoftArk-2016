@@ -7,29 +7,33 @@ import hotciv.framework.*;
  */
 public class UnitImpl implements Unit {
 
+    private Player owner;
+    private Position p;
+    private String type;
+
+    public UnitImpl(Position p, Player owner, String type ) {
+        this.p = p;
+        this.owner = owner;
+        this.type = type;
+    }
 
     @Override
     public String getTypeString() {
-        if(WorldImpl.p.equals(WorldImpl.archer)){
-            return GameConstants.ARCHER;
-        }else if(WorldImpl.p.equals(WorldImpl.legion)){
-            return GameConstants.LEGION;
-        }else if(WorldImpl.p.equals(WorldImpl.settler)){
-            return GameConstants.SETTLER;
-        } else{
-            return null;
-        }
+        return type;
+    }
 
+    public Position getPosition() {
+        return p;
     }
 
     @Override
     public Player getOwner() {
-        if(WorldImpl.p.equals(WorldImpl.legion)){
-            return Player.BLUE;
-        }else{
-            return Player.RED;
-        }
+        return owner;
 
+    }
+
+    public void setPosition(Position p){
+        this.p = p;
     }
 
     @Override

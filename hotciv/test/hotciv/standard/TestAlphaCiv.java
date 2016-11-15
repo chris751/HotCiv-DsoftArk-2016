@@ -252,7 +252,6 @@ public class TestAlphaCiv {
         assertThat(archerUnit.getTypeString(), is(GameConstants.ARCHER));
     }
 
-    @Ignore
     @Test
     public void shouldMoveLegionFrom3_2To3_3() {
         Unit legion = game.getUnitAt((new Position(3, 2)));
