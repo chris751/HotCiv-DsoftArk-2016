@@ -11,8 +11,9 @@ public class CityImpl implements City{
     private Position redCity = new Position(1,1);
 
 
-    private static int productionValue = 6;
+    private static int productionValue = 6; //Has the accumulated amount of production for the city
 
+    //return @param productionValue
     public static int getProductionValue(){
         return  productionValue;
     }
