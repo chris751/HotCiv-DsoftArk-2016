@@ -77,6 +77,7 @@ public class GameImpl implements Game {
 
   //at the end of turn switch turn to the correct player and set age to 100
   public void endOfTurn() {
+
     if(whosTurn == BLUE){
       whosTurn = RED;
       age += -100;

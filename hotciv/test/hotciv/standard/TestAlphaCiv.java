@@ -179,11 +179,5 @@ public class TestAlphaCiv {
     assertThat(cityPosBlue.getSize(),is(1));
 
   }
-  //Make sure to add 6 production after round 1
-  @Test
-  public void shouldAdd6productionAfterRound1(){
-    assertThat(CityImpl.getProductionValue(),is(6));
-
-  }
-
+  
 }
