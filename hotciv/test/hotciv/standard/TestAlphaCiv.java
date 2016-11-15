@@ -132,10 +132,6 @@ public class TestAlphaCiv {
     assertThat(isPlains15_15.getTypeString(), is(GameConstants.PLAINS));
   }
 
-
-
-
-
   //test if RED wins in year 3000BC
   @Test
   public void redAlwaysWinInYear3000BC(){
@@ -155,5 +151,10 @@ public class TestAlphaCiv {
     }
     assertThat(game.getAge(),is(3500));
     assertThat(game.getWinner(), is(nullValue()));
+  }
+  //Make sure that there is a city at position (1,1)
+  @Test
+  public void shouldBeCityAt1_1(){
+    assertThat(game.getCityAt(new Position(1,1)),is(notNullValue()));
   }
 }

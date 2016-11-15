@@ -48,10 +48,13 @@ public class GameImpl implements Game {
   }
 
   public Unit getUnitAt( Position p ) { return null; }
-  public City getCityAt( Position p ) { return null; }
+  public City getCityAt( Position p ) {
+    CityImpl cityPosition = new CityImpl();
+
+    return cityPosition; }
 
   //returns the variable whosTurn
-  public Player getPlayerInTurn() { return whosTurn; }
+  public Player getPlayerInTurn() { return   whosTurn; }
 
   //returns the winning player, which is RED at year 3000BC
   public Player getWinner() {

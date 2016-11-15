@@ -1,5 +1,6 @@
 package hotciv.standard;
 
+import hotciv.framework.GameConstants;
 import hotciv.framework.Position;
 import hotciv.framework.Tile;
 
@@ -17,13 +18,13 @@ public class TileImpl implements Tile{
     @Override
     public String getTypeString() {
         if(oceanP.equals(p)) {
-            return "ocean";
+            return GameConstants.OCEANS;
         }else if(mountainP.equals(p)){
-            return "mountain";
+            return GameConstants.MOUNTAINS;
         }else if(hillsP.equals(p)){
-            return "hills";
+            return GameConstants.HILLS;
         }else{
-            return "plains";
+            return GameConstants.PLAINS;
         }
     }
 }
