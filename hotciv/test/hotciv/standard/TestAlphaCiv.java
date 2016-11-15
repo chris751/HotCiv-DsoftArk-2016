@@ -169,5 +169,15 @@ public class TestAlphaCiv {
     City cityPos = game.getCityAt(new Position(4,1));
     assertThat(cityPos.getOwner(),is(Player.BLUE));
   }
+  //Make sure cities at (4,1) and (1,1) have a population of 1
+  @Test
+  public void shouldBePopulation1FirstRound(){
+    City cityPosRed = game.getCityAt(new Position(4,1));
+    City cityPosBlue = game.getCityAt(new Position(1,1));
+
+    assertThat(cityPosRed.getSize(),is(1));
+    assertThat(cityPosBlue.getSize(),is(1));
+
+  }
 
 }
