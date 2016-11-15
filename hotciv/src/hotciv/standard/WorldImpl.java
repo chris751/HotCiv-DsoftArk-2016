@@ -12,8 +12,8 @@ public class WorldImpl implements World {
     static Position legion = new Position(3,2);
     static Position settler = new Position(4,3);
 
-    City redCity = new CityImpl(new Position(1,1));
-    City blueCity = new CityImpl(new Position(4,1));
+    City redCity = new CityImpl(new Position(1,1), Player.RED);
+    City blueCity = new CityImpl(new Position(4,1), Player.BLUE);
 
     @Override
     public Unit removeUnitAt(Position from) {

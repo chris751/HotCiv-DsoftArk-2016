@@ -11,19 +11,17 @@ import hotciv.framework.Position;
 public class CityImpl implements City{
     private Position p;
     private String producing = GameConstants.SETTLER;
+    private Player owner;
 
-    public CityImpl(Position p) {
+    public CityImpl(Position p, Player owner) {
         this.p = p;
+        this.owner = owner;
+
     }
 
     @Override
     public Player getOwner() {
-        if(p.equals(new Position(1,1))){
-            return Player.RED;
-        }else {
-            return Player.BLUE;
-        }
-
+        return owner;
     }
 
     @Override
