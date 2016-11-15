@@ -40,19 +40,25 @@ public class GameImpl implements Game {
   //Starting year
   int age = 4000;
 
-  //Gets a new tile Ocean, and returns it.
+  //Gets a new tile terrainTile, and returns it.
   public Tile getTileAt( Position p ) {
     this.p = p;
     TileImpl terrainTile = new TileImpl();
     return terrainTile;
   }
+  //Returns a unit at position p
+  public Unit getUnitAt( Position p ) {
+    UnitImpl unitAtPosition = new UnitImpl();
 
-  public Unit getUnitAt( Position p ) { return null; }
+    return unitAtPosition;
+  }
+  //Returns cityPosition at Position p
   public City getCityAt( Position p ) {
     this.p=p;
     CityImpl cityPosition = new CityImpl();
 
-    return cityPosition; }
+    return cityPosition;
+  }
 
   //returns the variable whosTurn
   public Player getPlayerInTurn() { return   whosTurn; }

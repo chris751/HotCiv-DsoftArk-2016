@@ -179,5 +179,10 @@ public class TestAlphaCiv {
     assertThat(cityPosBlue.getSize(),is(1));
 
   }
-  
+  //Make sure that there is a unit at position (2,1)
+  @Test
+  public void shouldBeUnitAt2_0(){
+      assertThat(game.getUnitAt(new Position(2,1)),is(notNullValue()));
+  }
+
 }
