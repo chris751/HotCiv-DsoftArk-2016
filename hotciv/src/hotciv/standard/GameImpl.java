@@ -39,6 +39,7 @@ public class GameImpl implements Game {
   Player whosTurn = RED;
   //Starting year
   int age = 4000;
+  private World world = new WorldImpl();
 
   //Gets a new tile terrainTile, and returns it.
   public Tile getTileAt( Position p ) {
@@ -48,10 +49,11 @@ public class GameImpl implements Game {
   }
   //Returns a unit at position p
   public Unit getUnitAt( Position p ) {
-    this.p = p;
-    UnitImpl unitAtPosition = new UnitImpl();
+    //this.p = p;
+    //UnitImpl unitAtPosition = new UnitImpl();
+    return world.getUnitAt(p);
 
-    return unitAtPosition;
+    //return unitAtPosition;
   }
   //Returns cityPosition at Position p
   public City getCityAt( Position p ) {
@@ -78,7 +80,10 @@ public class GameImpl implements Game {
   //returns the current year of the game (age varaible)
   public int getAge() { return age; }
 
-  public boolean moveUnit( Position from, Position to ) {
+  public boolean moveUnit( Position from, Position to )
+  {
+    Unit unit = world.removeUnitAt(from);
+    world.setUnitAt(to, unit);
     return false;
   }
 

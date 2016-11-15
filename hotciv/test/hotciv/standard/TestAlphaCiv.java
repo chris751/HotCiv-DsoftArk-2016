@@ -239,4 +239,28 @@ public class TestAlphaCiv {
         assertThat(settlerUnit.getTypeString(),is(GameConstants.SETTLER));
         assertThat(settlerUnit.getOwner(),is(Player.RED));
     }
+    //Make sure that an archer move from (2,0) to (2,1)
+    @Test
+    public void shouldMoveArcherFrom2_0To2_1(){
+        Unit archerUnit = game.getUnitAt(new Position(2,0));
+
+        assertThat(archerUnit.getTypeString(),is(GameConstants.ARCHER));
+        game.moveUnit(new Position(2,0), new Position(2,1));
+        assertThat(game.getUnitAt(new Position(2,0)), is(nullValue()));
+
+        archerUnit = game.getUnitAt(new Position(2,1));
+        assertThat(archerUnit.getTypeString(), is(GameConstants.ARCHER));
+    }
+    @Ignore
+    @Test
+    public void shouldMoveLegionFrom3_2To3_3(){
+        Unit legionUnit = game.getUnitAt(new Position(3,2));
+
+        assertThat(legionUnit.getTypeString(),is(GameConstants.LEGION));
+        game.moveUnit(new Position(3,2), new Position(3,3));
+        assertThat(game.getUnitAt(new Position(3,2)), is(nullValue()));
+
+        legionUnit = game.getUnitAt(new Position(3,3));
+        assertThat(legionUnit.getTypeString(), is(GameConstants.LEGION));
+    }
 }

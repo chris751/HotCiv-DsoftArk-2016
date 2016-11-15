@@ -1,33 +1,30 @@
 package hotciv.standard;
 
-import hotciv.framework.GameConstants;
-import hotciv.framework.Player;
-import hotciv.framework.Position;
-import hotciv.framework.Unit;
+import hotciv.framework.*;
 
 /**
  * Created by Christian on 15/11/2016.
  */
 public class UnitImpl implements Unit {
-    Position archer = new Position(2,0);
-    Position legion = new Position(3,2);
 
 
     @Override
     public String getTypeString() {
-        if(GameImpl.p.equals(archer)){
+        if(WorldImpl.p.equals(WorldImpl.archer)){
             return GameConstants.ARCHER;
-        }else if(GameImpl.p.equals(legion)){
+        }else if(WorldImpl.p.equals(WorldImpl.legion)){
             return GameConstants.LEGION;
-        }else{
+        }else if(WorldImpl.p.equals(WorldImpl.settler)){
             return GameConstants.SETTLER;
+        } else{
+            return null;
         }
 
     }
 
     @Override
     public Player getOwner() {
-        if(GameImpl.p.equals(legion)){
+        if(WorldImpl.p.equals(WorldImpl.legion)){
             return Player.BLUE;
         }else{
             return Player.RED;
