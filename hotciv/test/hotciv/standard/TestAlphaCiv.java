@@ -219,4 +219,24 @@ public class TestAlphaCiv {
       assertThat(legionUnit.getOwner(),is(Player.BLUE));
   }
 
+  //-------------------------------------------------------Settler Unit Test -------------------------------------------
+  //Make sure that there is a unit at (4,3)
+    @Test
+  public void shouldBeUnitAt4_3(){
+      assertThat(game.getUnitAt(new Position(4,3)),is(notNullValue()));
+  }
+  //Make sure that there is a settler unit at (4,3)
+  @Test
+  public void shouldBeSettlerAt4_3(){
+      Unit settlerUnit = game.getUnitAt(new Position(4,3));
+      assertThat(settlerUnit.getTypeString(),is(GameConstants.SETTLER));
+    }
+
+   //Make sure that there is a red settler at (4,3)
+    @Test
+    public void shouldBeRedSettlerAt4_3(){
+        Unit settlerUnit = game.getUnitAt(new Position(4,3));
+        assertThat(settlerUnit.getTypeString(),is(GameConstants.SETTLER));
+        assertThat(settlerUnit.getOwner(),is(Player.RED));
+    }
 }

@@ -10,24 +10,27 @@ import hotciv.framework.Unit;
  */
 public class UnitImpl implements Unit {
     Position archer = new Position(2,0);
+    Position legion = new Position(3,2);
 
 
     @Override
     public String getTypeString() {
         if(GameImpl.p.equals(archer)){
             return GameConstants.ARCHER;
-        }else{
+        }else if(GameImpl.p.equals(legion)){
             return GameConstants.LEGION;
+        }else{
+            return GameConstants.SETTLER;
         }
 
     }
 
     @Override
     public Player getOwner() {
-        if(GameImpl.p.equals(archer)){
-            return Player.RED;
-        }else{
+        if(GameImpl.p.equals(legion)){
             return Player.BLUE;
+        }else{
+            return Player.RED;
         }
 
     }
