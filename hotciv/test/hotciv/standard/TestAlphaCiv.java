@@ -182,7 +182,12 @@ public class TestAlphaCiv {
   //Make sure that there is a unit at position (2,1)
   @Test
   public void shouldBeUnitAt2_0(){
-      assertThat(game.getUnitAt(new Position(2,1)),is(notNullValue()));
+      assertThat(game.getUnitAt(new Position(2,0)),is(notNullValue()));
   }
-
+  //Make sure that there is an archer at position (2,0)
+  @Test
+  public void shouldBeArcherAt2_0(){
+      Unit archerUnit = game.getUnitAt(new Position(2,0));
+      assertThat(archerUnit.getTypeString(),is(GameConstants.ARCHER));
+  }
 }
