@@ -8,7 +8,8 @@ import hotciv.framework.Player;
  */
 public class CityImpl implements City{
     private Player owner;
-    public String unitProducing = GameConstants.SETTLER;
+    private String unitProducing = GameConstants.SETTLER;
+    private int productionValue = 0;
 
     public CityImpl(Player owner) {
         this.owner = owner;
@@ -28,6 +29,14 @@ public class CityImpl implements City{
     @Override
     public String getProduction() {
         return unitProducing;
+    }
+
+    public int getProductionValue(){
+        return productionValue;
+    }
+
+    public void addProductionValue(){
+        productionValue += 6;
     }
 
     public void changeProduction(String unitType){

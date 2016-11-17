@@ -78,29 +78,27 @@ public class GameImpl implements Game {
   public boolean moveUnit( Position from, Position to ) {
 
     String tileType = WorldImpl.worldTileMap.get(to).getTypeString();
-    Player thisUnitOwner;
+    Player thisUnitOwner = WorldImpl.unitMap.get(from).getOwner();;
     Player otherUnitOwner;
 
     //Test variables for obstacles
+    boolean thisPlayersTurn = getPlayerInTurn().equals(thisUnitOwner);
     boolean isMountain = tileType.equals(GameConstants.MOUNTAINS);
-    System.out.print(isMountain);
     boolean isOcean = tileType.equals(GameConstants.OCEANS);
-    System.out.print(isOcean);
     boolean isFriendlyUnit = false;
     boolean isEnemyUnit = false;
     boolean isEmpty = WorldImpl.unitMap.get(to)== null;
-    System.out.print(isEmpty);
 
     //If there is a unit at the wanted tile, test if it is friend or foe, and save it in parameters.
     if(!isEmpty){
-      thisUnitOwner = WorldImpl.unitMap.get(from).getOwner();
       otherUnitOwner = WorldImpl.unitMap.get(to).getOwner();
       isFriendlyUnit = thisUnitOwner.equals(otherUnitOwner);
       isEnemyUnit = !thisUnitOwner.equals(otherUnitOwner);
     }
 
     //Decision making, whether to allow the movement or not.
-    if(isMountain) {return false;}
+    if(!thisPlayersTurn){return false;}
+    else if(isMountain) {return false;}
     else if(isOcean){return false;}
     else if(isFriendlyUnit){return false;}
     else if(isEmpty || isEnemyUnit){
@@ -118,10 +116,13 @@ public class GameImpl implements Game {
     if(whosTurn == BLUE){
       whosTurn = RED;
       age += -100;
+      WorldImpl.cityMap.get(new Position(1,1)).addProductionValue();
+      WorldImpl.cityMap.get(new Position(4,1)).addProductionValue();
     }
     else{
       whosTurn = BLUE;
     }
+
   }
 
   public void changeWorkForceFocusInCityAt( Position p, String balance ) {}

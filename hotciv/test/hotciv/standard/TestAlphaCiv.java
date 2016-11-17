@@ -243,6 +243,14 @@ public class TestAlphaCiv {
     //-----------------------------------------------------Movement test------------------------------------------------
 
     @Test
+    public void redCantMoveBlueUnits(){
+        assertThat(game.getPlayerInTurn(), is(Player.RED));
+        Unit legion = game.getUnitAt(new Position(3,2));
+        assertThat(legion.getOwner(), is(Player.BLUE));
+        assertThat(game.moveUnit(new Position(3,2), new Position(3,1)), is(false));
+    }
+
+    @Test
     public void shouldMoveArcherFrom2_0To2_1(){
         Unit archerUnit = game.getUnitAt(new Position(2,0));
 
@@ -256,6 +264,7 @@ public class TestAlphaCiv {
 
     @Test
     public void shouldMoveLegionFrom3_2To3_3() {
+        game.endOfTurn();
         Unit legion = game.getUnitAt((new Position(3, 2)));
         assertThat(legion.getTypeString(),is(GameConstants.LEGION));
         assertThat(game.moveUnit(new Position(3,2),new Position(3,3)),is(true));
@@ -354,6 +363,24 @@ public class TestAlphaCiv {
 
         assertThat(cityPosRed.getSize(),is(1));
         assertThat(cityPosBlue.getSize(),is(1));
-
     }
+
+    @Test
+    public void shouldGet6ProductionValueAtEndRoundInRedCity(){
+        City redCity = game.getCityAt(new Position(1,1));
+        assertThat(redCity.getProductionValue(), is(0));
+        game.endOfTurn();
+        game.endOfTurn();
+        assertThat(redCity.getProductionValue(), is(6));
+    }
+
+    @Test
+    public void shouldGet6ProductionValueAtEndRoundInBlueCity(){
+        City blueCity = game.getCityAt(new Position(4,1));
+        assertThat(blueCity.getProductionValue(), is(0));
+        game.endOfTurn();
+        game.endOfTurn();
+        assertThat(blueCity.getProductionValue(), is(6));
+    }
+
 }
