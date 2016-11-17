@@ -118,6 +118,7 @@ public class GameImpl implements Game {
       age += -100;
       WorldImpl.cityMap.get(new Position(1,1)).addProductionValue();
       WorldImpl.cityMap.get(new Position(4,1)).addProductionValue();
+      produceUnit();
     }
     else{
       whosTurn = BLUE;
@@ -129,6 +130,14 @@ public class GameImpl implements Game {
   public void changeProductionInCityAt( Position p, String unitType ) {
     CityImpl city = getCityAt(p);
     city.changeProduction(unitType);
+  }
+
+  public void produceUnit(){
+    CityImpl city = WorldImpl.cityMap.get(new Position(1,1));
+    int currentValue = city.getProductionValue();
+      if(currentValue >= 30){
+        city.buyUnit(30);
+      }
   }
   public void performUnitActionAt( Position p ) {}
 }

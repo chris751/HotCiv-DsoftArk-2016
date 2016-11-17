@@ -23,7 +23,6 @@ public class UnitImpl implements Unit {
     @Override
     public Player getOwner() {
         return owner;
-
     }
 
     @Override

@@ -382,5 +382,31 @@ public class TestAlphaCiv {
         game.endOfTurn();
         assertThat(blueCity.getProductionValue(), is(6));
     }
+    @Ignore
+    @Test
+    public void spawnArcherInRedCity(){
+        City redCity = game.getCityAt(new Position(1,1));
+        //assertThat(CityImpl.getProduction(), is() );
+    }
 
+    @Test
+    public void withdrawUnitCostFromProductionValue(){
+        City redCity = game.getCityAt(new Position(1,1));
+        assertThat(redCity.getProduction(), is(GameConstants.SETTLER));
+        assertThat(redCity.getProductionValue(), is(0));
+        game.endOfTurn();
+        game.endOfTurn();
+        game.endOfTurn();
+        game.endOfTurn();
+        assertThat(redCity.getProductionValue(), is(12));
+        game.endOfTurn();
+        game.endOfTurn();
+        game.endOfTurn();
+        game.endOfTurn();
+        game.endOfTurn();
+        game.endOfTurn();
+        assertThat(redCity.getProductionValue(), is(0));
+        //assertThat();
+
+    }
 }

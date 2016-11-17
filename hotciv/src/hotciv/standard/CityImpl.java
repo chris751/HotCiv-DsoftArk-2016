@@ -39,6 +39,10 @@ public class CityImpl implements City{
         productionValue += 6;
     }
 
+    public void buyUnit(int unitCost){
+        productionValue += - unitCost;
+    }
+
     public void changeProduction(String unitType){
         unitProducing = unitType;
     }
