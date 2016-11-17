@@ -74,10 +74,14 @@ public class GameImpl implements Game {
   public int getAge() { return age; }
 
   public boolean moveUnit( Position from, Position to ) {
-    Unit unit = WorldImpl.unitMap.get(from);
-    WorldImpl.unitMap.remove(from);
-    WorldImpl.unitMap.put(to,unit);
-    return false;
+    if(WorldImpl.worldTileMap.get(to).getTypeString().equals(GameConstants.MOUNTAINS)) {
+      return false;
+    }else {
+      Unit unit = WorldImpl.unitMap.get(from);
+      WorldImpl.unitMap.remove(from);
+      WorldImpl.unitMap.put(to, unit);
+      return true;
+    }
   }
 
   //at the end of turn switch turn to the correct player and set age to 100

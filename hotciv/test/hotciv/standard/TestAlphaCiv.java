@@ -248,7 +248,7 @@ public class TestAlphaCiv {
         Unit archerUnit = game.getUnitAt(new Position(2,0));
 
         assertThat(archerUnit.getTypeString(),is(GameConstants.ARCHER));
-        game.moveUnit(new Position(2,0), new Position(2,1));
+        assertThat(game.moveUnit(new Position(2,0), new Position(2,1)),is(true));
         assertThat(game.getUnitAt(new Position(2,0)), is(nullValue()));
 
         archerUnit = game.getUnitAt(new Position(2,1));
@@ -259,12 +259,26 @@ public class TestAlphaCiv {
     public void shouldMoveLegionFrom3_2To3_3() {
         Unit legion = game.getUnitAt((new Position(3, 2)));
         assertThat(legion.getTypeString(),is(GameConstants.LEGION));
-        game.moveUnit(new Position(3,2),new Position(3,3));
+        assertThat(game.moveUnit(new Position(3,2),new Position(3,3)),is(true));
         assertThat(game.getUnitAt(new Position(3,2)),is(nullValue()));
         legion = game.getUnitAt(new Position(3,3));
         assertThat(legion.getTypeString(),is(GameConstants.LEGION));
+
     }
 
+    @Test
+    public void shouldNotMoveOntoMountain(){
+        Unit legion = game.getUnitAt((new Position(3,2)));
+        Tile mountainTile = game.getTileAt(new Position(2,2));
+        assertThat(mountainTile.getTypeString(), is(GameConstants.MOUNTAINS));
+        assertThat(game.moveUnit(new Position(3,2), new Position(2,2)), is(false));
+        assertThat(game.getUnitAt(new Position(3,2)), is(legion));
+        assertThat(game.getUnitAt(new Position(2,2)), is(nullValue()));
+    }
+
+
+
+    //----------------------------------------------------Production test----------------------------------------------
 
     //Makes sure that the cities are producing stuff
     @Test
