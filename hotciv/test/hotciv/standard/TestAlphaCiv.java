@@ -276,6 +276,16 @@ public class TestAlphaCiv {
         assertThat(game.getUnitAt(new Position(2,2)), is(nullValue()));
     }
 
+    @Test
+    public void shouldNotMoveOntoOcean(){
+        Unit Archer = game.getUnitAt(new Position(2,0));
+        Tile oceanTile = game.getTileAt(new Position(1,0));
+        assertThat(oceanTile.getTypeString(), is(GameConstants.OCEANS));
+        assertThat(game.moveUnit(new Position(2,0),new Position(1,0)), is(false));
+        assertThat(game.getUnitAt(new Position(2,0)), is(Archer));
+        assertThat(game.getUnitAt(new Position(1,0)), is(nullValue()));
+    }
+
 
 
     //----------------------------------------------------Production test----------------------------------------------

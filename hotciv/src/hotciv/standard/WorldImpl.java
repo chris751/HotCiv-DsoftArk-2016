@@ -40,6 +40,7 @@ public class WorldImpl implements World {
             worldTileMap.put(new Position(0,1), createTile(GameConstants.HILLS));
             worldTileMap.put(new Position(1,0), createTile(GameConstants.OCEANS));
             worldTileMap.put(new Position(2,2), createTile(GameConstants.MOUNTAINS));
+
             cityMap.put(new Position(1,1), new CityImpl(Player.RED));
             cityMap.put(new Position(4,1), new CityImpl(Player.BLUE));
             unitMap.put(new Position(2,0), new UnitImpl(Player.RED, GameConstants.ARCHER));

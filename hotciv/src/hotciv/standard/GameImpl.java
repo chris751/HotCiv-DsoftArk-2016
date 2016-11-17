@@ -76,7 +76,9 @@ public class GameImpl implements Game {
   public boolean moveUnit( Position from, Position to ) {
     if(WorldImpl.worldTileMap.get(to).getTypeString().equals(GameConstants.MOUNTAINS)) {
       return false;
-    }else {
+    }else if(WorldImpl.worldTileMap.get(to).getTypeString().equals(GameConstants.OCEANS)){
+      return false;
+    }else{
       Unit unit = WorldImpl.unitMap.get(from);
       WorldImpl.unitMap.remove(from);
       WorldImpl.unitMap.put(to, unit);
