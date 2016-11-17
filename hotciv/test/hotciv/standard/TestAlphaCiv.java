@@ -45,6 +45,8 @@ public class TestAlphaCiv {
     game = new GameImpl();
   }
 
+  //------------------------------------------------Turn and Aging test-------------------------------------------------
+
   // FRS p. 455 states that 'Red is the first player to take a turn'.
   @Test
   public void shouldBeRedAsStartingPlayer() {
@@ -98,7 +100,7 @@ public class TestAlphaCiv {
   }
 
 
-
+//---------------------------------------------------TileMap world testing----------------------------------------------
 
   //test if ocean is in tile 1,0
   @Test
@@ -132,6 +134,26 @@ public class TestAlphaCiv {
     assertThat(isPlains15_15.getTypeString(), is(GameConstants.PLAINS));
   }
 
+    //Make sure that there is a city at position (1,1)
+    @Test
+    public void shouldBeCityAt1_1(){
+        assertThat(game.getCityAt(new Position(1,1)),is(notNullValue()));
+    }
+    //Make sure the city is red at position (1,1)
+    @Test
+    public void shouldBeRedCityAt1_1(){
+        City cityPos = game.getCityAt(new Position(1,1));
+        assertThat(cityPos.getOwner(),is(Player.RED));
+    }
+    //Make sure that city is blue at (4,1)
+    @Test
+    public void shouldBeBlueCityAt4_1(){
+        City cityPos = game.getCityAt(new Position(4,1));
+        assertThat(cityPos.getOwner(),is(Player.BLUE));
+    }
+
+  //-----------------------------------------------Winning test---------------------------------------------------------
+
   //test if RED wins in year 3000BC
   @Test
   public void redAlwaysWinInYear3000BC(){
@@ -152,33 +174,10 @@ public class TestAlphaCiv {
     assertThat(game.getAge(),is(3500));
     assertThat(game.getWinner(), is(nullValue()));
   }
-  //Make sure that there is a city at position (1,1)
-  @Test
-  public void shouldBeCityAt1_1(){
-    assertThat(game.getCityAt(new Position(1,1)),is(notNullValue()));
-  }
-  //Make sure the city is red at position (1,1)
-  @Test
-  public void shouldBeRedCityAt1_1(){
-    City cityPos = game.getCityAt(new Position(1,1));
-    assertThat(cityPos.getOwner(),is(Player.RED));
-  }
-  //Make sure that city is blue at (4,1)
-  @Test
-  public void shouldBeBlueCityAt4_1(){
-    City cityPos = game.getCityAt(new Position(4,1));
-    assertThat(cityPos.getOwner(),is(Player.BLUE));
-  }
-  //Make sure cities at (4,1) and (1,1) have a population of 1
-  @Test
-  public void shouldBePopulation1FirstRound(){
-    City cityPosRed = game.getCityAt(new Position(4,1));
-    City cityPosBlue = game.getCityAt(new Position(1,1));
 
-    assertThat(cityPosRed.getSize(),is(1));
-    assertThat(cityPosBlue.getSize(),is(1));
 
-  }
+
+
   //--------------------------------------------------------Unit Archer Test--------------------------------------------
   //Make sure that there is a unit at position (2,0)
   @Test
@@ -286,9 +285,31 @@ public class TestAlphaCiv {
         assertThat(game.getUnitAt(new Position(1,0)), is(nullValue()));
     }
 
+    @Test
+    public void shouldBeOnSameTileAsOtherFriendlyUnits(){
+        assertThat(game.moveUnit(new Position(2,0), new Position(3,0)), is(true));
+        assertThat(game.moveUnit(new Position(3,0), new Position(4,0)), is(true));
+        assertThat(game.moveUnit(new Position(4,0), new Position(4,1)), is(true));
+        assertThat(game.moveUnit(new Position(4,1), new Position(4,2)), is(true));
+        assertThat(game.moveUnit(new Position(4,2), new Position(4,3)), is(false));
 
+    }
 
-    //----------------------------------------------------Production test----------------------------------------------
+    //---------------------------------------------------Attack Test----------------------------------------------------
+
+    @Test
+    public void AttackingUnitShouldWin(){
+        Unit settler = game.getUnitAt(new Position(4,3));
+        assertThat(settler.getTypeString(), is(GameConstants.SETTLER));
+        Unit legion = game.getUnitAt(new Position(3,2));
+        assertThat(legion.getTypeString(), is(GameConstants.LEGION));
+        assertThat(game.moveUnit(new Position(4,3), new Position(3,2)), is(true));
+        settler = game.getUnitAt(new Position(3,2));
+        assertThat(settler.getTypeString(),is(GameConstants.SETTLER));
+        assertThat(game.getUnitAt(new Position(4,3)), is(nullValue()));
+    }
+
+    //------------------------------------------------City Production test----------------------------------------------
 
     //Makes sure that the cities are producing stuff
     @Test
@@ -323,5 +344,16 @@ public class TestAlphaCiv {
         City city = game.getCityAt(new Position(4,1));
         game.changeProductionInCityAt(new Position(4,1),GameConstants.LEGION);
         assertThat(city.getProduction(),is(GameConstants.LEGION));
+    }
+
+    //Make sure cities at (4,1) and (1,1) have a population of 1
+    @Test
+    public void shouldBePopulation1FirstRound(){
+        City cityPosRed = game.getCityAt(new Position(4,1));
+        City cityPosBlue = game.getCityAt(new Position(1,1));
+
+        assertThat(cityPosRed.getSize(),is(1));
+        assertThat(cityPosBlue.getSize(),is(1));
+
     }
 }

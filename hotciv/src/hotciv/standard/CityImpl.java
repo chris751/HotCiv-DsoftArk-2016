@@ -3,14 +3,12 @@ package hotciv.standard;
 import hotciv.framework.City;
 import hotciv.framework.GameConstants;
 import hotciv.framework.Player;
-import hotciv.framework.Position;
-
 /**
  * Created by Christian on 15/11/2016.
  */
 public class CityImpl implements City{
-    private String producing = GameConstants.SETTLER;
     private Player owner;
+    public String unitProducing = GameConstants.SETTLER;
 
     public CityImpl(Player owner) {
         this.owner = owner;
@@ -29,13 +27,11 @@ public class CityImpl implements City{
 
     @Override
     public String getProduction() {
-
-        return this.producing;
+        return unitProducing;
     }
 
-    @Override
-    public void setProduction(String unitType){
-        this.producing = unitType;
+    public void changeProduction(String unitType){
+        unitProducing = unitType;
     }
 
     @Override

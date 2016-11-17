@@ -52,7 +52,7 @@ public class GameImpl implements Game {
     return WorldImpl.unitMap.get(p);
   }
   //Returns cityPosition at Position p
-  public City getCityAt( Position p ) {
+  public CityImpl getCityAt( Position p ) {
     return WorldImpl.cityMap.get(p);
   }
 
@@ -73,12 +73,25 @@ public class GameImpl implements Game {
   //returns the current year of the game (age varaible)
   public int getAge() { return age; }
 
+  //Returns true and removes the unit from current position, and adds the unit to the wanted position.
+  //Unless the wanted position is either a mountain tile or ocean tile.
   public boolean moveUnit( Position from, Position to ) {
-    if(WorldImpl.worldTileMap.get(to).getTypeString().equals(GameConstants.MOUNTAINS)) {
-      return false;
-    }else if(WorldImpl.worldTileMap.get(to).getTypeString().equals(GameConstants.OCEANS)){
-      return false;
-    }else{
+
+    //Saving the type of tile in the @param tileType
+    String tileType = WorldImpl.worldTileMap.get(to).getTypeString();
+    if(tileType.equals(GameConstants.MOUNTAINS)) {return false;}
+    else if(tileType.equals(GameConstants.OCEANS)){return false;}
+    else if(WorldImpl.unitMap.get(to) != null){
+      Player thisUnitOwner = WorldImpl.unitMap.get(from).getOwner();
+      Player otherUnitOwner = WorldImpl.unitMap.get(to).getOwner();
+      if(!thisUnitOwner.equals(otherUnitOwner)){
+        Unit unit = WorldImpl.unitMap.get(from);
+        WorldImpl.unitMap.remove(from);
+        WorldImpl.unitMap.put(to, unit);
+        return true;
+      }
+      return false;}
+    else{
       Unit unit = WorldImpl.unitMap.get(from);
       WorldImpl.unitMap.remove(from);
       WorldImpl.unitMap.put(to, unit);
@@ -100,8 +113,8 @@ public class GameImpl implements Game {
 
   public void changeWorkForceFocusInCityAt( Position p, String balance ) {}
   public void changeProductionInCityAt( Position p, String unitType ) {
-    City city = getCityAt(p);
-    city.setProduction(unitType);
+    CityImpl city = getCityAt(p);
+    city.changeProduction(unitType);
   }
   public void performUnitActionAt( Position p ) {}
 }
