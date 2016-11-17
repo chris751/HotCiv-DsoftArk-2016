@@ -2,6 +2,8 @@ package hotciv.standard;
 
 import hotciv.framework.*;
 
+import java.util.Iterator;
+
 import static hotciv.framework.Player.*;
 
 /** Skeleton implementation of HotCiv.
@@ -133,46 +135,37 @@ public class GameImpl implements Game {
   }
 
   public void produceUnit(){
-    CityImpl redCity = WorldImpl.cityMap.get(new Position(1,1));
-    int redCurrentValue = redCity.getProductionValue();
 
-    CityImpl blueCity = WorldImpl.cityMap.get(new Position(4,1));
-    int blueCurrentValue = blueCity.getProductionValue();
-
-    String redUnitProducing = redCity.getProduction();
-    String blueUnitProducing = blueCity.getProduction();
     int settlerCost = 30;
     int archerCost = 10;
     int legionCost = 15;
 
-    boolean redArcherProducing = redUnitProducing.equals(GameConstants.ARCHER);
-    boolean redLegionProducing = redUnitProducing.equals(GameConstants.LEGION);
-    boolean redSettlerProducing = redUnitProducing.equals(GameConstants.SETTLER);
+    //While loop, Running through the cityHashMap, and produces units, if the city has enough productionValue.
 
-    boolean blueArcherProducing = blueUnitProducing.equals(GameConstants.ARCHER);
-    boolean blueLegionProducing = blueUnitProducing.equals(GameConstants.LEGION);
-    boolean blueSettlerProducing = blueUnitProducing.equals(GameConstants.SETTLER);
+    Iterator<Position> keySetIterator = WorldImpl.cityMap.keySet().iterator();
 
-      if(redArcherProducing && redCurrentValue >= archerCost){
-        redCity.buyUnit(archerCost);
-        WorldImpl.createUnit(new Position(1,1), Player.RED, GameConstants.ARCHER);
-      } else if(redSettlerProducing && redCurrentValue >= settlerCost){
-        redCity.buyUnit(settlerCost);
-        WorldImpl.createUnit(new Position(1,1), Player.RED, GameConstants.SETTLER);
-      } else if(redLegionProducing && redCurrentValue >= legionCost){
-        redCity.buyUnit(legionCost);
-        WorldImpl.createUnit(new Position(1,1), Player.RED, GameConstants.LEGION);
+    while(keySetIterator.hasNext()){
+      Position position = keySetIterator.next();
+      CityImpl city = WorldImpl.cityMap.get(position);
+      String cityProduction = city.getProduction();
+      int currentValue = city.getProductionValue();
+      boolean ArcherProducing = cityProduction.equals(GameConstants.ARCHER);
+      boolean LegionProducing = cityProduction.equals(GameConstants.LEGION);
+      boolean SettlerProducing = cityProduction.equals(GameConstants.SETTLER);
+      boolean enoughForArcher = currentValue >= archerCost;
+      boolean enoughForLegion = currentValue >= legionCost;
+      boolean enoughForSettler = currentValue >= settlerCost;
+
+      if(ArcherProducing && enoughForArcher){
+        city.buyUnit(archerCost);
+        WorldImpl.createUnit(position, city.getOwner(), cityProduction);
+      }else if (LegionProducing && enoughForLegion){
+        city.buyUnit(legionCost);
+        WorldImpl.createUnit(position, city.getOwner(), cityProduction);
+      }else if (SettlerProducing && enoughForSettler){
+        city.buyUnit(settlerCost);
+        WorldImpl.createUnit(position, city.getOwner(), cityProduction);
       }
-
-    if(blueArcherProducing && blueCurrentValue >= archerCost){
-      blueCity.buyUnit(archerCost);
-      WorldImpl.createUnit(new Position(4,1), Player.BLUE, GameConstants.ARCHER);
-    } else if(blueSettlerProducing && blueCurrentValue >= settlerCost){
-      blueCity.buyUnit(settlerCost);
-      WorldImpl.createUnit(new Position(4,1), Player.BLUE, GameConstants.SETTLER);
-    } else if(blueLegionProducing && blueCurrentValue >= legionCost){
-      blueCity.buyUnit(legionCost);
-      WorldImpl.createUnit(new Position(4,1), Player.BLUE, GameConstants.LEGION);
     }
 
   }

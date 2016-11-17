@@ -3,6 +3,8 @@ package hotciv.standard;
 import hotciv.framework.*;
 
 import java.util.HashMap;
+import java.util.Iterator;
+import java.util.Map;
 
 /**
  * Created by Christian on 15/11/2016.
@@ -11,7 +13,7 @@ public class WorldImpl implements World {
 
     static HashMap<Position, Tile> worldTileMap = new HashMap<Position, Tile>();
     static HashMap<Position, CityImpl> cityMap = new HashMap<Position, CityImpl>();
-    static HashMap<Position, Unit> unitMap = new HashMap<Position, Unit>();
+    public static HashMap<Position, Unit> unitMap = new HashMap<Position, Unit>();
 
     public WorldImpl() {
         createTileMap();
@@ -45,4 +47,7 @@ public class WorldImpl implements World {
         UnitImpl unit = new UnitImpl(owner, unitType);
         unitMap.put(p, unit);
     }
+
+
+
 }
