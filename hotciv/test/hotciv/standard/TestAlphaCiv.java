@@ -406,7 +406,70 @@ public class TestAlphaCiv {
         game.endOfTurn();
         game.endOfTurn();
         assertThat(redCity.getProductionValue(), is(0));
-        //assertThat();
-
     }
+
+    @Test
+    public void shouldSpawnRedSettlerAtTile1_1(){
+        City redCity = game.getCityAt(new Position(1,1));
+        assertThat(redCity.getProduction(), is(GameConstants.SETTLER));
+        assertThat(redCity.getProductionValue(), is(0));
+        game.endOfTurn();
+        game.endOfTurn();
+        game.endOfTurn();
+        game.endOfTurn();
+        assertThat(redCity.getProductionValue(), is(12));
+        game.endOfTurn();
+        game.endOfTurn();
+        game.endOfTurn();
+        game.endOfTurn();
+        game.endOfTurn();
+        game.endOfTurn();
+        assertThat(redCity.getProductionValue(), is(0));
+        Unit settler = game.getUnitAt(new Position(1,1));
+        assertThat(settler, is (notNullValue()));
+        assertThat(settler.getTypeString() ,is(GameConstants.SETTLER));
+        assertThat(settler.getOwner() ,is(Player.RED));
+    }
+
+    @Test
+    public void shouldSpawnBlueSettlerAtTile4_1(){
+        City blueCity = game.getCityAt(new Position(4,1));
+        assertThat(blueCity.getProduction(), is(GameConstants.SETTLER));
+        assertThat(blueCity.getProductionValue(), is(0));
+        game.endOfTurn();
+        game.endOfTurn();
+        game.endOfTurn();
+        game.endOfTurn();
+        assertThat(blueCity.getProductionValue(), is(12));
+        game.endOfTurn();
+        game.endOfTurn();
+        game.endOfTurn();
+        game.endOfTurn();
+        game.endOfTurn();
+        game.endOfTurn();
+        assertThat(blueCity.getProductionValue(), is(0));
+        Unit settler = game.getUnitAt(new Position(4,1));
+        assertThat(settler, is (notNullValue()));
+        assertThat(settler.getTypeString() ,is(GameConstants.SETTLER));
+        assertThat(settler.getOwner() ,is(Player.BLUE));
+    }
+
+    @Test
+    public void shouldSpawnRedArcherAtTile1_1(){
+        City redCity = game.getCityAt(new Position(1,1));
+        game.changeProductionInCityAt(new Position(1,1), GameConstants.ARCHER);
+        assertThat(redCity.getProduction(), is(GameConstants.ARCHER));
+        assertThat(redCity.getProductionValue(), is(0));
+        game.endOfTurn();
+        game.endOfTurn();
+        game.endOfTurn();
+        game.endOfTurn();
+        assertThat(redCity.getProductionValue(), is(2));
+        Unit settler = game.getUnitAt(new Position(1,1));
+        assertThat(settler, is (notNullValue()));
+        assertThat(settler.getTypeString() ,is(GameConstants.ARCHER));
+        assertThat(settler.getOwner() ,is(Player.RED));
+    }
+
+
 }

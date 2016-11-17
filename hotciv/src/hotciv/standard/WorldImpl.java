@@ -40,4 +40,9 @@ public class WorldImpl implements World {
             unitMap.put(new Position(4,3), new UnitImpl(Player.RED, GameConstants.SETTLER));
         }
     }
+
+    public static void createUnit(Position p, Player owner, String unitType){
+        UnitImpl unit = new UnitImpl(owner, unitType);
+        unitMap.put(p, unit);
+    }
 }

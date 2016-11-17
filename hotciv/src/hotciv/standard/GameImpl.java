@@ -39,7 +39,7 @@ public class GameImpl implements Game {
   Player whosTurn = RED;
   //Starting year
   int age = 4000;
-  private World world = new WorldImpl();
+  private WorldImpl world = new WorldImpl();
 
   //Gets a new tile terrainTile, and returns it.
   public Tile getTileAt( Position p ) {
@@ -133,11 +133,48 @@ public class GameImpl implements Game {
   }
 
   public void produceUnit(){
-    CityImpl city = WorldImpl.cityMap.get(new Position(1,1));
-    int currentValue = city.getProductionValue();
-      if(currentValue >= 30){
-        city.buyUnit(30);
+    CityImpl redCity = WorldImpl.cityMap.get(new Position(1,1));
+    int redCurrentValue = redCity.getProductionValue();
+
+    CityImpl blueCity = WorldImpl.cityMap.get(new Position(4,1));
+    int blueCurrentValue = blueCity.getProductionValue();
+
+    String redUnitProducing = redCity.getProduction();
+    String blueUnitProducing = blueCity.getProduction();
+    int settlerCost = 30;
+    int archerCost = 10;
+    int legionCost = 15;
+
+    boolean redArcherProducing = redUnitProducing.equals(GameConstants.ARCHER);
+    boolean redLegionProducing = redUnitProducing.equals(GameConstants.LEGION);
+    boolean redSettlerProducing = redUnitProducing.equals(GameConstants.SETTLER);
+
+    boolean blueArcherProducing = blueUnitProducing.equals(GameConstants.ARCHER);
+    boolean blueLegionProducing = blueUnitProducing.equals(GameConstants.LEGION);
+    boolean blueSettlerProducing = blueUnitProducing.equals(GameConstants.SETTLER);
+
+      if(redArcherProducing && redCurrentValue >= archerCost){
+        redCity.buyUnit(archerCost);
+        WorldImpl.createUnit(new Position(1,1), Player.RED, GameConstants.ARCHER);
+      } else if(redSettlerProducing && redCurrentValue >= settlerCost){
+        redCity.buyUnit(settlerCost);
+        WorldImpl.createUnit(new Position(1,1), Player.RED, GameConstants.SETTLER);
+      } else if(redLegionProducing && redCurrentValue >= legionCost){
+        redCity.buyUnit(legionCost);
+        WorldImpl.createUnit(new Position(1,1), Player.RED, GameConstants.LEGION);
       }
+
+    if(blueArcherProducing && blueCurrentValue >= archerCost){
+      blueCity.buyUnit(archerCost);
+      WorldImpl.createUnit(new Position(4,1), Player.BLUE, GameConstants.ARCHER);
+    } else if(blueSettlerProducing && blueCurrentValue >= settlerCost){
+      blueCity.buyUnit(settlerCost);
+      WorldImpl.createUnit(new Position(4,1), Player.BLUE, GameConstants.SETTLER);
+    } else if(blueLegionProducing && blueCurrentValue >= legionCost){
+      blueCity.buyUnit(legionCost);
+      WorldImpl.createUnit(new Position(4,1), Player.BLUE, GameConstants.LEGION);
+    }
+
   }
   public void performUnitActionAt( Position p ) {}
 }
