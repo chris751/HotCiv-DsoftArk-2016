@@ -44,21 +44,16 @@ public class GameImpl implements Game {
   //Gets a new tile terrainTile, and returns it.
   public Tile getTileAt( Position p ) {
     this.p = p;
-    TileImpl terrainTile = new TileImpl();
-    return terrainTile;
+    Tile tile = WorldImpl.worldTileMap.get(p);
+    return tile;
   }
   //Returns a unit at position p
   public Unit getUnitAt( Position p ) {
-    //this.p = p;
-    //UnitImpl unitAtPosition = new UnitImpl();
-    return world.getUnitAt(p);
-
-    //return unitAtPosition;
+    return WorldImpl.unitMap.get(p);
   }
   //Returns cityPosition at Position p
   public City getCityAt( Position p ) {
-    this.p=p;
-    return world.getCityAt(p);
+    return WorldImpl.cityMap.get(p);
   }
 
   //returns the variable whosTurn
@@ -79,8 +74,9 @@ public class GameImpl implements Game {
   public int getAge() { return age; }
 
   public boolean moveUnit( Position from, Position to ) {
-    Unit unit = world.removeUnitAt(from);
-    world.setUnitAt(to, unit);
+    Unit unit = WorldImpl.unitMap.get(from);
+    WorldImpl.unitMap.remove(from);
+    WorldImpl.unitMap.put(to,unit);
     return false;
   }
 

@@ -1,6 +1,9 @@
 package hotciv.standard;
 
 import hotciv.framework.*;
+import javafx.geometry.Pos;
+
+import java.util.HashMap;
 
 /**
  * Created by Christian on 15/11/2016.
@@ -12,45 +15,36 @@ public class WorldImpl implements World {
     static Position legion = new Position(3,2);
     static Position settler = new Position(4,3);
 
-    City redCity = new CityImpl(new Position(1,1), Player.RED);
-    City blueCity = new CityImpl(new Position(4,1), Player.BLUE);
 
-    Unit redArcher = new UnitImpl(new Position(2,0), Player.RED, GameConstants.ARCHER);
-    Unit blueLegion = new UnitImpl(new Position(3,2), Player.BLUE, GameConstants.LEGION);
-    Unit redSettler = new UnitImpl(new Position(4,3), Player.RED, GameConstants.SETTLER);
 
-    @Override
-    public Unit removeUnitAt(Position from) {
-        this.p = from;
-        return getUnitAt(from);
+
+    static HashMap<Position, Tile> worldTileMap = new HashMap<Position, Tile>();
+    static HashMap<Position, City> cityMap = new HashMap<Position, City>();
+    static HashMap<Position, Unit> unitMap = new HashMap<Position, Unit>();
+
+    public WorldImpl() {
+        createTileMap();
     }
 
     @Override
-    public void setUnitAt(Position to, Unit u) {
-        u.setPosition(to);
-
+    public Tile createTile(String terrain) {
+        Tile tile = new TileImpl(terrain);
+        return tile;
     }
 
-    @Override
-    public Unit getUnitAt(Position p) {
-        this.p = p;
-        if(p.equals(redArcher.getPosition())){
-            return redArcher;
-        }else if(p.equals(blueLegion.getPosition())){
-            return blueLegion;
-        }else if(p.equals(redSettler.getPosition())){
-            return redSettler;
-        }else {
-            return null;
+    public void createTileMap(){
+        for(int i = 0; i<GameConstants.WORLDSIZE;i++){
+            for(int j = 0; j<GameConstants.WORLDSIZE;j++){
+                worldTileMap.put(new Position(i,j), createTile(GameConstants.PLAINS));
+            }
+            worldTileMap.put(new Position(0,1), createTile(GameConstants.HILLS));
+            worldTileMap.put(new Position(1,0), createTile(GameConstants.OCEANS));
+            worldTileMap.put(new Position(2,2), createTile(GameConstants.MOUNTAINS));
+            cityMap.put(new Position(1,1), new CityImpl(Player.RED));
+            cityMap.put(new Position(4,1), new CityImpl(Player.BLUE));
+            unitMap.put(new Position(2,0), new UnitImpl(Player.RED, GameConstants.ARCHER));
+            unitMap.put(new Position(3,2), new UnitImpl(Player.BLUE, GameConstants.LEGION));
+            unitMap.put(new Position(4,3), new UnitImpl(Player.RED, GameConstants.SETTLER));
         }
-    }
-
-    public City getCityAt(Position p){
-        if(p.equals(new Position(1,1))){
-            return redCity;
-        }else{
-            return blueCity;
-        }
-
     }
 }

@@ -8,11 +8,9 @@ import hotciv.framework.*;
 public class UnitImpl implements Unit {
 
     private Player owner;
-    private Position p;
     private String type;
 
-    public UnitImpl(Position p, Player owner, String type ) {
-        this.p = p;
+    public UnitImpl(Player owner, String type ) {
         this.owner = owner;
         this.type = type;
     }
@@ -22,18 +20,10 @@ public class UnitImpl implements Unit {
         return type;
     }
 
-    public Position getPosition() {
-        return p;
-    }
-
     @Override
     public Player getOwner() {
         return owner;
 
-    }
-
-    public void setPosition(Position p){
-        this.p = p;
     }
 
     @Override

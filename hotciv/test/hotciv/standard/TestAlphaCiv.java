@@ -240,6 +240,9 @@ public class TestAlphaCiv {
         assertThat(settlerUnit.getOwner(),is(Player.RED));
     }
     //Make sure that an archer move from (2,0) to (2,1)
+
+    //-----------------------------------------------------Movement test------------------------------------------------
+
     @Test
     public void shouldMoveArcherFrom2_0To2_1(){
         Unit archerUnit = game.getUnitAt(new Position(2,0));

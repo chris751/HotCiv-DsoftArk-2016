@@ -9,12 +9,10 @@ import hotciv.framework.Position;
  * Created by Christian on 15/11/2016.
  */
 public class CityImpl implements City{
-    private Position p;
     private String producing = GameConstants.SETTLER;
     private Player owner;
 
-    public CityImpl(Position p, Player owner) {
-        this.p = p;
+    public CityImpl(Player owner) {
         this.owner = owner;
 
     }
