@@ -286,7 +286,7 @@ public class TestAlphaCiv {
     }
 
     @Test
-    public void shouldBeOnSameTileAsOtherFriendlyUnits(){
+    public void shouldNotBeOnSameTileAsOtherFriendlyUnits(){
         assertThat(game.moveUnit(new Position(2,0), new Position(3,0)), is(true));
         assertThat(game.moveUnit(new Position(3,0), new Position(4,0)), is(true));
         assertThat(game.moveUnit(new Position(4,0), new Position(4,1)), is(true));
@@ -298,7 +298,7 @@ public class TestAlphaCiv {
     //---------------------------------------------------Attack Test----------------------------------------------------
 
     @Test
-    public void AttackingUnitShouldWin(){
+    public void attackingUnitShouldWin(){
         Unit settler = game.getUnitAt(new Position(4,3));
         assertThat(settler.getTypeString(), is(GameConstants.SETTLER));
         Unit legion = game.getUnitAt(new Position(3,2));

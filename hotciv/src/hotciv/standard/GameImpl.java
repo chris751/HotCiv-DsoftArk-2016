@@ -77,26 +77,39 @@ public class GameImpl implements Game {
   //Unless the wanted position is either a mountain tile or ocean tile.
   public boolean moveUnit( Position from, Position to ) {
 
-    //Saving the type of tile in the @param tileType
     String tileType = WorldImpl.worldTileMap.get(to).getTypeString();
-    if(tileType.equals(GameConstants.MOUNTAINS)) {return false;}
-    else if(tileType.equals(GameConstants.OCEANS)){return false;}
-    else if(WorldImpl.unitMap.get(to) != null){
-      Player thisUnitOwner = WorldImpl.unitMap.get(from).getOwner();
-      Player otherUnitOwner = WorldImpl.unitMap.get(to).getOwner();
-      if(!thisUnitOwner.equals(otherUnitOwner)){
-        Unit unit = WorldImpl.unitMap.get(from);
-        WorldImpl.unitMap.remove(from);
-        WorldImpl.unitMap.put(to, unit);
-        return true;
-      }
-      return false;}
-    else{
+    Player thisUnitOwner;
+    Player otherUnitOwner;
+
+    //Test variables for obstacles
+    boolean isMountain = tileType.equals(GameConstants.MOUNTAINS);
+    System.out.print(isMountain);
+    boolean isOcean = tileType.equals(GameConstants.OCEANS);
+    System.out.print(isOcean);
+    boolean isFriendlyUnit = false;
+    boolean isEnemyUnit = false;
+    boolean isEmpty = WorldImpl.unitMap.get(to)== null;
+    System.out.print(isEmpty);
+
+    //If there is a unit at the wanted tile, test if it is friend or foe, and save it in parameters.
+    if(!isEmpty){
+      thisUnitOwner = WorldImpl.unitMap.get(from).getOwner();
+      otherUnitOwner = WorldImpl.unitMap.get(to).getOwner();
+      isFriendlyUnit = thisUnitOwner.equals(otherUnitOwner);
+      isEnemyUnit = !thisUnitOwner.equals(otherUnitOwner);
+    }
+
+    //Decision making, whether to allow the movement or not.
+    if(isMountain) {return false;}
+    else if(isOcean){return false;}
+    else if(isFriendlyUnit){return false;}
+    else if(isEmpty || isEnemyUnit){
       Unit unit = WorldImpl.unitMap.get(from);
       WorldImpl.unitMap.remove(from);
       WorldImpl.unitMap.put(to, unit);
       return true;
     }
+    return false;
   }
 
   //at the end of turn switch turn to the correct player and set age to 100
