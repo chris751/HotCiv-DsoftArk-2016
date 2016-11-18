@@ -36,11 +36,14 @@ import static hotciv.framework.Player.*;
 public class GameImpl implements Game {
   //@param p to enable access to the positions
   public static Position p;
+  AgingStrategy agingStrategy;
+
+  public GameImpl(AgingStrategy agingStrategy) {
+    this.agingStrategy = agingStrategy;
+  }
 
   //which player has the turn, RED is set to begin
   Player whosTurn = RED;
-  //Starting year
-  int age = 4000;
   private WorldImpl world = new WorldImpl();
 
   //Gets a new tile terrainTile, and returns it.
@@ -73,7 +76,7 @@ public class GameImpl implements Game {
   }
 
   //returns the current year of the game (age varaible)
-  public int getAge() { return age; }
+  public int getAge() { return agingStrategy.getAge(); }
 
   //Returns true and removes the unit from current position, and adds the unit to the wanted position.
   //Unless the wanted position is either a mountain tile or ocean tile.
@@ -117,10 +120,11 @@ public class GameImpl implements Game {
 
     if(whosTurn == BLUE){
       whosTurn = RED;
-      age += -100;
+      agingStrategy.aging(); // get older
       WorldImpl.cityMap.get(new Position(1,1)).addProductionValue();
       WorldImpl.cityMap.get(new Position(4,1)).addProductionValue();
       produceUnit();
+
     }
     else{
       whosTurn = BLUE;
@@ -170,4 +174,5 @@ public class GameImpl implements Game {
 
   }
   public void performUnitActionAt( Position p ) {}
+
 }
