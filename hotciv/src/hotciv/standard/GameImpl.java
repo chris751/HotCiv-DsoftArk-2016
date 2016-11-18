@@ -68,7 +68,7 @@ public class GameImpl implements Game {
 
   //returns the winning player, which is RED at year 3000BC
   public Player getWinner() {
-    return winningStrategy.getWinner(getAge());
+    return winningStrategy.getWinner(this);
   }
 
   //returns the current year of the game (age varaible)
@@ -110,7 +110,7 @@ public class GameImpl implements Game {
     else if(isFriendlyUnit){return false;}
     else if(isEmpty || isEnemyUnit){
         if(isEnemyCity){
-          WorldImpl.cityMap.put(to,new CityImpl(Player.RED));
+          WorldImpl.cityMap.put(to,new CityImpl(getPlayerInTurn()));
           Unit unit = WorldImpl.unitMap.get(from);
           WorldImpl.unitMap.remove(from);
           WorldImpl.unitMap.put(to, unit);

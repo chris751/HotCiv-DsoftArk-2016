@@ -5,6 +5,6 @@ package hotciv.framework;
  */
 public interface WinningStrategy {
 
-    public Player getWinner(int age);
+    public Player getWinner(Game game);
 
 }
