@@ -89,12 +89,18 @@ public class GameImpl implements Game {
     boolean isFriendlyUnit = false;
     boolean isEnemyUnit = false;
     boolean isEmpty = WorldImpl.unitMap.get(to)== null;
+    boolean isEnemyCity = false;
+    boolean noCity = WorldImpl.cityMap.get(to) == null;
 
     //If there is a unit at the wanted tile, test if it is friend or foe, and save it in parameters.
     if(!isEmpty){
       otherUnitOwner = WorldImpl.unitMap.get(to).getOwner();
       isFriendlyUnit = thisUnitOwner.equals(otherUnitOwner);
       isEnemyUnit = !thisUnitOwner.equals(otherUnitOwner);
+
+    }
+    if(!noCity){
+      isEnemyCity = !WorldImpl.cityMap.get(to).getOwner().equals(getPlayerInTurn());
     }
 
     //Decision making, whether to allow the movement or not.
@@ -103,10 +109,18 @@ public class GameImpl implements Game {
     else if(isOcean){return false;}
     else if(isFriendlyUnit){return false;}
     else if(isEmpty || isEnemyUnit){
-      Unit unit = WorldImpl.unitMap.get(from);
-      WorldImpl.unitMap.remove(from);
-      WorldImpl.unitMap.put(to, unit);
-      return true;
+        if(isEnemyCity){
+          WorldImpl.cityMap.put(to,new CityImpl(Player.RED));
+          Unit unit = WorldImpl.unitMap.get(from);
+          WorldImpl.unitMap.remove(from);
+          WorldImpl.unitMap.put(to, unit);
+          return true;
+        }else {
+          Unit unit = WorldImpl.unitMap.get(from);
+          WorldImpl.unitMap.remove(from);
+          WorldImpl.unitMap.put(to, unit);
+          return true;
+        }
     }
     return false;
   }

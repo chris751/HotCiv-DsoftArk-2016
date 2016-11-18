@@ -19,6 +19,14 @@ public class TestBetaCiv {
 
     @Test
     public void shouldAllCitiesBeRed(){
-        
+        City redCity = game.getCityAt(new Position(1,1));
+        assertThat(redCity.getOwner(),is(Player.RED));
+        Unit redSettler = game.getUnitAt(new Position(4,3));
+        assertThat(redSettler.getTypeString(),is(notNullValue()));
+        assertThat(redSettler.getOwner(),is(Player.RED));
+        game.moveUnit(new Position(4,3), new Position(4,2));
+        game.moveUnit(new Position(4,2), new Position(4,1));
+        City newRedCity = game.getCityAt(new Position(4,1));
+        assertThat(newRedCity.getOwner(), is(Player.RED));
     }
 }

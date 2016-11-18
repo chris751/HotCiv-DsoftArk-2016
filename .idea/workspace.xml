@@ -2,16 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="84083f01-3edc-481d-9129-36d11e5abd61" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/hotciv/src/hotciv/standard/AlphaWin.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/hotciv/src/hotciv/standard/BetaWin.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/hotciv/test/hotciv/standard/TestBetaCiv.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/hotciv/hotciv/framework/WinningStrategy.class" afterPath="$PROJECT_DIR$/out/production/hotciv/hotciv/framework/WinningStrategy.class" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/hotciv/src/hotciv/standard/BetaAging.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/hotciv/hotciv/standard/GameImpl.class" afterPath="$PROJECT_DIR$/out/production/hotciv/hotciv/standard/GameImpl.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/test/hotciv/hotciv/standard/TestAlphaCiv.class" afterPath="$PROJECT_DIR$/out/test/hotciv/hotciv/standard/TestAlphaCiv.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/hotciv/src/hotciv/framework/WinningStrategy.java" afterPath="$PROJECT_DIR$/hotciv/src/hotciv/framework/WinningStrategy.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/hotciv/src/hotciv/standard/GameImpl.java" afterPath="$PROJECT_DIR$/hotciv/src/hotciv/standard/GameImpl.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/hotciv/test/hotciv/standard/TestAlphaCiv.java" afterPath="$PROJECT_DIR$/hotciv/test/hotciv/standard/TestAlphaCiv.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/hotciv/test/hotciv/standard/TestBetaCiv.java" afterPath="$PROJECT_DIR$/hotciv/test/hotciv/standard/TestBetaCiv.java" />
     </list>
     <ignored path="HotCiv.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -36,8 +31,8 @@
       <file leaf-file-name="GameImpl.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/hotciv/src/hotciv/standard/GameImpl.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="245">
-              <caret line="70" column="47" selection-start-line="70" selection-start-column="47" selection-end-line="70" selection-end-column="47" />
+            <state relative-caret-position="320">
+              <caret line="102" column="61" selection-start-line="102" selection-start-column="61" selection-end-line="102" selection-end-column="61" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="e#1762#1763#0" expanded="true" />
@@ -51,22 +46,27 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="AgingStrategy.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/hotciv/src/hotciv/framework/AgingStrategy.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="90">
-              <caret line="6" column="32" selection-start-line="6" selection-start-column="32" selection-end-line="6" selection-end-column="32" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="GameConstants.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/hotciv/src/hotciv/framework/GameConstants.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="690">
               <caret line="46" column="49" selection-start-line="46" selection-start-column="49" selection-end-line="46" selection-end-column="49" />
               <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="WorldImpl.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/hotciv/src/hotciv/standard/WorldImpl.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="374">
+              <caret line="36" column="67" selection-start-line="36" selection-start-column="43" selection-end-line="36" selection-end-column="67" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="e#281#297#0" expanded="true" />
+                <element signature="e#361#381#0" expanded="true" />
+                <element signature="e#448#464#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -96,8 +96,8 @@
       <file leaf-file-name="TestAlphaCiv.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/hotciv/test/hotciv/standard/TestAlphaCiv.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="285">
-              <caret line="39" column="0" selection-start-line="39" selection-start-column="0" selection-end-line="46" selection-end-column="3" />
+            <state relative-caret-position="231">
+              <caret line="250" column="0" selection-start-line="250" selection-start-column="0" selection-end-line="250" selection-end-column="0" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -108,12 +108,25 @@
       <file leaf-file-name="TestBetaCiv.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/hotciv/test/hotciv/standard/TestBetaCiv.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="315">
-              <caret line="21" column="8" selection-start-line="21" selection-start-column="8" selection-end-line="21" selection-end-column="8" />
+            <state relative-caret-position="450">
+              <caret line="30" column="5" selection-start-line="30" selection-start-column="5" selection-end-line="30" selection-end-column="5" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="e#325#326#0" expanded="true" />
                 <element signature="e#392#393#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="BetaAging.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/hotciv/src/hotciv/standard/BetaAging.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="150">
+              <caret line="10" column="0" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
+              <folding>
+                <element signature="e#249#250#0" expanded="true" />
+                <element signature="e#273#274#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -138,16 +151,6 @@
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="495">
               <caret line="33" column="0" selection-start-line="33" selection-start-column="0" selection-end-line="33" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Game.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/hotciv/src/hotciv/framework/Game.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="15">
-              <caret line="34" column="25" selection-start-line="34" selection-start-column="25" selection-end-line="34" selection-end-column="25" />
               <folding />
             </state>
           </provider>
@@ -189,9 +192,10 @@
         <option value="$PROJECT_DIR$/hotciv/src/hotciv/standard/AlphaWin.java" />
         <option value="$PROJECT_DIR$/hotciv/src/hotciv/framework/WinningStrategy.java" />
         <option value="$PROJECT_DIR$/hotciv/test/hotciv/standard/TestAlphaCiv.java" />
-        <option value="$PROJECT_DIR$/hotciv/src/hotciv/standard/GameImpl.java" />
         <option value="$PROJECT_DIR$/hotciv/src/hotciv/standard/BetaWin.java" />
         <option value="$PROJECT_DIR$/hotciv/test/hotciv/standard/TestBetaCiv.java" />
+        <option value="$PROJECT_DIR$/hotciv/src/hotciv/standard/BetaAging.java" />
+        <option value="$PROJECT_DIR$/hotciv/src/hotciv/standard/GameImpl.java" />
       </list>
     </option>
   </component>
@@ -389,7 +393,7 @@
       <recent name="hotciv.framework" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.TestAlphaCiv">
+  <component name="RunManager" selected="JUnit.All in hotciv">
     <configuration default="false" name="TestAlphaCiv" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
         <pattern>
@@ -416,6 +420,27 @@
       <patterns />
       <RunnerSettings RunnerId="Run" />
       <ConfigurationWrapper RunnerId="Run" />
+      <method />
+    </configuration>
+    <configuration default="false" name="All in hotciv" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <module name="hotciv" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="METHOD_NAME" />
+      <option name="TEST_OBJECT" value="package" />
+      <option name="VM_PARAMETERS" value="-ea" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="singleModule" />
+      </option>
+      <envs />
+      <patterns />
       <method />
     </configuration>
     <configuration default="true" type="#org.jetbrains.idea.devkit.run.PluginConfigurationType" factoryName="Plugin">
@@ -834,12 +859,14 @@
     <configuration default="true" type="osgi.bnd.run" factoryName="Test Launcher (JUnit)">
       <method />
     </configuration>
-    <list size="1">
+    <list size="2">
       <item index="0" class="java.lang.String" itemvalue="JUnit.TestAlphaCiv" />
+      <item index="1" class="java.lang.String" itemvalue="JUnit.All in hotciv" />
     </list>
     <recent_temporary>
-      <list size="1">
-        <item index="0" class="java.lang.String" itemvalue="JUnit.TestAlphaCiv" />
+      <list size="2">
+        <item index="0" class="java.lang.String" itemvalue="JUnit.All in hotciv" />
+        <item index="1" class="java.lang.String" itemvalue="JUnit.TestAlphaCiv" />
       </list>
     </recent_temporary>
   </component>
@@ -863,7 +890,7 @@
       <workItem from="1478868726772" duration="1894000" />
       <workItem from="1478871862551" duration="1663000" />
       <workItem from="1479199488680" duration="25824000" />
-      <workItem from="1479387957038" duration="31605000" />
+      <workItem from="1479387957038" duration="33150000" />
     </task>
     <task id="LOCAL-00001" summary="Jedi message tester niklas">
       <created>1478263152330</created>
@@ -883,14 +910,14 @@
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="TestAlphaCiv - 2016.11.17 at 21h 05m 30s.xml">
-      <configuration name="TestAlphaCiv" configurationId="JUnit" />
+    <history-entry file="All_in_hotciv - 2016.11.18 at 13h 16m 16s.xml">
+      <configuration name="All in hotciv" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="TestAlphaCiv - 2016.11.17 at 21h 20m 36s.xml">
-      <configuration name="TestAlphaCiv" configurationId="JUnit" />
+    <history-entry file="All_in_hotciv - 2016.11.18 at 13h 25m 14s.xml">
+      <configuration name="All in hotciv" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="TestAlphaCiv - 2016.11.17 at 21h 23m 00s.xml">
-      <configuration name="TestAlphaCiv" configurationId="JUnit" />
+    <history-entry file="All_in_hotciv - 2016.11.18 at 13h 28m 46s.xml">
+      <configuration name="All in hotciv" configurationId="JUnit" />
     </history-entry>
     <history-entry file="TestAlphaCiv - 2016.11.17 at 21h 23m 47s.xml">
       <configuration name="TestAlphaCiv" configurationId="JUnit" />
@@ -915,7 +942,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="90268000" />
+    <option name="totallyTimeSpent" value="91813000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="58" y="23" width="1862" height="1057" extended-state="6" />
@@ -1026,22 +1053,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/hotciv/src/hotciv/standard/GameImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="645">
-          <caret line="43" column="26" selection-start-line="43" selection-start-column="26" selection-end-line="43" selection-end-column="35" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#1762#1763#0" expanded="true" />
-            <element signature="e#1803#1804#0" expanded="true" />
-            <element signature="e#1886#1887#0" expanded="true" />
-            <element signature="e#1927#1928#0" expanded="true" />
-            <element signature="e#2108#2109#0" expanded="true" />
-            <element signature="e#2160#2161#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/hotciv/src/hotciv/framework/Position.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="555">
@@ -1347,21 +1358,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/hotciv/src/hotciv/standard/WorldImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="530">
-          <caret line="48" column="5" selection-start-line="48" selection-start-column="5" selection-end-line="48" selection-end-column="5" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#281#297#0" expanded="true" />
-            <element signature="e#361#381#0" expanded="true" />
-            <element signature="e#448#464#0" expanded="true" />
-            <element signature="e#492#493#0" expanded="true" />
-            <element signature="e#523#524#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/hotciv/src/hotciv/standard/package.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -1454,22 +1450,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/hotciv/src/hotciv/standard/GameImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="245">
-          <caret line="70" column="47" selection-start-line="70" selection-start-column="47" selection-end-line="70" selection-end-column="47" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#1762#1763#0" expanded="true" />
-            <element signature="e#1803#1804#0" expanded="true" />
-            <element signature="e#1886#1887#0" expanded="true" />
-            <element signature="e#1927#1928#0" expanded="true" />
-            <element signature="e#2108#2109#0" expanded="true" />
-            <element signature="e#2160#2161#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/hotciv/src/hotciv/standard/AlphaWin.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="255">
@@ -1492,20 +1472,60 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/hotciv/src/hotciv/standard/BetaAging.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="150">
+          <caret line="10" column="0" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
+          <folding>
+            <element signature="e#249#250#0" expanded="true" />
+            <element signature="e#273#274#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/hotciv/src/hotciv/standard/WorldImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="374">
+          <caret line="36" column="67" selection-start-line="36" selection-start-column="43" selection-end-line="36" selection-end-column="67" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#281#297#0" expanded="true" />
+            <element signature="e#361#381#0" expanded="true" />
+            <element signature="e#448#464#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/hotciv/test/hotciv/standard/TestAlphaCiv.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="285">
-          <caret line="39" column="0" selection-start-line="39" selection-start-column="0" selection-end-line="46" selection-end-column="3" />
+        <state relative-caret-position="231">
+          <caret line="250" column="0" selection-start-line="250" selection-start-column="0" selection-end-line="250" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/hotciv/src/hotciv/standard/GameImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="320">
+          <caret line="102" column="61" selection-start-line="102" selection-start-column="61" selection-end-line="102" selection-end-column="61" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#1762#1763#0" expanded="true" />
+            <element signature="e#1803#1804#0" expanded="true" />
+            <element signature="e#1886#1887#0" expanded="true" />
+            <element signature="e#1927#1928#0" expanded="true" />
+            <element signature="e#2108#2109#0" expanded="true" />
+            <element signature="e#2160#2161#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/hotciv/test/hotciv/standard/TestBetaCiv.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="315">
-          <caret line="21" column="8" selection-start-line="21" selection-start-column="8" selection-end-line="21" selection-end-column="8" />
+        <state relative-caret-position="450">
+          <caret line="30" column="5" selection-start-line="30" selection-start-column="5" selection-end-line="30" selection-end-column="5" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="e#325#326#0" expanded="true" />
