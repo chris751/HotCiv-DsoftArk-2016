@@ -18,6 +18,15 @@ public class TestBetaCiv {
     }
 
 
+    public void endRound(int roundCount){
+
+        for(int i = 0; i < roundCount; i++) {
+            game.endOfTurn();
+            game.endOfTurn();
+        }
+    }
+
+
     @Test
     public void shouldRedBeWinnerAfterConqureingAllCities(){
         assertThat(game.getPlayerInTurn(),is(Player.RED));
@@ -53,15 +62,71 @@ public class TestBetaCiv {
     @Test
     public void shouldBe4000bc() {
         assertThat(game.getAge(),is(4000));
-
-
     }
     @Test
 
     public void shouldAge100Between4000And3900(){
         assertThat(game.getAge(),is(4000));
-        game.endOfTurn();
-        game.endOfTurn();
+        endRound(1);
         assertThat(game.getAge(),is(3900));
+    }
+
+    @Test
+    public void shouldAge100EachRoundFrom4000bcTo100bc(){
+        assertThat(game.getAge(),is(4000));
+        endRound(39);
+        assertThat(game.getAge(),is(100));
+    }
+
+    @Test
+    public void shouldage1From100bcToTheBirthOfChrist(){
+        endRound(39);
+        assertThat(game.getAge(),is(100));
+        endRound(1);
+        assertThat(game.getAge(),is(99));
+        endRound(99);
+        assertThat(game.getAge(),is(0));
+    }
+
+    @Test
+    public void shouldAge1BetweenYear0And50AD(){
+        endRound(139);
+        assertThat(game.getAge(),is(0));
+        endRound(1);
+        assertThat(game.getAge(),is(1));
+        endRound(49);
+        assertThat(game.getAge(),is(50));
+    }
+
+    @Test
+    public void shouldAge50YearsBetween50ADand1750(){
+        endRound(189);
+        assertThat(game.getAge(),is(50));
+        endRound(34);
+        assertThat(game.getAge(), is(1750));
+    }
+
+    @Test
+    public void shouldage25YearsBetweenyear1750AndYear1900(){
+        endRound(223);
+        assertThat(game.getAge(),is(1750));
+        endRound(6);
+        assertThat(game.getAge(),is(1900));
+    }
+
+    @Test
+    public void shouldAge5yearsBetweenYear1900and1970(){
+        endRound(229);
+        assertThat(game.getAge(), is(1900));
+        endRound(14);
+        assertThat(game.getAge(), is(1970));
+    }
+
+    @Test
+    public void shoudlAge1After1970(){
+        endRound(243);
+        assertThat(game.getAge(),is(1970));
+        endRound(30);
+        assertThat(game.getAge(),is(2000));
     }
 }
