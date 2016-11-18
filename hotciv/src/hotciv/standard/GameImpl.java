@@ -37,9 +37,11 @@ public class GameImpl implements Game {
   //@param p to enable access to the positions
   public static Position p;
   AgingStrategy agingStrategy;
+  WinningStrategy winningStrategy;
 
-  public GameImpl(AgingStrategy agingStrategy) {
+  public GameImpl(AgingStrategy agingStrategy, WinningStrategy winningStrategy) {
     this.agingStrategy = agingStrategy;
+    this.winningStrategy = winningStrategy;
   }
 
   //which player has the turn, RED is set to begin
@@ -62,17 +64,11 @@ public class GameImpl implements Game {
   }
 
   //returns the variable whosTurn
-  public Player getPlayerInTurn() { return   whosTurn; }
+  public Player getPlayerInTurn() { return whosTurn; }
 
   //returns the winning player, which is RED at year 3000BC
   public Player getWinner() {
-    if (getAge()==3000){
-      return RED;
-    }
-    else{
-      return null;
-    }
-
+    return winningStrategy.getWinner(getAge());
   }
 
   //returns the current year of the game (age varaible)
