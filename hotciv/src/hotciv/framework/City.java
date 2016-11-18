@@ -33,6 +33,7 @@ Responsibilities:
     gg nub
 */
 public interface City {
+
   /** return the owner of this city.
    * @return the player that controls this city.
    */
@@ -53,6 +54,10 @@ public interface City {
    * @return a string type defining the focus, see GameConstants
    * for valid return values.
    */
+
+  public int getProductionValue();
+
   public String getWorkforceFocus();
+
 
 }

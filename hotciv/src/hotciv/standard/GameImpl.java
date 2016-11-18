@@ -2,6 +2,10 @@ package hotciv.standard;
 
 import hotciv.framework.*;
 
+import java.util.Iterator;
+
+import static hotciv.framework.Player.*;
+
 /** Skeleton implementation of HotCiv.
  
    This source code is from the book 
@@ -30,17 +34,141 @@ import hotciv.framework.*;
 */
 
 public class GameImpl implements Game {
-  public Tile getTileAt( Position p ) { return null; }
-  public Unit getUnitAt( Position p ) { return null; }
-  public City getCityAt( Position p ) { return null; }
-  public Player getPlayerInTurn() { return null; }
-  public Player getWinner() { return null; }
-  public int getAge() { return 0; }
+  //@param p to enable access to the positions
+  public static Position p;
+  AgingStrategy agingStrategy;
+  WinningStrategy winningStrategy;
+
+  public GameImpl(AgingStrategy agingStrategy, WinningStrategy winningStrategy) {
+    this.agingStrategy = agingStrategy;
+    this.winningStrategy = winningStrategy;
+  }
+
+  //which player has the turn, RED is set to begin
+  Player whosTurn = RED;
+  private WorldImpl world = new WorldImpl();
+
+  //Gets a new tile terrainTile, and returns it.
+  public Tile getTileAt( Position p ) {
+    this.p = p;
+    Tile tile = WorldImpl.worldTileMap.get(p);
+    return tile;
+  }
+  //Returns a unit at position p
+  public Unit getUnitAt( Position p ) {
+    return WorldImpl.unitMap.get(p);
+  }
+  //Returns cityPosition at Position p
+  public CityImpl getCityAt( Position p ) {
+    return WorldImpl.cityMap.get(p);
+  }
+
+  //returns the variable whosTurn
+  public Player getPlayerInTurn() { return whosTurn; }
+
+  //returns the winning player, which is RED at year 3000BC
+  public Player getWinner() {
+    return winningStrategy.getWinner(getAge());
+  }
+
+  //returns the current year of the game (age varaible)
+  public int getAge() { return agingStrategy.getAge(); }
+
+  //Returns true and removes the unit from current position, and adds the unit to the wanted position.
+  //Unless the wanted position is either a mountain tile or ocean tile.
   public boolean moveUnit( Position from, Position to ) {
+
+    String tileType = WorldImpl.worldTileMap.get(to).getTypeString();
+    Player thisUnitOwner = WorldImpl.unitMap.get(from).getOwner();;
+    Player otherUnitOwner;
+
+    //Test variables for obstacles
+    boolean thisPlayersTurn = getPlayerInTurn().equals(thisUnitOwner);
+    boolean isMountain = tileType.equals(GameConstants.MOUNTAINS);
+    boolean isOcean = tileType.equals(GameConstants.OCEANS);
+    boolean isFriendlyUnit = false;
+    boolean isEnemyUnit = false;
+    boolean isEmpty = WorldImpl.unitMap.get(to)== null;
+
+    //If there is a unit at the wanted tile, test if it is friend or foe, and save it in parameters.
+    if(!isEmpty){
+      otherUnitOwner = WorldImpl.unitMap.get(to).getOwner();
+      isFriendlyUnit = thisUnitOwner.equals(otherUnitOwner);
+      isEnemyUnit = !thisUnitOwner.equals(otherUnitOwner);
+    }
+
+    //Decision making, whether to allow the movement or not.
+    if(!thisPlayersTurn){return false;}
+    else if(isMountain) {return false;}
+    else if(isOcean){return false;}
+    else if(isFriendlyUnit){return false;}
+    else if(isEmpty || isEnemyUnit){
+      Unit unit = WorldImpl.unitMap.get(from);
+      WorldImpl.unitMap.remove(from);
+      WorldImpl.unitMap.put(to, unit);
+      return true;
+    }
     return false;
   }
-  public void endOfTurn() {}
+
+  //at the end of turn switch turn to the correct player and set age to 100
+  public void endOfTurn() {
+
+    if(whosTurn == BLUE){
+      whosTurn = RED;
+      agingStrategy.aging(); // get older
+      WorldImpl.cityMap.get(new Position(1,1)).addProductionValue();
+      WorldImpl.cityMap.get(new Position(4,1)).addProductionValue();
+      produceUnit();
+
+    }
+    else{
+      whosTurn = BLUE;
+    }
+
+  }
+
   public void changeWorkForceFocusInCityAt( Position p, String balance ) {}
-  public void changeProductionInCityAt( Position p, String unitType ) {}
+  public void changeProductionInCityAt( Position p, String unitType ) {
+    CityImpl city = getCityAt(p);
+    city.changeProduction(unitType);
+  }
+
+  public void produceUnit(){
+
+    int settlerCost = 30;
+    int archerCost = 10;
+    int legionCost = 15;
+
+    //While loop, Running through the cityHashMap, and produces units, if the city has enough productionValue.
+
+    Iterator<Position> keySetIterator = WorldImpl.cityMap.keySet().iterator();
+
+    while(keySetIterator.hasNext()){
+      Position position = keySetIterator.next();
+      CityImpl city = WorldImpl.cityMap.get(position);
+      String cityProduction = city.getProduction();
+      int currentValue = city.getProductionValue();
+      boolean ArcherProducing = cityProduction.equals(GameConstants.ARCHER);
+      boolean LegionProducing = cityProduction.equals(GameConstants.LEGION);
+      boolean SettlerProducing = cityProduction.equals(GameConstants.SETTLER);
+      boolean enoughForArcher = currentValue >= archerCost;
+      boolean enoughForLegion = currentValue >= legionCost;
+      boolean enoughForSettler = currentValue >= settlerCost;
+
+      if(ArcherProducing && enoughForArcher){
+        city.buyUnit(archerCost);
+        WorldImpl.createUnit(position, city.getOwner(), cityProduction);
+      }else if (LegionProducing && enoughForLegion){
+        city.buyUnit(legionCost);
+        WorldImpl.createUnit(position, city.getOwner(), cityProduction);
+      }else if (SettlerProducing && enoughForSettler){
+        city.buyUnit(settlerCost);
+        WorldImpl.createUnit(position, city.getOwner(), cityProduction);
+      }
+    }
+
+  }
   public void performUnitActionAt( Position p ) {}
+
 }
