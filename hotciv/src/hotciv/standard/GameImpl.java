@@ -3,6 +3,7 @@ package hotciv.standard;
 import hotciv.framework.*;
 
 import java.util.Iterator;
+import java.util.Map;
 
 import static hotciv.framework.Player.*;
 
@@ -38,10 +39,12 @@ public class GameImpl implements Game {
   public static Position p;
   AgingStrategy agingStrategy;
   WinningStrategy winningStrategy;
+    UnitActionStrategy unitActionStrategy;
 
-  public GameImpl(AgingStrategy agingStrategy, WinningStrategy winningStrategy) {
+    public GameImpl(AgingStrategy agingStrategy, WinningStrategy winningStrategy, UnitActionStrategy unitActionStrategy) {
     this.agingStrategy = agingStrategy;
     this.winningStrategy = winningStrategy;
+        this.unitActionStrategy = unitActionStrategy;
   }
 
   //which player has the turn, RED is set to begin
@@ -183,6 +186,8 @@ public class GameImpl implements Game {
     }
 
   }
-  public void performUnitActionAt( Position p ) {}
+  public void performUnitActionAt( Position p ) {
+      unitActionStrategy.unitAction(this, p);
+  }
 
 }
