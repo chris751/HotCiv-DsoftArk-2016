@@ -49,7 +49,27 @@ public class TestGammaCiv {
         assertThat(game.getUnitAt(new Position(2,0)).getTypeString(), is(GameConstants.ARCHER));
         game.performUnitActionAt(new Position(2,0));
         assertThat(game.getUnitAt(new Position(2,0)).getDefensiveStrength(),is(6));
+    }
 
+    @Test
+    public void shouldNotMoveWhenFortified(){
+        assertThat(game.getUnitAt(new Position(2,0)).getTypeString(), is(GameConstants.ARCHER));
+        game.performUnitActionAt(new Position(2,0));
+        assertThat(game.getUnitAt(new Position(2,0)).getMoveCount(),is(0));
+    }
 
+    @Test
+    public void shouldbeAbleToMoveWhenNotFortified(){
+        assertThat(game.getUnitAt(new Position(2,0)).getTypeString(), is(GameConstants.ARCHER));
+        assertThat(game.getUnitAt(new Position(2,0)).getMoveCount(),is(1));
+    }
+
+    @Test
+    public void shouldBeAbleToReverseFortify(){
+        assertThat(game.getUnitAt(new Position(2,0)).getTypeString(), is(GameConstants.ARCHER));
+        game.performUnitActionAt(new Position(2,0));
+        assertThat(game.getUnitAt(new Position(2,0)).getDefensiveStrength(),is(6));
+        game.performUnitActionAt(new Position(2,0));
+        assertThat(game.getUnitAt(new Position(2,0)).getDefensiveStrength(),is(3));
     }
 }

@@ -51,9 +51,14 @@ public class UnitImpl implements Unit {
     public void setFortified(){
         if(isFortified == false){
             isFortified = true;
-        }else{
+            defenseStength=defenseStength*2;
+            moveCount=0;
+        }else if (isFortified ==true){
             isFortified = false;
-        }
+            defenseStength = defenseStength/2;
+            moveCount=1;
+        }else
+            isFortified = false;
     }
 
     public boolean getFortified(){
@@ -62,11 +67,7 @@ public class UnitImpl implements Unit {
 
     @Override
     public int getDefensiveStrength() {
-        if (isFortified) {
-            return defenseStength * 2;
-        } else {
-            return defenseStength;
-        }
+        return defenseStength;
     }
 
     @Override
