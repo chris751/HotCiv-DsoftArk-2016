@@ -190,4 +190,8 @@ public class GameImpl implements Game {
       unitActionStrategy.unitAction(this, p);
   }
 
+  public WorldImpl getWorld(){
+    return this.world;
+  }
+
 }

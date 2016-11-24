@@ -19,10 +19,37 @@ public class TestGammaCiv {
     }
 
     @Test
-    public void settlerCanProdudeCity(){
+    public void settlerCanProduceCity(){
         assertThat(game.getUnitAt(new Position(4,3)).getTypeString(), is(GameConstants.SETTLER));
         game.performUnitActionAt(new Position(4,3));
         assertThat(game.getCityAt(new Position(4,3)), is(notNullValue()));
+
+    }
+
+    @Test
+    public void settlerOwnerIsTheSameAsProducedCity(){
+        assertThat(game.getUnitAt(new Position(4,3)).getTypeString(), is(GameConstants.SETTLER));
+        assertThat(game.getUnitAt(new Position(4,3)).getOwner(), is(Player.RED));
+        game.performUnitActionAt(new Position(4,3));
+        assertThat(game.getCityAt(new Position(4,3)), is(notNullValue()));
+        assertThat(game.getCityAt(new Position(4,3)).getOwner(),is(Player.RED));
+    }
+
+    @Test
+    public void settlerShouldBeRemovedWhenBuildingACity(){
+        assertThat(game.getUnitAt(new Position(4,3)).getTypeString(), is(GameConstants.SETTLER));
+        game.performUnitActionAt(new Position(4,3));
+        assertThat(game.getCityAt(new Position(4,3)), is(notNullValue()));
+        assertThat(game.getUnitAt(new Position(4,3)), is(nullValue()));
+
+    }
+
+    @Test
+    public void archerFortificationShouldHaveDoubleAmountStrength(){
+        assertThat(game.getUnitAt(new Position(2,0)).getTypeString(), is(GameConstants.ARCHER));
+        game.performUnitActionAt(new Position(2,0));
+        assertThat(game.getUnitAt(new Position(2,0)).getDefensiveStrength(),is(6));
+
 
     }
 }

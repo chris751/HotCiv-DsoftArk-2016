@@ -49,4 +49,12 @@ public class WorldImpl implements World {
     }
 
 
+    public void createCity(Position p, Player owner) {
+        CityImpl city = new CityImpl(owner);
+        cityMap.put(p, city);
+    }
+
+    public void slayTheUnitAtPosition(Position p){
+        unitMap.remove(p);
+    }
 }

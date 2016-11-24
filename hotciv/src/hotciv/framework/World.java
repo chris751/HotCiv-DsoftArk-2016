@@ -6,4 +6,6 @@ package hotciv.framework;
 public interface World {
     //Creates a tile type at position p
     Tile createTile(String terrain);
+
+
 }
