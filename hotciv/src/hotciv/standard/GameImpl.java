@@ -2,6 +2,7 @@ package hotciv.standard;
 
 import hotciv.framework.*;
 
+import java.util.HashMap;
 import java.util.Iterator;
 
 import static hotciv.framework.Player.*;
@@ -38,29 +39,40 @@ public class GameImpl implements Game {
   public static Position p;
   AgingStrategy agingStrategy;
   WinningStrategy winningStrategy;
+    UnitActionStrategy unitActionStrategy;
+  WorldStrategy worldStrategy;
 
-  public GameImpl(AgingStrategy agingStrategy, WinningStrategy winningStrategy) {
-    this.agingStrategy = agingStrategy;
-    this.winningStrategy = winningStrategy;
+    HashMap<Position, Tile> tileMap;
+    HashMap<Position, Unit> unitMap;
+    HashMap<Position, CityImpl> cityMap;
+
+    public GameImpl(AgingStrategy agingStrategy, WinningStrategy winningStrategy, UnitActionStrategy unitActionStrategy, WorldStrategy worldStrategy) {
+        this.agingStrategy = agingStrategy;
+        this.winningStrategy = winningStrategy;
+        this.unitActionStrategy = unitActionStrategy;
+        this.worldStrategy = worldStrategy;
+
+        tileMap = worldStrategy.getWorldTileMap();
+        unitMap = worldStrategy.getUnitMap();
+        cityMap = worldStrategy.getCityMap();
   }
 
   //which player has the turn, RED is set to begin
   Player whosTurn = RED;
-  private WorldImpl world = new WorldImpl();
 
   //Gets a new tile terrainTile, and returns it.
   public Tile getTileAt( Position p ) {
     this.p = p;
-    Tile tile = WorldImpl.worldTileMap.get(p);
+    Tile tile = tileMap.get(p);
     return tile;
   }
   //Returns a unit at position p
   public Unit getUnitAt( Position p ) {
-    return WorldImpl.unitMap.get(p);
+    return unitMap.get(p);
   }
   //Returns cityPosition at Position p
   public CityImpl getCityAt( Position p ) {
-    return WorldImpl.cityMap.get(p);
+    return cityMap.get(p);
   }
 
   //returns the variable whosTurn
@@ -68,7 +80,7 @@ public class GameImpl implements Game {
 
   //returns the winning player, which is RED at year 3000BC
   public Player getWinner() {
-    return winningStrategy.getWinner(getAge());
+    return winningStrategy.getWinner(this);
   }
 
   //returns the current year of the game (age varaible)
@@ -78,8 +90,8 @@ public class GameImpl implements Game {
   //Unless the wanted position is either a mountain tile or ocean tile.
   public boolean moveUnit( Position from, Position to ) {
 
-    String tileType = WorldImpl.worldTileMap.get(to).getTypeString();
-    Player thisUnitOwner = WorldImpl.unitMap.get(from).getOwner();;
+    String tileType = tileMap.get(to).getTypeString();
+    Player thisUnitOwner = unitMap.get(from).getOwner();;
     Player otherUnitOwner;
 
     //Test variables for obstacles
@@ -88,13 +100,19 @@ public class GameImpl implements Game {
     boolean isOcean = tileType.equals(GameConstants.OCEANS);
     boolean isFriendlyUnit = false;
     boolean isEnemyUnit = false;
-    boolean isEmpty = WorldImpl.unitMap.get(to)== null;
+    boolean isEmpty = unitMap.get(to)== null;
+    boolean isEnemyCity = false;
+    boolean noCity = cityMap.get(to) == null;
 
     //If there is a unit at the wanted tile, test if it is friend or foe, and save it in parameters.
     if(!isEmpty){
-      otherUnitOwner = WorldImpl.unitMap.get(to).getOwner();
+      otherUnitOwner = unitMap.get(to).getOwner();
       isFriendlyUnit = thisUnitOwner.equals(otherUnitOwner);
       isEnemyUnit = !thisUnitOwner.equals(otherUnitOwner);
+
+    }
+    if(!noCity){
+      isEnemyCity = !cityMap.get(to).getOwner().equals(getPlayerInTurn());
     }
 
     //Decision making, whether to allow the movement or not.
@@ -103,10 +121,18 @@ public class GameImpl implements Game {
     else if(isOcean){return false;}
     else if(isFriendlyUnit){return false;}
     else if(isEmpty || isEnemyUnit){
-      Unit unit = WorldImpl.unitMap.get(from);
-      WorldImpl.unitMap.remove(from);
-      WorldImpl.unitMap.put(to, unit);
-      return true;
+        if(isEnemyCity){
+          cityMap.put(to,new CityImpl(getPlayerInTurn()));
+          Unit unit =unitMap.get(from);
+          unitMap.remove(from);
+          unitMap.put(to, unit);
+          return true;
+        }else {
+          Unit unit = unitMap.get(from);
+          unitMap.remove(from);
+          unitMap.put(to, unit);
+          return true;
+        }
     }
     return false;
   }
@@ -117,8 +143,8 @@ public class GameImpl implements Game {
     if(whosTurn == BLUE){
       whosTurn = RED;
       agingStrategy.aging(); // get older
-      WorldImpl.cityMap.get(new Position(1,1)).addProductionValue();
-      WorldImpl.cityMap.get(new Position(4,1)).addProductionValue();
+      cityMap.get(new Position(1,1)).addProductionValue();
+      cityMap.get(new Position(4,1)).addProductionValue();
       produceUnit();
 
     }
@@ -142,11 +168,11 @@ public class GameImpl implements Game {
 
     //While loop, Running through the cityHashMap, and produces units, if the city has enough productionValue.
 
-    Iterator<Position> keySetIterator = WorldImpl.cityMap.keySet().iterator();
+    Iterator<Position> keySetIterator = cityMap.keySet().iterator();
 
     while(keySetIterator.hasNext()){
       Position position = keySetIterator.next();
-      CityImpl city = WorldImpl.cityMap.get(position);
+      CityImpl city = cityMap.get(position);
       String cityProduction = city.getProduction();
       int currentValue = city.getProductionValue();
       boolean ArcherProducing = cityProduction.equals(GameConstants.ARCHER);
@@ -158,17 +184,22 @@ public class GameImpl implements Game {
 
       if(ArcherProducing && enoughForArcher){
         city.buyUnit(archerCost);
-        WorldImpl.createUnit(position, city.getOwner(), cityProduction);
+        worldStrategy.createUnit(position, city.getOwner(), cityProduction, unitMap);
       }else if (LegionProducing && enoughForLegion){
         city.buyUnit(legionCost);
-        WorldImpl.createUnit(position, city.getOwner(), cityProduction);
+        worldStrategy.createUnit(position, city.getOwner(), cityProduction, unitMap);
       }else if (SettlerProducing && enoughForSettler){
         city.buyUnit(settlerCost);
-        WorldImpl.createUnit(position, city.getOwner(), cityProduction);
+        worldStrategy.createUnit(position, city.getOwner(), cityProduction, unitMap);
       }
     }
 
   }
-  public void performUnitActionAt( Position p ) {}
+  public void performUnitActionAt( Position p ) {
+      unitActionStrategy.unitAction(this, p);
+  }
 
+  public WorldStrategy getWorld(){
+    return worldStrategy;
+  }
 }

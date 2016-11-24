@@ -42,7 +42,7 @@ public class TestAlphaCiv {
   /** Fixture for alphaciv testing. */
   @Before
   public void setUp() {
-    game = new GameImpl(new AlphaAging(), new AlphaWin());
+    game = new GameImpl(new AlphaAging(), new AlphaWin(), new AlphaUnitAction(), new AlphaWorld());
 
   }
 
@@ -472,5 +472,25 @@ public class TestAlphaCiv {
         assertThat(settler.getOwner() ,is(Player.RED));
     }
 
+    @Test
+    public void settlerActionDoesNothing(){
+        assertThat(game.getUnitAt(new Position(4,3)).getTypeString(), is(GameConstants.SETTLER ));
+        game.performUnitActionAt(new Position(4,3));
+        assertThat(game.getCityAt(new Position (4,3)),is(nullValue()));
+    }
 
+    @Test
+    public void archerShouldHave3Defence(){
+        assertThat(game.getUnitAt(new Position(2,0)).getDefensiveStrength(), is(3));
+    }
+
+    @Test
+    public void legionShouldHave2Defence(){
+        assertThat(game.getUnitAt(new Position(3,2)).getDefensiveStrength(), is(2));
+    }
+
+    @Test
+    public void settlerShouldHave2Defence(){
+        assertThat(game.getUnitAt(new Position(4,3)).getDefensiveStrength(), is(3));
+    }
 }
