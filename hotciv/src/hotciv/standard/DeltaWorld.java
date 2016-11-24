@@ -78,17 +78,23 @@ public class DeltaWorld implements WorldStrategy {
                     worldTileMap.put(p, createTile(type));
                 }
             }
+            cityMap.put(new Position(8,12),new CityImpl(Player.RED));
+            cityMap.put(new Position(4,5),new CityImpl(Player.BLUE));
+            unitMap.put(new Position(4,4),new UnitImpl(Player.BLUE,GameConstants.LEGION));
+            unitMap.put(new Position(3,8),new UnitImpl(Player.RED,GameConstants.ARCHER));
+            unitMap.put(new Position(5,5),new UnitImpl(Player.RED,GameConstants.SETTLER));
+
         }
 
 
     @Override
     public HashMap<Position, Unit> getUnitMap() {
-        return null;
+        return unitMap;
     }
 
     @Override
     public HashMap<Position, CityImpl> getCityMap() {
-        return null;
+        return cityMap;
     }
 
     @Override
