@@ -15,7 +15,7 @@ public class TestGammaCiv {
     /** Fixture for betaciv testing. */
     @Before
     public void setUp() {
-        game = new GameImpl(new AlphaAging(), new AlphaWin(), new GammaUnitAction());
+        game = new GameImpl(new AlphaAging(), new AlphaWin(), new GammaUnitAction(), new AlphaWorld());
     }
 
     @Test

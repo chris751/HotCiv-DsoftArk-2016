@@ -10,7 +10,7 @@ import hotciv.framework.UnitActionStrategy;
  */
 public class GammaUnitAction implements UnitActionStrategy {
 
-    WorldImpl gameWorld;
+    AlphaWorld gameWorld;
     Position p;
     @Override
     public void unitAction(GameImpl game, Position p) {

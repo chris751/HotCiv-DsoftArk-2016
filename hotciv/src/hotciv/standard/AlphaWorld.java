@@ -3,19 +3,17 @@ package hotciv.standard;
 import hotciv.framework.*;
 
 import java.util.HashMap;
-import java.util.Iterator;
-import java.util.Map;
 
 /**
  * Created by Christian on 15/11/2016.
  */
-public class WorldImpl implements World {
+public class AlphaWorld implements WorldStrategy {
 
     static HashMap<Position, Tile> worldTileMap = new HashMap<Position, Tile>();
     static HashMap<Position, CityImpl> cityMap = new HashMap<Position, CityImpl>();
     public static HashMap<Position, Unit> unitMap = new HashMap<Position, Unit>();
 
-    public WorldImpl() {
+    public AlphaWorld() {
         createTileMap();
     }
 
