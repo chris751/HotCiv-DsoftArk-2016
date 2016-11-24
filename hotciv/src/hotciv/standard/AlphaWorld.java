@@ -9,7 +9,7 @@ import java.util.HashMap;
  */
 public class AlphaWorld implements WorldStrategy {
 
-    static HashMap<Position, Tile> worldTileMap = new HashMap<Position, Tile>();
+    HashMap<Position, Tile> worldTileMap = new HashMap<Position, Tile>();
     static HashMap<Position, CityImpl> cityMap = new HashMap<Position, CityImpl>();
     public static HashMap<Position, Unit> unitMap = new HashMap<Position, Unit>();
 
@@ -41,18 +41,38 @@ public class AlphaWorld implements WorldStrategy {
         }
     }
 
-    public static void createUnit(Position p, Player owner, String unitType){
+    public HashMap<Position, Unit> createUnit(Position p, Player owner, String unitType, HashMap<Position,Unit> unitMap){
+        this.unitMap = unitMap;
         UnitImpl unit = new UnitImpl(owner, unitType);
-        unitMap.put(p, unit);
+        this.unitMap.put(p, unit);
+        return this.unitMap;
     }
 
 
-    public void createCity(Position p, Player owner) {
+    public HashMap<Position, CityImpl> createCity(Position p, Player owner, HashMap<Position,CityImpl> cityMap) {
+        this.cityMap = cityMap;
         CityImpl city = new CityImpl(owner);
-        cityMap.put(p, city);
+        this.cityMap.put(p, city);
+        return this.cityMap;
     }
 
-    public void slayTheUnitAtPosition(Position p){
-        unitMap.remove(p);
+    public HashMap<Position, Unit> slayTheUnitAtPosition(Position p, HashMap<Position, Unit> unitMap){
+        this.unitMap = unitMap;
+        this.unitMap.remove(p);
+        return this.unitMap;
+    }
+
+    public HashMap<Position, Tile> getWorldTileMap() {
+        return worldTileMap;
+    }
+
+    @Override
+    public HashMap<Position, Unit> getUnitMap() {
+        return unitMap;
+    }
+
+    @Override
+    public HashMap<Position, CityImpl> getCityMap() {
+        return cityMap;
     }
 }
