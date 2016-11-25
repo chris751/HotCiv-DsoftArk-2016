@@ -41,16 +41,19 @@ public class GameImpl implements Game {
   WinningStrategy winningStrategy;
     UnitActionStrategy unitActionStrategy;
   WorldStrategy worldStrategy;
+    BattleStrategy battleStrategy;
 
     HashMap<Position, Tile> tileMap;
     HashMap<Position, Unit> unitMap;
     HashMap<Position, CityImpl> cityMap;
 
-    public GameImpl(AgingStrategy agingStrategy, WinningStrategy winningStrategy, UnitActionStrategy unitActionStrategy, WorldStrategy worldStrategy) {
+
+    public GameImpl(AgingStrategy agingStrategy, WinningStrategy winningStrategy, UnitActionStrategy unitActionStrategy, WorldStrategy worldStrategy, BattleStrategy battleStrategy) {
         this.agingStrategy = agingStrategy;
         this.winningStrategy = winningStrategy;
         this.unitActionStrategy = unitActionStrategy;
         this.worldStrategy = worldStrategy;
+        this.battleStrategy = battleStrategy;
 
         tileMap = worldStrategy.getWorldTileMap();
         unitMap = worldStrategy.getUnitMap();
@@ -122,16 +125,9 @@ public class GameImpl implements Game {
     else if(isFriendlyUnit){return false;}
     else if(isEmpty || isEnemyUnit){
         if(isEnemyCity){
-          cityMap.put(to,new CityImpl(getPlayerInTurn()));
-          Unit unit =unitMap.get(from);
-          unitMap.remove(from);
-          unitMap.put(to, unit);
-          return true;
+          return battleStrategy.winBattle(this,to,from);
         }else {
-          Unit unit = unitMap.get(from);
-          unitMap.remove(from);
-          unitMap.put(to, unit);
-          return true;
+          return battleStrategy.winBattle(this,to,from);
         }
     }
     return false;
@@ -202,4 +198,13 @@ public class GameImpl implements Game {
   public WorldStrategy getWorld(){
     return worldStrategy;
   }
+
+  public HashMap<Position,Unit> getUnitMap(){
+      return unitMap;
+  }
+
+  public HashMap<Position, CityImpl> getCityMap(){
+      return cityMap;
+  }
+
 }
