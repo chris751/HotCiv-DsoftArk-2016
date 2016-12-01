@@ -47,8 +47,12 @@ public class GameImpl implements Game {
     HashMap<Position, Unit> unitMap;
     HashMap<Position, CityImpl> cityMap;
 
+  private int redWinCounter;
+  private int blueWincounter;
 
-    public GameImpl(AgingStrategy agingStrategy, WinningStrategy winningStrategy, UnitActionStrategy unitActionStrategy, WorldStrategy worldStrategy, BattleStrategy battleStrategy) {
+
+
+  public GameImpl(AgingStrategy agingStrategy, WinningStrategy winningStrategy, UnitActionStrategy unitActionStrategy, WorldStrategy worldStrategy, BattleStrategy battleStrategy) {
         this.agingStrategy = agingStrategy;
         this.winningStrategy = winningStrategy;
         this.unitActionStrategy = unitActionStrategy;
@@ -83,6 +87,8 @@ public class GameImpl implements Game {
 
   //returns the winning player, which is RED at year 3000BC
   public Player getWinner() {
+
+
     return winningStrategy.getWinner(this);
   }
 
@@ -124,7 +130,13 @@ public class GameImpl implements Game {
     else if(isOcean){return false;}
     else if(isFriendlyUnit){return false;}
     else if(isEnemyUnit){
-      if(battleStrategy.winBattle(this, from, to)) {
+      if(battleStrategy.winBattle(this, to, from)) {
+        if(getUnitAt(from).equals(Player.RED)){
+          redWinCounter++;
+        }
+        else{
+          blueWincounter++;
+        }
         if (isEnemyCity) {
           cityMap.put(to, new CityImpl(getPlayerInTurn()));
           Unit unit = unitMap.get(from);
@@ -139,8 +151,14 @@ public class GameImpl implements Game {
         }
       }
       else{
-        unitMap.remove(from);
 
+        if(getUnitAt(from).equals(Player.RED)){
+          redWinCounter++;
+        }
+        else{
+          blueWincounter++;
+        }
+        unitMap.remove(from);
         return false;}
     } else if(isEmpty){
         Unit unit = unitMap.get(from);
@@ -224,5 +242,8 @@ public class GameImpl implements Game {
   public HashMap<Position, CityImpl> getCityMap(){
       return cityMap;
   }
+
+  public int getRedWinCounter(){ return redWinCounter; }
+  public int getBlueWinCounter(){ return blueWincounter; }
 
 }

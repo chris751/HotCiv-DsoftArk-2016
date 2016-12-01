@@ -8,7 +8,7 @@ import hotciv.framework.*;
 public class BetaWin implements WinningStrategy{
     Game game;
     @Override
-    public Player getWinner(Game game) {
+    public Player getWinner(GameImpl game) {
         this.game = game;
 
         City redCity = game.getCityAt(new Position(1,1));
@@ -24,4 +24,6 @@ public class BetaWin implements WinningStrategy{
 
 
     }
+
+
 }

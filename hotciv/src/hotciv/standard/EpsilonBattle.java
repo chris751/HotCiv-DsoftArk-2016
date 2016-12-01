@@ -4,6 +4,7 @@ import hotciv.framework.*;
 
 import java.util.ArrayList;
 import java.util.Iterator;
+import java.util.Random;
 
 /**
  * Created by Christian on 01/12/2016.
@@ -15,9 +16,15 @@ public class EpsilonBattle implements BattleStrategy{
     public boolean winBattle(GameImpl game, Position to, Position from) {
         this.game = game;
         int attackStr = game.getUnitAt(from).getAttackingStrength();
+        System.out.println(game.getUnitAt(from).getTypeString());
+        System.out.println(attackStr);
         int defendStr = game.getUnitAt(to).getDefensiveStrength();
+        System.out.println(game.getUnitAt(to).getTypeString());
+        System.out.println(defendStr);
+        Random attackDie = new Random();
+        Random defendDie = new Random();
 
-        if(attackStr>defendStr){
+        if(attackStr/*(attackDie.nextInt(6)+1)*/>defendStr/*(defendDie.nextInt(6)+1)*/){
             return true;
         }else {
             return false;

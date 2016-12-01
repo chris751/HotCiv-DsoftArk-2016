@@ -18,7 +18,7 @@ import static org.hamcrest.CoreMatchers.*;
  */
 public class TestEpsilonCiv {
 
-    private Game game;
+    private GameImpl game;
     private Iterator<Position> iter;
     private ArrayList<Position> neighborhood;
     private Position center, p;
@@ -27,7 +27,7 @@ public class TestEpsilonCiv {
     /** Fixture for betaciv testing. */
     @Before
     public void setUp() {
-        game = new GameImpl(new AlphaAging(), new AlphaWin(), new AlphaUnitAction(), new AlphaWorld(), new EpsilonBattle());
+        game = new GameImpl(new AlphaAging(), new EpsilonWin(), new AlphaUnitAction(), new AlphaWorld(), new EpsilonBattle());
     }
     /** helper method to insert elements in an iterator into a list. */
     private ArrayList<Position> convertIteration2List(Iterator<Position> iter) {
@@ -167,6 +167,8 @@ public class TestEpsilonCiv {
                 +0, EpsilonBattle.getFriendlySupport( game, new Position(0,3), Player.BLUE));
     }
 
+    //Test nedenstående er hvor der er ingen tegningslag
+    @Ignore
     @Test
     public void bigAttackStrWinsOverDefendStr() {
 
@@ -182,5 +184,72 @@ public class TestEpsilonCiv {
         assertThat((game.getUnitAt(pos(1,1)).getOwner()),is(Player.RED));
 
 
+    }
+
+    @Test
+    public void firstPlayerToWinThreeAttacksWinsGame() {
+        System.out.print(game.getUnitMap());
+        System.out.print(game.getUnitAt(pos(1, 1)).getOwner());
+        System.out.print(game.getUnitAt(pos(3, 3)).getOwner());
+        System.out.print(game.getUnitAt(pos(4, 1)).getOwner());
+        assertThat(game.getUnitAt(pos(4,3)).getTypeString(),is(GameConstants.SETTLER));
+        game.endOfTurn();
+        game.endOfTurn();
+
+        game.endOfTurn();
+        game.endOfTurn();
+
+        game.endOfTurn();
+        game.endOfTurn();
+
+        game.endOfTurn();
+        game.endOfTurn();
+
+        game.endOfTurn();
+        game.endOfTurn();
+        assertThat(game.getUnitAt(pos(1, 1)).getTypeString(), is(GameConstants.SETTLER));
+        assertThat(game.getUnitAt(pos(4, 1)).getTypeString(), is(GameConstants.SETTLER));
+
+        assertThat(game.getUnitAt(pos(1, 1)).getOwner(), is(Player.RED));
+        assertThat(game.getUnitAt(pos(4, 1)).getOwner(), is(Player.BLUE));
+
+        game.moveUnit(pos(1,1), pos(2,1));
+        game.moveUnit(pos(4,1), pos(5,1));
+
+        game.endOfTurn();
+        game.endOfTurn();
+
+        game.endOfTurn();
+        game.endOfTurn();
+
+        game.endOfTurn();
+        game.endOfTurn();
+
+        game.endOfTurn();
+        game.endOfTurn();
+
+        game.endOfTurn();
+        game.endOfTurn();
+
+        assertThat(game.getUnitAt(pos(1, 1)).getTypeString(), is(GameConstants.SETTLER));
+        assertThat(game.getUnitAt(pos(4, 1)).getTypeString(), is(GameConstants.SETTLER));
+
+        assertThat(game.getUnitAt(pos(1, 1)).getOwner(), is(Player.RED));
+        assertThat(game.getUnitAt(pos(4, 1)).getOwner(), is(Player.BLUE));
+
+        assertThat(game.getUnitAt(pos(4,3)).getAttackingStrength(), is(0));
+        System.out.println(game.getUnitAt(pos(3,2)).getDefensiveStrength());
+
+        game.moveUnit(pos(4,3),pos(3,2));
+        assertThat(game.getUnitAt(pos(3,2)).getTypeString(), is(GameConstants.LEGION));
+        game.moveUnit(pos(1,1),pos(0,7));
+        game.moveUnit(pos(0,7),pos(3,2));
+        assertThat(game.getUnitAt(pos(3,2)).getTypeString(), is(GameConstants.LEGION));
+        game.moveUnit(pos(2,1),pos(3,2));
+        assertThat(game.getUnitAt(pos(3,2)).getTypeString(), is(GameConstants.LEGION));
+
+        System.out.print(game.getRedWinCounter());
+        System.out.print(game.getBlueWinCounter());
+        assertThat(game.getWinner(), is(Player.BLUE));
     }
 }

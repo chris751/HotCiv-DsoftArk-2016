@@ -411,6 +411,7 @@ public class TestAlphaCiv {
 
     @Test
     public void shouldSpawnRedSettlerAtTile1_1(){
+
         City redCity = game.getCityAt(new Position(1,1));
         assertThat(redCity.getProduction(), is(GameConstants.SETTLER));
         assertThat(redCity.getProductionValue(), is(0));

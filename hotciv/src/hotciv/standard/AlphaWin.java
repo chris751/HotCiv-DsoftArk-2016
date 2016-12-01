@@ -12,7 +12,7 @@ public class AlphaWin implements WinningStrategy{
     int winAge = 3000;
     Game game;
     @Override
-    public Player getWinner(Game game) {
+    public Player getWinner(GameImpl game) {
         this.game = game;
         int currentAge = game.getAge();
 
