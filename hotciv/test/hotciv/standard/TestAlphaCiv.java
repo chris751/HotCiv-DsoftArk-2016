@@ -493,4 +493,5 @@ public class TestAlphaCiv {
     public void settlerShouldHave2Defence(){
         assertThat(game.getUnitAt(new Position(4,3)).getDefensiveStrength(), is(3));
     }
+
 }

@@ -123,7 +123,7 @@ public class GameImpl implements Game {
     else if(isMountain) {return false;}
     else if(isOcean){return false;}
     else if(isFriendlyUnit){return false;}
-    else if(isEmpty || isEnemyUnit){
+    else if(isEnemyUnit){
       if(battleStrategy.winBattle(this, from, to)) {
         if (isEnemyCity) {
           cityMap.put(to, new CityImpl(getPlayerInTurn()));
@@ -138,7 +138,15 @@ public class GameImpl implements Game {
           return true;
         }
       }
-      else return false;
+      else{
+        unitMap.remove(from);
+
+        return false;}
+    } else if(isEmpty){
+        Unit unit = unitMap.get(from);
+        unitMap.remove(from);
+        unitMap.put(to, unit);
+        return true;
     }
     return false;
   }
@@ -190,13 +198,13 @@ public class GameImpl implements Game {
 
       if(ArcherProducing && enoughForArcher){
         city.buyUnit(archerCost);
-        worldStrategy.createUnit(position, city.getOwner(), cityProduction, unitMap);
+        unitMap = worldStrategy.createUnit(position, city.getOwner(), cityProduction, unitMap);
       }else if (LegionProducing && enoughForLegion){
         city.buyUnit(legionCost);
-        worldStrategy.createUnit(position, city.getOwner(), cityProduction, unitMap);
+        unitMap = worldStrategy.createUnit(position, city.getOwner(), cityProduction, unitMap);
       }else if (SettlerProducing && enoughForSettler){
         city.buyUnit(settlerCost);
-        worldStrategy.createUnit(position, city.getOwner(), cityProduction, unitMap);
+        unitMap = worldStrategy.createUnit(position, city.getOwner(), cityProduction, unitMap);
       }
     }
 
