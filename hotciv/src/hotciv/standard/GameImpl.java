@@ -124,11 +124,21 @@ public class GameImpl implements Game {
     else if(isOcean){return false;}
     else if(isFriendlyUnit){return false;}
     else if(isEmpty || isEnemyUnit){
-        if(isEnemyCity){
-          return battleStrategy.winBattle(this,to,from);
-        }else {
-          return battleStrategy.winBattle(this,to,from);
+      if(battleStrategy.winBattle(this, from, to)) {
+        if (isEnemyCity) {
+          cityMap.put(to, new CityImpl(getPlayerInTurn()));
+          Unit unit = unitMap.get(from);
+          unitMap.remove(from);
+          unitMap.put(to, unit);
+          return true;
+        } else {
+          Unit unit = unitMap.get(from);
+          unitMap.remove(from);
+          unitMap.put(to, unit);
+          return true;
         }
+      }
+      else return false;
     }
     return false;
   }
