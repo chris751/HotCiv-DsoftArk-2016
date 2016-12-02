@@ -91,8 +91,6 @@ public class GameImpl implements Game {
 
   //returns the winning player, which is RED at year 3000BC
   public Player getWinner() {
-
-
     return winningStrategy.getWinner(this);
   }
 
