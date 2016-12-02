@@ -2,10 +2,12 @@ package hotciv.framework;
 
 import hotciv.standard.GameImpl;
 
+import java.util.HashMap;
+
 /**
  * Created by Christian on 24/11/2016.
  */
 public interface UnitActionStrategy {
 
-    void unitAction(GameImpl game, Position p);
+    HashMap<Position, Unit> unitAction(GameImpl game, Position p);
 }

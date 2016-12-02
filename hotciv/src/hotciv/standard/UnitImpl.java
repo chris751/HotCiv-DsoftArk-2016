@@ -30,6 +30,9 @@ public class UnitImpl implements Unit {
             defenseStength = 3;
             attackStrength = 0;
             moveCount = 1;
+        }else if(type.equals(OurConstants.BOMB)){
+            defenseStength = 1;
+            attackStrength = 0;
         }
     }
 

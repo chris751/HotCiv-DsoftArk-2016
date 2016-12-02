@@ -176,14 +176,12 @@ public class GameImpl implements Game {
 
   //at the end of turn switch turn to the correct player and set age to 100
   public void endOfTurn() {
-
     if(whosTurn == BLUE){
       whosTurn = RED;
       agingStrategy.aging(); // get older
       cityMap.get(new Position(1,1)).addProductionValue();
       cityMap.get(new Position(4,1)).addProductionValue();
       produceUnit();
-
     }
     else{
       whosTurn = BLUE;
@@ -199,6 +197,7 @@ public class GameImpl implements Game {
 
   public void produceUnit(){
 
+    int bombCost = 60;
     int settlerCost = 30;
     int archerCost = 10;
     int legionCost = 15;
@@ -215,9 +214,11 @@ public class GameImpl implements Game {
       boolean ArcherProducing = cityProduction.equals(GameConstants.ARCHER);
       boolean LegionProducing = cityProduction.equals(GameConstants.LEGION);
       boolean SettlerProducing = cityProduction.equals(GameConstants.SETTLER);
+      boolean BombProducing = cityProduction.equals(OurConstants.BOMB);
       boolean enoughForArcher = currentValue >= archerCost;
       boolean enoughForLegion = currentValue >= legionCost;
       boolean enoughForSettler = currentValue >= settlerCost;
+      boolean enoughForBomb = currentValue >= bombCost;
 
       if(ArcherProducing && enoughForArcher){
         city.buyUnit(archerCost);
@@ -228,12 +229,19 @@ public class GameImpl implements Game {
       }else if (SettlerProducing && enoughForSettler){
         city.buyUnit(settlerCost);
         unitMap = worldStrategy.createUnit(position, city.getOwner(), cityProduction, unitMap);
+      }else if (BombProducing && enoughForBomb){
+        city.buyUnit(bombCost);
+        unitMap = worldStrategy.createUnit(position, city.getOwner(), cityProduction, unitMap);
       }
     }
 
   }
   public void performUnitActionAt( Position p ) {
-      unitActionStrategy.unitAction(this, p);
+      if(getUnitAt(p).getTypeString().equals(OurConstants.BOMB)){
+        unitMap = unitActionStrategy.unitAction(this, p);
+      }else {
+        unitActionStrategy.unitAction(this, p);
+      }
   }
 
   public WorldStrategy getWorld(){
