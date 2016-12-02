@@ -10,29 +10,25 @@ import java.util.Random;
  * Created by Christian on 01/12/2016.
  */
 public class EpsilonBattle implements BattleStrategy{
+    private BattleDescisionStrategy battleDescisionStrategy;
     Game game;
+
+    public EpsilonBattle(BattleDescisionStrategy battleDescisionStrategy) {
+        this.battleDescisionStrategy = battleDescisionStrategy;
+    }
 
     @Override
     public boolean winBattle(GameImpl game, Position to, Position from) {
         this.game = game;
         int attackStr = game.getUnitAt(from).getAttackingStrength();
-        System.out.println(game.getUnitAt(from).getTypeString());
-        System.out.println(attackStr);
         int defendStr = game.getUnitAt(to).getDefensiveStrength();
-        System.out.println(game.getUnitAt(to).getTypeString());
+        attackStr = (attackStr + getFriendlySupport(this.game, from, game.getUnitAt(from).getOwner()))* getTerrainFactor(this.game, from);
+        defendStr= (defendStr + getFriendlySupport(this.game, to, game.getUnitAt(to).getOwner()))* getTerrainFactor(this.game, to);
+
         System.out.println(defendStr);
-        Random attackDie = new Random();
-        Random defendDie = new Random();
+        System.out.println(attackStr);
 
-        if(attackStr/*(attackDie.nextInt(6)+1)*/>defendStr/*(defendDie.nextInt(6)+1)*/){
-            return true;
-        }else {
-            return false;
-        }
-    }
-
-    public static int getAttackingStrength() {
-        return 4;
+        return battleDescisionStrategy.winDecision(defendStr, attackStr);
     }
 
     /** get the terrain factor for the attack and defense strength

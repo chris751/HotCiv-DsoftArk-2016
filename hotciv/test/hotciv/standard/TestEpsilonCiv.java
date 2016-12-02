@@ -27,7 +27,7 @@ public class TestEpsilonCiv {
     /** Fixture for betaciv testing. */
     @Before
     public void setUp() {
-        game = new GameImpl(new AlphaAging(), new EpsilonWin(), new AlphaUnitAction(), new AlphaWorld(), new EpsilonBattle());
+        game = new GameImpl(new AlphaAging(), new EpsilonWin(), new AlphaUnitAction(), new AlphaWorld(), new EpsilonBattle(new FixedBattleDecision()));
     }
     /** helper method to insert elements in an iterator into a list. */
     private ArrayList<Position> convertIteration2List(Iterator<Position> iter) {
@@ -43,57 +43,9 @@ public class TestEpsilonCiv {
         return new Position(y,x);
     }
 
-    @Ignore
-    @Test
-    public void whenAttackingUnitWinsBattleDeleteDefeatedAndMove() {
-
-        assertThat(game.getUnitAt(new Position(2,0)), is(notNullValue()));
-        game.moveUnit(new Position(2,0), new Position(3,0));
-        //game.endOfTurn();
-        //game.endOfTurn();
-        game.moveUnit(new Position(3,0), new Position(3,1));
-        assertThat(game.moveUnit(new Position(3,1), new Position(3,2)), is(true));
-    }
-    @Ignore
-    @Test
-    public void shouldGet2TimesAttackingStrengthWhenOnForrestOrHill(){
-        assertThat(game.getUnitAt(new Position(1,1)), is(notNullValue()));
-
-        assertThat(game.getUnitAt(new Position(2,0)), is(notNullValue()));
-        game.moveUnit(pos(2,0),pos(0,1));
-      /*  assertThat(game.getUnitAt(pos(2,1)),is(notNullValue()));
-        game.endOfTurn();
-        game.endOfTurn();
-        game.moveUnit(pos(2,1),pos(1,1));
-        assertThat(game.getUnitAt(pos(1,1)),is(notNullValue()));
-        assertThat(game.getUnitAt(pos(0,1)),is(nullValue()));
-        game.endOfTurn();
-        game.endOfTurn();
-        assertThat(game.getPlayerInTurn(),is(Player.RED));
-        game.moveUnit(new Position(1,1),new Position(0,1));
-        game.endOfTurn();
-        game.endOfTurn();
-        assertThat(game.getCityAt(pos(1,1)).getOwner(),is(Player.RED));
-        assertThat(game.getUnitAt(pos(1,1)),is(nullValue()));
-        assertThat(game.getUnitAt(pos(0,1)),is(notNullValue()));*/
-        assertThat(game.getTileAt(pos(0,1)).getTypeString(), is(GameConstants.HILLS));
-        assertThat(game.getUnitAt(pos(0,1)).getTypeString(), is(GameConstants.ARCHER));
-        assertThat(EpsilonBattle.getAttackingStrength(), is(game.getUnitAt(pos(0,1)).getAttackingStrength()* 2));
-    }
-    @Ignore
-    @Test
-    public void archerAttackingStrShouldBeMultipliedBy3(){
-        assertThat(game.getUnitAt(pos(2,0)),is(notNullValue()));
-        assertThat(game.getUnitAt(pos(2,0)).getTypeString(),is(GameConstants.ARCHER));
-        game.moveUnit(pos(2,0),pos(1,1));
-       /* game.moveUnit(pos(2,1),pos(1,1));
-        assertThat(game.getUnitAt(pos(1,1)),is(notNullValue()));*/
-        assertThat(game.getUnitAt(pos(1,1)).getTypeString(),is(GameConstants.ARCHER));
 
 
-        assertThat(EpsilonBattle.getAttackingStrength(),is(game.getUnitAt(pos(1,1)).getAttackingStrength()*3));
 
-    }
     @Test public void shouldGiveCorrectTerrainFactors() {
         // plains have multiplier 1
         assertEquals( 1, EpsilonBattle.getTerrainFactor( game, new Position(0,0)));
@@ -168,10 +120,8 @@ public class TestEpsilonCiv {
     }
 
     //Test nedenstående er hvor der er ingen tegningslag
-    @Ignore
     @Test
     public void bigAttackStrWinsOverDefendStr() {
-
         assertThat(game.getUnitAt(pos(2,0)).getTypeString(),is(GameConstants.ARCHER));
         game.moveUnit(pos(2,0),pos(1,1));
         game.endOfTurn();
@@ -182,8 +132,6 @@ public class TestEpsilonCiv {
         assertThat(game.getUnitAt(pos(2,1)),is(nullValue()));
         assertThat(game.getUnitAt(pos(1,1)).getTypeString(),is(GameConstants.ARCHER));
         assertThat((game.getUnitAt(pos(1,1)).getOwner()),is(Player.RED));
-
-
     }
 
     @Test
