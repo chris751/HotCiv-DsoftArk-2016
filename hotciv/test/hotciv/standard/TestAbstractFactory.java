@@ -1,6 +1,7 @@
 package hotciv.standard;
 
 import hotciv.framework.Game;
+import hotciv.standard.Factories.TestGameFactory;
 import org.junit.Before;
 
 /**
@@ -11,7 +12,7 @@ public class TestAbstractFactory {
 
     @Before
     public void setUp(){
-        game = new GameImpl(new TestAbstractFactory());
+        game = new GameImpl(new TestGameFactory());
 
     }
 }

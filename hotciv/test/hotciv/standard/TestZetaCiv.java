@@ -1,6 +1,7 @@
 package hotciv.standard;
 
 import hotciv.framework.*;
+import hotciv.standard.Factories.ZetaFactory;
 import org.junit.Before;
 import org.junit.Ignore;
 import org.junit.Test;
@@ -18,7 +19,7 @@ public class TestZetaCiv {
 
     @Before
     public void setUp() {
-        game = new GameImpl(new AlphaAging(), new ZetaWin(new BetaWin(), new EpsilonWin()), new AlphaUnitAction(), new AlphaWorld(), new AlphaBattle());
+        game = new GameImpl(new ZetaFactory());
     }
 
     public void endRound(int roundCount){

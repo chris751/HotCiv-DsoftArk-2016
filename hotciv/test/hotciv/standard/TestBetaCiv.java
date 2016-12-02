@@ -1,6 +1,7 @@
 package hotciv.standard;
 import hotciv.framework.*;
 
+import hotciv.standard.Factories.BetaFactory;
 import org.junit.*;
 import static org.junit.Assert.*;
 import static org.hamcrest.CoreMatchers.*;
@@ -14,7 +15,7 @@ public class TestBetaCiv {
     /** Fixture for betaciv testing. */
     @Before
     public void setUp() {
-        game = new GameImpl(new BetaAging(), new BetaWin(), new AlphaUnitAction(), new AlphaWorld(), new AlphaBattle());
+        game = new GameImpl(new BetaFactory());
     }
 
 

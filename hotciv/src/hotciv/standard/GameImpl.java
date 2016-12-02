@@ -54,13 +54,14 @@ public class GameImpl implements Game {
 
 
 
-  public GameImpl(AgingStrategy agingStrategy, WinningStrategy winningStrategy, UnitActionStrategy unitActionStrategy, WorldStrategy worldStrategy, BattleStrategy battleStrategy) {
-        
-        this.agingStrategy = agingStrategy;
-        this.winningStrategy = winningStrategy;
-        this.unitActionStrategy = unitActionStrategy;
-        this.worldStrategy = worldStrategy;
-        this.battleStrategy = battleStrategy;
+  public GameImpl(GameFactory factory) {
+        this.factory = factory;
+        this.agingStrategy = factory.createAgingStrategy();
+        this.winningStrategy = factory.createWinningStrategy();
+        this.unitActionStrategy = factory.createActionStrategy();
+        this.worldStrategy = factory.createWorldStrategy();
+        this.battleStrategy = factory.createBattleStrategy();
+
 
         tileMap = worldStrategy.getWorldTileMap();
         unitMap = worldStrategy.getUnitMap();

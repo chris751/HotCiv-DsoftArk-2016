@@ -1,11 +1,10 @@
 package hotciv.standard;
 
-import hotciv.framework.Game;
 import hotciv.framework.GameConstants;
 import hotciv.framework.Player;
 import hotciv.framework.Position;
+import hotciv.standard.Factories.EpsilonFactory;
 import org.junit.*;
-import org.junit.validator.PublicClassValidator;
 
 import java.util.ArrayList;
 import java.util.Iterator;
@@ -27,7 +26,7 @@ public class TestEpsilonCiv {
     /** Fixture for betaciv testing. */
     @Before
     public void setUp() {
-        game = new GameImpl(new AlphaAging(), new EpsilonWin(), new AlphaUnitAction(), new AlphaWorld(), new EpsilonBattle(new FixedBattleDecision()));
+        game = new GameImpl(new EpsilonFactory());
     }
     /** helper method to insert elements in an iterator into a list. */
     private ArrayList<Position> convertIteration2List(Iterator<Position> iter) {
