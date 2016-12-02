@@ -3,7 +3,6 @@ package hotciv.standard;
 import hotciv.framework.GameConstants;
 import hotciv.framework.Player;
 import hotciv.framework.Position;
-import hotciv.standard.Factories.EpsilonFactory;
 import org.junit.*;
 
 import java.util.ArrayList;

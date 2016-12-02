@@ -1,4 +1,4 @@
-package hotciv.standard.Factories;
+package hotciv.standard;
 
 import hotciv.framework.*;
 import hotciv.framework.Factories.GameFactory;
@@ -7,15 +7,15 @@ import hotciv.standard.*;
 /**
  * Created by Christian on 02/12/2016.
  */
-public class EpsilonFactory implements GameFactory {
+public class BetaFactory implements GameFactory {
     @Override
     public AgingStrategy createAgingStrategy() {
-        return new AlphaAging();
+        return new BetaAging();
     }
 
     @Override
     public WinningStrategy createWinningStrategy() {
-        return new EpsilonWin();
+        return new BetaWin();
     }
 
     @Override
@@ -30,6 +30,6 @@ public class EpsilonFactory implements GameFactory {
 
     @Override
     public BattleStrategy createBattleStrategy() {
-        return new EpsilonBattle(new DiceBattleDecision());
+        return new AlphaBattle();
     }
 }

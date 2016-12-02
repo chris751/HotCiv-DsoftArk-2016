@@ -37,11 +37,11 @@ import static hotciv.framework.Player.*;
 
 public class GameImpl implements Game {
   //@param p to enable access to the positions
-  public static Position p;
-  AgingStrategy agingStrategy;
-  WinningStrategy winningStrategy;
+    public static Position p;
+    AgingStrategy agingStrategy;
+    WinningStrategy winningStrategy;
     UnitActionStrategy unitActionStrategy;
-  WorldStrategy worldStrategy;
+    WorldStrategy worldStrategy;
     BattleStrategy battleStrategy;
 
     HashMap<Position, Tile> tileMap;

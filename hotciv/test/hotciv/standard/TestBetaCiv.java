@@ -1,7 +1,6 @@
 package hotciv.standard;
 import hotciv.framework.*;
 
-import hotciv.standard.Factories.BetaFactory;
 import org.junit.*;
 import static org.junit.Assert.*;
 import static org.hamcrest.CoreMatchers.*;

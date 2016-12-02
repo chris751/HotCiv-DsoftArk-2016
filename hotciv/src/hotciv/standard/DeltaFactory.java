@@ -1,4 +1,4 @@
-package hotciv.standard.Factories;
+package hotciv.standard;
 
 import hotciv.framework.*;
 import hotciv.framework.Factories.GameFactory;
@@ -7,7 +7,7 @@ import hotciv.standard.*;
 /**
  * Created by Christian on 02/12/2016.
  */
-public class GammaFactory implements GameFactory {
+public class DeltaFactory implements GameFactory {
     @Override
     public AgingStrategy createAgingStrategy() {
         return new AlphaAging();
@@ -20,12 +20,12 @@ public class GammaFactory implements GameFactory {
 
     @Override
     public UnitActionStrategy createActionStrategy() {
-        return new GammaUnitAction();
+        return new AlphaUnitAction();
     }
 
     @Override
     public WorldStrategy createWorldStrategy() {
-        return new AlphaWorld();
+        return new DeltaWorld();
     }
 
     @Override

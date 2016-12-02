@@ -1,35 +1,34 @@
-package hotciv.standard.Factories;
+package hotciv.standard;
 
 import hotciv.framework.*;
 import hotciv.framework.Factories.GameFactory;
-import hotciv.standard.*;
 
 /**
  * Created by Christian on 02/12/2016.
  */
-public class AlphaFactory implements GameFactory {
+public class TestGameFactory implements GameFactory{
     @Override
     public AgingStrategy createAgingStrategy() {
-        return new AlphaAging();
+        return null;
     }
 
     @Override
     public WinningStrategy createWinningStrategy() {
-        return new AlphaWin();
+        return null;
     }
 
     @Override
     public UnitActionStrategy createActionStrategy() {
-        return new AlphaUnitAction();
+        return null;
     }
 
     @Override
     public WorldStrategy createWorldStrategy() {
-        return new AlphaWorld();
+        return null;
     }
 
     @Override
     public BattleStrategy createBattleStrategy() {
-        return new AlphaBattle();
+        return null;
     }
 }
