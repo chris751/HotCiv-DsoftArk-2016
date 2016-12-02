@@ -1,6 +1,7 @@
 package hotciv.standard;
 
 import hotciv.framework.*;
+import hotciv.framework.Factories.GameFactory;
 
 import java.util.HashMap;
 import java.util.Iterator;
@@ -49,10 +50,12 @@ public class GameImpl implements Game {
 
   private int redWinCounter;
   private int blueWincounter;
+  private GameFactory factory;
 
 
 
   public GameImpl(AgingStrategy agingStrategy, WinningStrategy winningStrategy, UnitActionStrategy unitActionStrategy, WorldStrategy worldStrategy, BattleStrategy battleStrategy) {
+        
         this.agingStrategy = agingStrategy;
         this.winningStrategy = winningStrategy;
         this.unitActionStrategy = unitActionStrategy;
@@ -121,7 +124,7 @@ public class GameImpl implements Game {
 
     }
     if(!noCity){
-      isEnemyCity = !cityMap.get(to).getOwner().equals(getPlayerInTurn());
+      isEnemyCity = !cityMap.get(to).getOwner().equals(getUnitAt(from).getOwner());
     }
 
     //Decision making, whether to allow the movement or not.
@@ -138,7 +141,8 @@ public class GameImpl implements Game {
           blueWincounter++;
         }
         if (isEnemyCity) {
-          cityMap.put(to, new CityImpl(getPlayerInTurn()));
+          cityMap.remove(to);
+          cityMap.put(to, new CityImpl(getUnitAt(from).getOwner()));
           Unit unit = unitMap.get(from);
           unitMap.remove(from);
           unitMap.put(to, unit);
