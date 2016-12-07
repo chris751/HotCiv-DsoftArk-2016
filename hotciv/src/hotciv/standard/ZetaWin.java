@@ -12,7 +12,6 @@ public class ZetaWin implements WinningStrategy {
     private WinningStrategy betaWin;
     private WinningStrategy epsilonWin;
 
-
     public ZetaWin(WinningStrategy betaWin, WinningStrategy epsilonWin) {
         this.betaWin = betaWin;
         this.epsilonWin = epsilonWin;
