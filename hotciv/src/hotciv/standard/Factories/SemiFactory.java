@@ -25,7 +25,7 @@ public class SemiFactory implements GameFactory {
 
     @Override
     public WorldStrategy createWorldStrategy() {
-        return new DeltaWorld();
+        return new DeltaWorld(new DeltaMapLayout().getLayout());
     }
 
     @Override

@@ -9,11 +9,13 @@ import java.util.HashMap;
  */
 public class DeltaWorld implements WorldStrategy {
 
+    private String[] layout;
     HashMap<Position, Tile> worldTileMap = new HashMap<Position, Tile>();
     static HashMap<Position, CityImpl> cityMap = new HashMap<Position, CityImpl>();
     public static HashMap<Position, Unit> unitMap = new HashMap<Position, Unit>();
 
-    public DeltaWorld() {
+    public DeltaWorld(String[] layout ) {
+        this.layout = layout;
         createTileMap();
     }
 
@@ -29,28 +31,7 @@ public class DeltaWorld implements WorldStrategy {
     }
 
     public void createTileMap() {
-            // Basically we use a 'data driven' approach - code the
-            // layout in a simple semi-visual representation, and
-            // convert it to the actual Game representation.
-            String[] layout =
-                    new String[]{
-                            "...ooMooooo.....",
-                            "..ohhoooofffoo..",
-                            ".oooooMooo...oo.",
-                            ".ooMMMoooo..oooo",
-                            "...ofooohhoooo..",
-                            ".ofoofooooohhoo.",
-                            "...ooo..........",
-                            ".ooooo.ooohooM..",
-                            ".ooooo.oohooof..",
-                            "offfoooo.offoooo",
-                            "oooooooo...ooooo",
-                            ".ooMMMoooo......",
-                            "..ooooooffoooo..",
-                            "....ooooooooo...",
-                            "..ooohhoo.......",
-                            ".....ooooooooo..",
-                    };
+
             // Conversion...
 
             String line;

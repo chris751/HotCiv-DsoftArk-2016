@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="fractal">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/hotciv/lib/fractal.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>
