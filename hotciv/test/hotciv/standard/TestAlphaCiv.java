@@ -42,7 +42,6 @@ public class TestAlphaCiv {
   @Before
   public void setUp() {
     game = new GameImpl(new AlphaFactory());
-
   }
 
   //------------------------------------------------Turn and Aging test-------------------------------------------------

@@ -1,9 +1,11 @@
 package hotciv.standard;
 
+import hotciv.framework.MapLayoutStrategy;
+
 /**
  * Created by Christian on 07/12/2016.
  */
-public class DeltaMapLayout {
+public class DeltaMapLayout implements MapLayoutStrategy {
 
     String[] layout =
             new String[]{
