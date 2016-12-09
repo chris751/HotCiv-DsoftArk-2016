@@ -18,9 +18,9 @@ public class FractalAdapter implements MapLayoutStrategy {
     @Override
     public String[] getLayout() {
         for(int r = 0; r <16; r++){
+            fractalTileMap = "";
             for(int c = 0; c <16; c++){
                 fractalTileMap = fractalTileMap + String.valueOf(fractalGenerator.getLandscapeAt(r,c));
-
             }
             mapLayout[r] = fractalTileMap;
         }

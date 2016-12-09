@@ -2,69 +2,16 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="84083f01-3edc-481d-9129-36d11e5abd61" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/hotciv/src/hotciv/framework/MapLayoutStrategy.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/hotciv/src/hotciv/standard/Factories/AdapterFactory.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/hotciv/src/hotciv/standard/FractalAdapter.java" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/hotciv/TEST-RESULT/TEST-hotciv.standard.TestAlphaCiv.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/hotciv/TEST-RESULT/TEST-hotciv.standard.TestBetaCiv.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/hotciv/TEST-RESULT/TEST-hotciv.standard.TestDeltaCiv.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/hotciv/TEST-RESULT/TEST-hotciv.standard.TestEpsilonCiv.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/hotciv/TEST-RESULT/TEST-hotciv.standard.TestGammaCiv.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/hotciv/TEST-RESULT/TEST-hotciv.standard.TestThetaCiv.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/hotciv/TEST-RESULT/TEST-hotciv.standard.TestZetaCiv.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/hotciv/build/hotciv/framework/AgingStrategy.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/hotciv/build/hotciv/framework/BattleDescisionStrategy.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/hotciv/build/hotciv/framework/BattleStrategy.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/hotciv/build/hotciv/framework/City.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/hotciv/build/hotciv/framework/Factories/GameFactory.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/hotciv/build/hotciv/framework/Game.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/hotciv/build/hotciv/framework/GameConstants.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/hotciv/build/hotciv/framework/OurConstants.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/hotciv/build/hotciv/framework/Player.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/hotciv/build/hotciv/framework/Position.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/hotciv/build/hotciv/framework/Tile.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/hotciv/build/hotciv/framework/Unit.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/hotciv/build/hotciv/framework/UnitActionStrategy.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/hotciv/build/hotciv/framework/WinningStrategy.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/hotciv/build/hotciv/framework/WorldStrategy.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/hotciv/build/hotciv/standard/AlphaAging.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/hotciv/build/hotciv/standard/AlphaBattle.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/hotciv/build/hotciv/standard/AlphaUnitAction.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/hotciv/build/hotciv/standard/AlphaWin.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/hotciv/build/hotciv/standard/AlphaWorld.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/hotciv/build/hotciv/standard/BetaAging.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/hotciv/build/hotciv/standard/BetaWin.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/hotciv/build/hotciv/standard/CityImpl.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/hotciv/build/hotciv/standard/DeltaWorld.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/hotciv/build/hotciv/standard/DiceBattleDecision.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/hotciv/build/hotciv/standard/EpsilonBattle.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/hotciv/build/hotciv/standard/EpsilonWin.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/hotciv/build/hotciv/standard/Factories/AlphaFactory.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/hotciv/build/hotciv/standard/Factories/BetaFactory.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/hotciv/build/hotciv/standard/Factories/DeltaFactory.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/hotciv/build/hotciv/standard/Factories/EpsilonFactory.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/hotciv/build/hotciv/standard/Factories/GammaFactory.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/hotciv/build/hotciv/standard/Factories/SemiFactory.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/hotciv/build/hotciv/standard/Factories/TestGameFactory.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/hotciv/build/hotciv/standard/Factories/ThetaFactory.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/hotciv/build/hotciv/standard/Factories/ZetaFactory.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/hotciv/build/hotciv/standard/FixedBattleDecision.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/hotciv/build/hotciv/standard/GameImpl.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/hotciv/build/hotciv/standard/GammaUnitAction.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/hotciv/build/hotciv/standard/TestAlphaCiv.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/hotciv/build/hotciv/standard/TestBetaCiv.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/hotciv/build/hotciv/standard/TestDeltaCiv.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/hotciv/build/hotciv/standard/TestEpsilonCiv.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/hotciv/build/hotciv/standard/TestGammaCiv.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/hotciv/build/hotciv/standard/TestThetaCiv.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/hotciv/build/hotciv/standard/TestZetaCiv.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/hotciv/build/hotciv/standard/TileImpl.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/hotciv/build/hotciv/standard/UnitImpl.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/hotciv/build/hotciv/standard/ZetaWin.class" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/hotciv/hotciv/standard/DeltaMapLayout.class" afterPath="$PROJECT_DIR$/out/production/hotciv/hotciv/standard/DeltaMapLayout.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/test/hotciv/hotciv/standard/TestAlphaCiv.class" afterPath="$PROJECT_DIR$/out/test/hotciv/hotciv/standard/TestAlphaCiv.class" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/hotciv/src/hotciv/standard/FractalTest.java" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/hotciv/src/hotciv/fractal/DemoFractalMap.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/hotciv/src/hotciv/fractal/compile.bat" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/hotciv/src/hotciv/fractal/run-test.bat" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/hotciv/hotciv/fractal/DemoFractalMap.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/hotciv/hotciv/fractal/compile.bat" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/hotciv/hotciv/fractal/run-test.bat" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/hotciv/src/hotciv/standard/DeltaMapLayout.java" afterPath="$PROJECT_DIR$/hotciv/src/hotciv/standard/DeltaMapLayout.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/hotciv/build.xml" afterPath="$PROJECT_DIR$/hotciv/build.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/hotciv/src/hotciv/standard/FractalAdapter.java" afterPath="$PROJECT_DIR$/hotciv/src/hotciv/standard/FractalAdapter.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/hotciv/test/hotciv/standard/TestAlphaCiv.java" afterPath="$PROJECT_DIR$/hotciv/test/hotciv/standard/TestAlphaCiv.java" />
     </list>
     <ignored path="HotCiv.iws" />
@@ -87,49 +34,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="TestDeltaCiv.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/hotciv/test/hotciv/standard/TestDeltaCiv.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="209">
-              <caret line="14" column="13" selection-start-line="14" selection-start-column="13" selection-end-line="14" selection-end-column="13" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="AlphaFactory.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/hotciv/src/hotciv/standard/Factories/AlphaFactory.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="150">
-              <caret line="10" column="13" selection-start-line="10" selection-start-column="13" selection-end-line="10" selection-end-column="13" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="FractalAdapter.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/hotciv/src/hotciv/standard/FractalAdapter.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="450">
-              <caret line="30" column="0" selection-start-line="30" selection-start-column="0" selection-end-line="30" selection-end-column="0" />
-              <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="e#420#421#0" expanded="true" />
-                <element signature="e#476#477#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="TestAlphaCiv.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/hotciv/test/hotciv/standard/TestAlphaCiv.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="219">
-              <caret line="41" column="1" selection-start-line="41" selection-start-column="1" selection-end-line="44" selection-end-column="3" />
+            <state relative-caret-position="240">
+              <caret line="18" column="19" selection-start-line="18" selection-start-column="19" selection-end-line="18" selection-end-column="19" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -140,8 +49,20 @@
       <file leaf-file-name="GameImpl.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/hotciv/src/hotciv/standard/GameImpl.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-2070">
-              <caret line="49" column="0" selection-start-line="49" selection-start-column="0" selection-end-line="49" selection-end-column="0" />
+            <state relative-caret-position="314">
+              <caret line="65" column="30" selection-start-line="65" selection-start-column="30" selection-end-line="65" selection-end-column="30" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="FractalTest.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/hotciv/src/hotciv/standard/FractalTest.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="315">
+              <caret line="21" column="39" selection-start-line="21" selection-start-column="39" selection-end-line="21" selection-end-column="39" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -163,22 +84,12 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="AdapterFactory.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/hotciv/src/hotciv/standard/Factories/AdapterFactory.java">
+      <file leaf-file-name="DeltaMapLayout.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/hotciv/src/hotciv/standard/DeltaMapLayout.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="432">
-              <caret line="29" column="5" selection-start-line="29" selection-start-column="5" selection-end-line="29" selection-end-column="5" />
-              <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="e#344#345#0" expanded="true" />
-                <element signature="e#383#384#0" expanded="true" />
-                <element signature="e#451#452#0" expanded="true" />
-                <element signature="e#488#489#0" expanded="true" />
-                <element signature="e#558#559#0" expanded="true" />
-                <element signature="e#602#603#0" expanded="true" />
-                <element signature="e#835#836#0" expanded="true" />
-                <element signature="e#875#876#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="210">
+              <caret line="14" column="16" selection-start-line="14" selection-start-column="16" selection-end-line="14" selection-end-column="16" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -186,8 +97,8 @@
       <file leaf-file-name="DeltaWorld.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/hotciv/src/hotciv/standard/DeltaWorld.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="195">
-              <caret line="16" column="28" selection-start-line="16" selection-start-column="28" selection-end-line="16" selection-end-column="30" />
+            <state relative-caret-position="463">
+              <caret line="57" column="52" selection-start-line="57" selection-start-column="52" selection-end-line="57" selection-end-column="52" />
               <folding>
                 <element signature="e#263#279#0" expanded="true" />
               </folding>
@@ -195,11 +106,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="TestBetaCiv.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/hotciv/test/hotciv/standard/TestBetaCiv.java">
+      <file leaf-file-name="AdapterFactory.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/hotciv/src/hotciv/standard/Factories/AdapterFactory.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="210">
-              <caret line="21" column="4" selection-start-line="21" selection-start-column="4" selection-end-line="27" selection-end-column="5" />
+            <state relative-caret-position="330">
+              <caret line="28" column="19" selection-start-line="28" selection-start-column="19" selection-end-line="28" selection-end-column="96" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -207,11 +118,21 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="DeltaMapLayout.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/hotciv/src/hotciv/standard/DeltaMapLayout.java">
+      <file leaf-file-name="WorldStrategy.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/hotciv/src/hotciv/framework/WorldStrategy.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="210">
-              <caret line="14" column="16" selection-start-line="14" selection-start-column="16" selection-end-line="14" selection-end-column="16" />
+            <state relative-caret-position="105">
+              <caret line="9" column="17" selection-start-line="9" selection-start-column="17" selection-end-line="9" selection-end-column="17" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="build.xml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/hotciv/build.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="535">
+              <caret line="52" column="36" selection-start-line="52" selection-start-column="36" selection-end-line="52" selection-end-column="36" />
               <folding />
             </state>
           </provider>
@@ -238,9 +159,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/hotciv/src/hotciv/standard/EpsilonWin.java" />
-        <option value="$PROJECT_DIR$/hotciv/src/hotciv/standard/fixedBattleDecision.java" />
-        <option value="$PROJECT_DIR$/hotciv/src/hotciv/framework/BattleDescisionStrategy.java" />
         <option value="$PROJECT_DIR$/hotciv/src/hotciv/standard/FixedBattleDecision.java" />
         <option value="$PROJECT_DIR$/hotciv/src/hotciv/standard/DiceBattleDecision.java" />
         <option value="$PROJECT_DIR$/hotciv/src/hotciv/standard/EpsilonBattle.java" />
@@ -285,10 +203,13 @@
         <option value="$PROJECT_DIR$/hotciv/src/hotciv/framework/MapLayout.java" />
         <option value="$PROJECT_DIR$/hotciv/src/hotciv/standard/DeltaMapLayout.java" />
         <option value="$PROJECT_DIR$/hotciv/src/hotciv/fractal/DemoFractalMap.java" />
-        <option value="$PROJECT_DIR$/hotciv/src/hotciv/standard/FractalAdapter.java" />
-        <option value="$PROJECT_DIR$/hotciv/test/hotciv/standard/TestAlphaCiv.java" />
-        <option value="$PROJECT_DIR$/hotciv/src/hotciv/standard/Factories/AdapterFactory.java" />
         <option value="$PROJECT_DIR$/hotciv/test/hotciv/standard/TestAdapter.java" />
+        <option value="$PROJECT_DIR$/hotciv/src/hotciv/standard/Factories/AdapterFactory.java" />
+        <option value="$PROJECT_DIR$/hotciv/src/hotciv/standard/fractal/DemoFractalMap.java" />
+        <option value="$PROJECT_DIR$/hotciv/test/hotciv/standard/TestAlphaCiv.java" />
+        <option value="$PROJECT_DIR$/hotciv/build.xml" />
+        <option value="$PROJECT_DIR$/hotciv/src/hotciv/standard/FractalAdapter.java" />
+        <option value="$PROJECT_DIR$/hotciv/src/hotciv/standard/FractalTest.java" />
       </list>
     </option>
   </component>
@@ -393,10 +314,6 @@
               <option name="myItemId" value="test" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="standard" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
           </PATH>
           <PATH>
             <PATH_ELEMENT>
@@ -417,32 +334,6 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="standard" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="HotCiv" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="hotciv" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="hotciv" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="standard" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Factories" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -504,28 +395,6 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="hotciv" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="fractal" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="HotCiv" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="hotciv" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
               <option name="myItemId" value="lib" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
@@ -540,12 +409,12 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="lib" />
+              <option name="myItemId" value="build" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="fractal.jar" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiFileNode" />
+              <option name="myItemId" value="hotciv" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
         </subPane>
@@ -573,7 +442,10 @@
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/hotciv/src/hotciv/standard" />
       <recent name="$PROJECT_DIR$/hotciv/lib" />
+      <recent name="$PROJECT_DIR$/hotciv/lib/fractal" />
+      <recent name="$PROJECT_DIR$/hotciv/src/hotciv/framework" />
     </key>
     <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
       <recent name="hotciv.standard" />
@@ -583,7 +455,7 @@
       <recent name="hotciv.framework" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.hotciv.standard in hotciv">
+  <component name="RunManager" selected="Application.DemoFractalMap">
     <configuration default="false" name="TestAlphaCiv" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
         <pattern>
@@ -633,32 +505,6 @@
       <patterns />
       <method />
     </configuration>
-    <configuration default="false" name="TestEpsilonCiv" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
-        <pattern>
-          <option name="PATTERN" value="hotciv.standard.Factories.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <module name="hotciv" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="PACKAGE_NAME" value="hotciv.standard" />
-      <option name="MAIN_CLASS_NAME" value="hotciv.standard.TestEpsilonCiv" />
-      <option name="METHOD_NAME" />
-      <option name="TEST_OBJECT" value="class" />
-      <option name="VM_PARAMETERS" value="-ea" />
-      <option name="PARAMETERS" />
-      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
-      <option name="ENV_VARIABLES" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <option name="TEST_SEARCH_SCOPE">
-        <value defaultName="singleModule" />
-      </option>
-      <envs />
-      <patterns />
-      <method />
-    </configuration>
     <configuration default="false" name="hotciv.standard in hotciv" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
         <pattern>
@@ -683,6 +529,46 @@
       </option>
       <envs />
       <patterns />
+      <method />
+    </configuration>
+    <configuration default="false" name="DemoFractalMap" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
+        <pattern>
+          <option name="PATTERN" value="hotciv.standard.fractal.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="MAIN_CLASS_NAME" value="hotciv.standard.fractal.DemoFractalMap" />
+      <option name="VM_PARAMETERS" />
+      <option name="PROGRAM_PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="ENABLE_SWING_INSPECTOR" value="false" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <module name="hotciv" />
+      <envs />
+      <method />
+    </configuration>
+    <configuration default="false" name="FractalTest" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
+        <pattern>
+          <option name="PATTERN" value="hotciv.standard.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="MAIN_CLASS_NAME" value="hotciv.standard.FractalTest" />
+      <option name="VM_PARAMETERS" />
+      <option name="PROGRAM_PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="ENABLE_SWING_INSPECTOR" value="false" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <module name="hotciv" />
+      <envs />
       <method />
     </configuration>
     <configuration default="true" type="#org.jetbrains.idea.devkit.run.PluginConfigurationType" factoryName="Plugin">
@@ -1101,18 +987,20 @@
     <configuration default="true" type="osgi.bnd.run" factoryName="Test Launcher (JUnit)">
       <method />
     </configuration>
-    <list size="4">
+    <list size="5">
       <item index="0" class="java.lang.String" itemvalue="JUnit.TestAlphaCiv" />
       <item index="1" class="java.lang.String" itemvalue="JUnit.All in hotciv" />
-      <item index="2" class="java.lang.String" itemvalue="JUnit.TestEpsilonCiv" />
-      <item index="3" class="java.lang.String" itemvalue="JUnit.hotciv.standard in hotciv" />
+      <item index="2" class="java.lang.String" itemvalue="JUnit.hotciv.standard in hotciv" />
+      <item index="3" class="java.lang.String" itemvalue="Application.DemoFractalMap" />
+      <item index="4" class="java.lang.String" itemvalue="Application.FractalTest" />
     </list>
     <recent_temporary>
-      <list size="4">
-        <item index="0" class="java.lang.String" itemvalue="JUnit.hotciv.standard in hotciv" />
-        <item index="1" class="java.lang.String" itemvalue="JUnit.TestAlphaCiv" />
-        <item index="2" class="java.lang.String" itemvalue="JUnit.All in hotciv" />
-        <item index="3" class="java.lang.String" itemvalue="JUnit.TestEpsilonCiv" />
+      <list size="5">
+        <item index="0" class="java.lang.String" itemvalue="Application.DemoFractalMap" />
+        <item index="1" class="java.lang.String" itemvalue="Application.FractalTest" />
+        <item index="2" class="java.lang.String" itemvalue="JUnit.hotciv.standard in hotciv" />
+        <item index="3" class="java.lang.String" itemvalue="JUnit.TestAlphaCiv" />
+        <item index="4" class="java.lang.String" itemvalue="JUnit.All in hotciv" />
       </list>
     </recent_temporary>
   </component>
@@ -1143,7 +1031,7 @@
       <workItem from="1480599194739" duration="3057000" />
       <workItem from="1480602388442" duration="8000" />
       <workItem from="1480602585197" duration="41391000" />
-      <workItem from="1481099866657" duration="11800000" />
+      <workItem from="1481099866657" duration="20085000" />
     </task>
     <task id="LOCAL-00001" summary="Jedi message tester niklas">
       <created>1478263152330</created>
@@ -1195,7 +1083,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="178916000" />
+    <option name="totallyTimeSpent" value="187201000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1208,7 +1096,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="58" y="23" width="1862" height="1057" extended-state="6" />
-    <editor active="false" />
+    <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32953367" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -1217,12 +1105,12 @@
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33248407" sideWeight="0.50860137" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.29637307" sideWeight="0.49139866" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.37202072" sideWeight="0.49139866" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.07253886" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.28704664" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2746114" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.20604396" sideWeight="0.5" order="1" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.20604396" sideWeight="0.5" order="1" side_tool="false" content_ui="combo" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.19689119" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24945055" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -1286,84 +1174,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/hotciv/test/hotciv/standard/TestZetaCiv.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="300">
-          <caret line="21" column="5" selection-start-line="16" selection-start-column="4" selection-end-line="21" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/hotciv/src/hotciv/framework/GameConstants.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="465">
-          <caret line="31" column="0" selection-start-line="31" selection-start-column="0" selection-end-line="48" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/hotciv/src/hotciv/standard/TileImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="285">
-          <caret line="21" column="20" selection-start-line="21" selection-start-column="20" selection-end-line="21" selection-end-column="20" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/hotciv/src/hotciv/standard/CityImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="345">
-          <caret line="29" column="19" selection-start-line="29" selection-start-column="19" selection-end-line="29" selection-end-column="19" />
-          <folding>
-            <element signature="e#822#823#0" expanded="true" />
-            <element signature="e#867#868#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/hotciv/test/hotciv/standard/TestEpsilonCiv.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="129">
-          <caret line="120" column="10" selection-start-line="120" selection-start-column="10" selection-end-line="120" selection-end-column="10" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/hotciv/src/hotciv/standard/Factories/TestGameFactory.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
-          <caret line="8" column="13" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/hotciv/src/hotciv/standard/package.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/hotciv/src/hotciv/standard/AlphaWorld.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="360">
-          <caret line="42" column="0" selection-start-line="42" selection-start-column="0" selection-end-line="42" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/hotciv/src/hotciv/framework/UnitActionStrategy.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="135">
-          <caret line="11" column="25" selection-start-line="11" selection-start-column="25" selection-end-line="11" selection-end-column="25" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/hotciv/test/hotciv/standard/TestGammaCiv.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -1501,37 +1311,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/hotciv/src/hotciv/standard/LogDecorator.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="330">
-          <caret line="52" column="155" selection-start-line="52" selection-start-column="155" selection-end-line="52" selection-end-column="155" />
-          <folding>
-            <element signature="e#213#214#0" expanded="true" />
-            <element signature="e#245#246#0" expanded="true" />
-            <element signature="e#300#301#0" expanded="true" />
-            <element signature="e#340#341#0" expanded="true" />
-            <element signature="e#395#396#0" expanded="true" />
-            <element signature="e#435#436#0" expanded="true" />
-            <element signature="e#490#491#0" expanded="true" />
-            <element signature="e#530#531#0" expanded="true" />
-            <element signature="e#583#584#0" expanded="true" />
-            <element signature="e#628#629#0" expanded="true" />
-            <element signature="e#818#819#0" expanded="true" />
-            <element signature="e#854#855#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/hotciv/test/hotciv/standard/TestLogDecorator.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="435">
-          <caret line="29" column="72" selection-start-line="29" selection-start-column="72" selection-end-line="29" selection-end-column="72" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/hotciv/src/hotciv/standard/Factories/GammaFactory.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="135">
@@ -1561,14 +1340,6 @@
             <element signature="e#618#619#0" expanded="true" />
             <element signature="e#689#690#0" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/hotciv/src/hotciv/standard/FixedBattleDecision.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="270">
-          <caret line="18" column="0" selection-start-line="18" selection-start-column="0" selection-end-line="18" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1619,26 +1390,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/hotciv/src/hotciv/fractal/run-test.bat">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/hotciv/src/hotciv/framework/MapLayoutStrategy.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="105">
           <caret line="7" column="19" selection-start-line="7" selection-start-column="19" selection-end-line="7" selection-end-column="19" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/hotciv/src/hotciv/fractal/DemoFractalMap.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="417">
-          <caret line="36" column="14" selection-start-line="36" selection-start-column="14" selection-end-line="36" selection-end-column="14" />
           <folding />
         </state>
       </provider>
@@ -1663,14 +1418,28 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/hotciv/src/hotciv/standard/Factories/DeltaFactory.java">
+    <entry file="file://$PROJECT_DIR$/hotciv/test/hotciv/standard/TestAdapter.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="315">
-          <caret line="27" column="62" selection-start-line="27" selection-start-column="62" selection-end-line="27" selection-end-column="62" />
+        <state relative-caret-position="435">
+          <caret line="29" column="5" selection-start-line="29" selection-start-column="5" selection-end-line="29" selection-end-column="5" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$PROJECT_DIR$/hotciv/lib/fractal.jar!/thirdparty/ThirdPartyFractalGenerator.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="270">
+          <caret line="19" column="62" selection-start-line="19" selection-start-column="62" selection-end-line="19" selection-end-column="62" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/hotciv/src/hotciv/standard/AlphaAging.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="30">
+          <caret line="2" column="7" selection-start-line="2" selection-start-column="7" selection-end-line="2" selection-end-column="7" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#618#619#0" expanded="true" />
-            <element signature="e#689#690#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -1685,6 +1454,90 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/hotciv/build/hotciv/standard/fractal/DemoFractalMap.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/hotciv/src/hotciv/standard/fractal/compile.bat">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/hotciv/src/hotciv/standard/fractal/run-test.bat">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/hotciv/hotciv.iml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/hotciv/test/hotciv/standard/TestAlphaCiv.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="712">
+          <caret line="302" column="5" selection-start-line="296" selection-start-column="15" selection-end-line="302" selection-end-column="5" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/hotciv/src/hotciv/standard/LogDecorator.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="105">
+          <caret line="7" column="0" selection-start-line="7" selection-start-column="0" selection-end-line="14" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/hotciv/test/hotciv/standard/TestLogDecorator.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="17" column="50" selection-start-line="17" selection-start-column="50" selection-end-line="17" selection-end-column="50" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/hotciv/src/hotciv/standard/FixedBattleDecision.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="270">
+          <caret line="18" column="0" selection-start-line="18" selection-start-column="0" selection-end-line="18" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/hotciv/src/hotciv/standard/package.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/hotciv/build.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="535">
+          <caret line="52" column="36" selection-start-line="52" selection-start-column="36" selection-end-line="52" selection-end-column="36" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/hotciv/src/hotciv/standard/DeltaMapLayout.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="210">
@@ -1693,68 +1546,78 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/hotciv/src/hotciv/standard/DeltaWorld.java">
+    <entry file="file://$PROJECT_DIR$/hotciv/src/hotciv/standard/GameImpl.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="195">
-          <caret line="16" column="28" selection-start-line="16" selection-start-column="28" selection-end-line="16" selection-end-column="30" />
+        <state relative-caret-position="314">
+          <caret line="65" column="30" selection-start-line="65" selection-start-column="30" selection-end-line="65" selection-end-column="30" />
           <folding>
-            <element signature="e#263#279#0" expanded="true" />
+            <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/hotciv/src/hotciv/standard/Factories/AdapterFactory.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="432">
-          <caret line="29" column="5" selection-start-line="29" selection-start-column="5" selection-end-line="29" selection-end-column="5" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#344#345#0" expanded="true" />
-            <element signature="e#383#384#0" expanded="true" />
-            <element signature="e#451#452#0" expanded="true" />
-            <element signature="e#488#489#0" expanded="true" />
-            <element signature="e#558#559#0" expanded="true" />
-            <element signature="e#602#603#0" expanded="true" />
-            <element signature="e#835#836#0" expanded="true" />
-            <element signature="e#875#876#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/hotciv/src/hotciv/standard/GameImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-2070">
-          <caret line="49" column="0" selection-start-line="49" selection-start-column="0" selection-end-line="49" selection-end-column="0" />
+        <state relative-caret-position="330">
+          <caret line="28" column="19" selection-start-line="28" selection-start-column="19" selection-end-line="28" selection-end-column="96" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/hotciv/test/hotciv/standard/TestAdapter.java">
+    <entry file="file://$PROJECT_DIR$/hotciv/src/hotciv/framework/WorldStrategy.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="435">
-          <caret line="29" column="5" selection-start-line="29" selection-start-column="5" selection-end-line="29" selection-end-column="5" />
+        <state relative-caret-position="105">
+          <caret line="9" column="17" selection-start-line="9" selection-start-column="17" selection-end-line="9" selection-end-column="17" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/hotciv/src/hotciv/standard/Factories/DeltaFactory.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="315">
+          <caret line="27" column="62" selection-start-line="27" selection-start-column="62" selection-end-line="27" selection-end-column="62" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#618#619#0" expanded="true" />
+            <element signature="e#689#690#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/hotciv/src/hotciv/standard/DeltaWorld.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="463">
+          <caret line="57" column="52" selection-start-line="57" selection-start-column="52" selection-end-line="57" selection-end-column="52" />
+          <folding>
+            <element signature="e#263#279#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/hotciv/src/hotciv/standard/fractal/DemoFractalMap.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="317">
+          <caret line="35" column="6" selection-start-line="35" selection-start-column="6" selection-end-line="35" selection-end-column="16" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/hotciv/src/hotciv/standard/FractalAdapter.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="450">
-          <caret line="30" column="0" selection-start-line="30" selection-start-column="0" selection-end-line="30" selection-end-column="0" />
+        <state relative-caret-position="240">
+          <caret line="18" column="19" selection-start-line="18" selection-start-column="19" selection-end-line="18" selection-end-column="19" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#420#421#0" expanded="true" />
-            <element signature="e#476#477#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/hotciv/test/hotciv/standard/TestAlphaCiv.java">
+    <entry file="file://$PROJECT_DIR$/hotciv/src/hotciv/standard/FractalTest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="219">
-          <caret line="41" column="1" selection-start-line="41" selection-start-column="1" selection-end-line="44" selection-end-column="3" />
+        <state relative-caret-position="315">
+          <caret line="21" column="39" selection-start-line="21" selection-start-column="39" selection-end-line="21" selection-end-column="39" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>

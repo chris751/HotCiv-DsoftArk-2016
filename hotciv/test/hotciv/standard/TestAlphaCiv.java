@@ -300,7 +300,6 @@ public class TestAlphaCiv {
         assertThat(game.moveUnit(new Position(4,0), new Position(4,1)), is(true));
         assertThat(game.moveUnit(new Position(4,1), new Position(4,2)), is(true));
         assertThat(game.moveUnit(new Position(4,2), new Position(4,3)), is(false));
-
     }
 
     //---------------------------------------------------Attack Test----------------------------------------------------
