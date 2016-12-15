@@ -1,19 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="84083f01-3edc-481d-9129-36d11e5abd61" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/hotciv/src/hotciv/standard/FractalTest.java" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/hotciv/src/hotciv/fractal/DemoFractalMap.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/hotciv/src/hotciv/fractal/compile.bat" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/hotciv/src/hotciv/fractal/run-test.bat" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/hotciv/hotciv/fractal/DemoFractalMap.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/hotciv/hotciv/fractal/compile.bat" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/hotciv/hotciv/fractal/run-test.bat" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/hotciv/build.xml" afterPath="$PROJECT_DIR$/hotciv/build.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/hotciv/src/hotciv/standard/FractalAdapter.java" afterPath="$PROJECT_DIR$/hotciv/src/hotciv/standard/FractalAdapter.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/hotciv/test/hotciv/standard/TestAlphaCiv.java" afterPath="$PROJECT_DIR$/hotciv/test/hotciv/standard/TestAlphaCiv.java" />
-    </list>
+    <list default="true" id="84083f01-3edc-481d-9129-36d11e5abd61" name="Default" comment="" />
     <ignored path="HotCiv.iws" />
     <ignored path=".idea/workspace.xml" />
     <ignored path="$PROJECT_DIR$/out/" />
@@ -1031,7 +1019,7 @@
       <workItem from="1480599194739" duration="3057000" />
       <workItem from="1480602388442" duration="8000" />
       <workItem from="1480602585197" duration="41391000" />
-      <workItem from="1481099866657" duration="20085000" />
+      <workItem from="1481099866657" duration="20173000" />
     </task>
     <task id="LOCAL-00001" summary="Jedi message tester niklas">
       <created>1478263152330</created>
@@ -1083,7 +1071,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="187201000" />
+    <option name="totallyTimeSpent" value="187289000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1096,7 +1084,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="58" y="23" width="1862" height="1057" extended-state="6" />
-    <editor active="true" />
+    <editor active="false" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32953367" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -1110,7 +1098,7 @@
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2746114" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.20604396" sideWeight="0.5" order="1" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.20604396" sideWeight="0.5" order="1" side_tool="false" content_ui="combo" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.19689119" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24945055" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />

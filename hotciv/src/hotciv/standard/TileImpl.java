@@ -17,6 +17,7 @@ public class TileImpl implements Tile{
     }
 
     //The tile has to be either ocean or mountain, an if statement is used to differenciete.
+    //hej
     @Override
     public String getTypeString() {
         return type;
